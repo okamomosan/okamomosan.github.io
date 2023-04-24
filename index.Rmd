@@ -1,5 +1,5 @@
 --- 
-title: "覚えよう！行動経済学の実証分析！"
+title: "覚えよう！行動経済学の実証分析"
 author: "Tomohisa OKADA"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

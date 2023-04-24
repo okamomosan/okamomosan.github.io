@@ -1,7 +1,6 @@
 fig:nice-fig
 tab:nice-tab
 eq:binom
-thm:tri
 準備
 rとは
 rstudioのインストール

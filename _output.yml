@@ -14,4 +14,4 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::gitbook: default
+bookdown::epub_book: default

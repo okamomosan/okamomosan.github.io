@@ -110,14 +110,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={覚えよう！行動経済学の実証分析},
+  pdftitle={行動経済学の実証分析},
   pdfauthor={Tomohisa OKADA},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{覚えよう！行動経済学の実証分析}
+\title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-04-24}
+\date{2023-04-25}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -143,19 +143,38 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{ux6e96ux5099}{%
-\chapter{準備！}\label{ux6e96ux5099}}
+\hypertarget{ready}{%
+\chapter{Ready?}\label{ready}}
 
-\hypertarget{rux3068ux306f}{%
-\section{Rとは？}\label{rux3068ux306f}}
+\hypertarget{rstudioux3068ux306f}{%
+\section{R(Studio)とは？}\label{rstudioux3068ux306f}}
 
 \begin{itemize}
 \tightlist
 \item
   Rは、オープンソースで利用可能な統計解析に特化したプログラミング言語
 \item
-  RStudioは、Rを使うための統合開発環境（めちゃくちゃRが使いやすくなるアプリ）
+  RStudioは、Rを使うための統合開発環境（なくてもRは使えるが、あるとめちゃ便利！）
 \end{itemize}
+
+\hypertarget{tips}{%
+\section{Tips!}\label{tips}}
+
+\begin{itemize}
+\tightlist
+\item
+  Rに関するお役立ちサイトや書籍をまとめる
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \href{https://tomoecon.github.io/R_for_graduate_thesis/}{「卒業論文のためのR入門」 by 森知春先生}\\
+  Rの使い方と心理統計学の基礎が一挙に学べる！
+\item
+  \href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」 by 宋財泫先生 \& 矢内勇生先生}\\
+  辞書的に使える！Tidyverseを使ったモダンなRのプログラムが学べる！
+\end{enumerate}
 
 \hypertarget{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
 \section{R(Studio)のインストール}\label{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
@@ -169,71 +188,192 @@
 \item
   「2:Install RStudio」からRStudioをインストール
 \item
-  うまくインストールできない場合は、矢内勇生先生のサイト( \url{http://yukiyanai.github.io/jp/resources/} )に詳しい解説がある
+  うまくインストールできない場合は、\href{https://www.jaysong.net/RBook/installation.html}{「私たちのR」}に詳しい解説がある
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\hypertarget{go}{%
+\chapter{Go!!}\label{go}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+\begin{itemize}
+\tightlist
+\item
+  とりあえずまずは使ってみよう！
+\end{itemize}
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+\hypertarget{rstudioux3092ux958bux304f}{%
+\section{RStudioを開く}\label{rstudioux3092ux958bux304f}}
 
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
+\begin{itemize}
+\tightlist
+\item
+  RStudioのアイコンから起動
+\item
+  次のような、４つの枠（ペーン）に分かれた画面が表示される
+\end{itemize}
 
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
+\includegraphics{./img/2_rstudio_4pane.png}
 
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
+　　\textbf{①左上：}メインの作業場でコードを書くところ\\
+　　\textbf{②右上：}変数やオブジェクトのリストが表示されたり、バージョン管理を行う\\
+　　\textbf{③左下：}コードの実行結果が表示されるコンソールや、各種コマンドを実行するターミナルなど\\
+　　\textbf{④右下：}各種ファイルやパッケージの表示、出力した図の表示など\\
+　　
 
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
+\hypertarget{ux30b3ux30f3ux30bdux30fcux30ebux306bux76f4ux63a5ux6253ux3061ux8fbcux3080}{%
+\section{コンソールに直接打ち込む}\label{ux30b3ux30f3ux30bdux30fcux30ebux306bux76f4ux63a5ux6253ux3061ux8fbcux3080}}
 
-You can render the HTML version of this example book without changing anything:
+\begin{itemize}
+\tightlist
+\item
+  RStudioの左下のペーンを見る\\
+\item
+  Consoleのタブが選択されていることを確認
+\item
+  最下段の\texttt{\textgreater{}}のあとに\texttt{1+1}と打ち込み\textbf{Enter（macはreturn）}を押す
+\item
+  \texttt{{[}1{]}\ 2}と返ってくる
+\item
+  \texttt{2}の部分が\texttt{1+1}の計算結果
+\end{itemize}
+
+\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046}{%
+\section{Rスクリプトを使う}\label{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046}}
+
+\begin{itemize}
+\tightlist
+\item
+  コンソールに書いたコードは、Rstudioを終了すると消える\\
+  （実際に終了して再起動してみよう）\\
+\item
+  だから、保存可能な\textbf{Rスクリプト}にコードを書くことが多い
+\end{itemize}
+
+\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}{%
+\paragraph*{Rスクリプトに書く：}\label{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}}
+\addcontentsline{toc}{paragraph}{Rスクリプトに書く：}
+
+\begin{itemize}
+\tightlist
+\item
+  RStudioの左上の
+  をクリックし、「R Script」を選択
+\item
+  空のRスクリプトファイルが作成され、左上のペーンに表示される
+\item
+  1行目に\texttt{1+1}と入力して\textbf{ctrl+Enter（macはcommand+return）}を押す\\
+  （ をクリックしても良い）
+\item
+  左下のペーンのコンソールに結果(\texttt{{[}1{]}\ 2})が表示される
+\end{itemize}
+
+\hypertarget{ux4fddux5b58}{%
+\paragraph*{保存：}\label{ux4fddux5b58}}
+\addcontentsline{toc}{paragraph}{保存：}
+
+\begin{itemize}
+\tightlist
+\item
+  Rスクリプトは\textbf{ctrl+s（macはcommand+s）}で好きな時に保存できる
+\item
+  初回はファイル名と保存場所も決める
+\item
+  試しに、保存したRスクリプトのタブを閉じてみよう
+  （タブの右側の×をクリック）
+\item
+  左上の をクリックし、保存したRスクリプトのファイルを選択\\
+\item
+  Rスクリプトが先ほど保存した状態で開く
+\end{itemize}
+
+\hypertarget{ux3055ux3089ux306bux66f8ux304f}{%
+\paragraph*{さらに書く！：}\label{ux3055ux3089ux306bux66f8ux304f}}
+\addcontentsline{toc}{paragraph}{さらに書く！：}
+
+\begin{itemize}
+\tightlist
+\item
+  2行目に\texttt{5-2}と入力する
+\item
+  2行目にカーソルを合わせて\textbf{ctrl+Enter}を押す
+\item
+  2行目の計算結果(\texttt{{[}1{]}\ 3})が表示される
+\item
+  1行目にカーソルを合わせて\textbf{ctrl+Enter}を押す
+\item
+  1行目の計算結果(\texttt{{[}1{]}\ 2})が表示される
+\item
+  つまり、実行したい行にカーソルを合わせて\textbf{ctrl+Enter}を押せば良い
+\item
+  全ての行を一括で実行したいなら\textbf{ctrl+shift+Enter（macはcommand+shift+return）}
+\item
+  一部分だけ実行したいなら、下図のように実行したい行だけ選択して\textbf{ctrl+Enter}
+\end{itemize}
+
+\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046ux30e1ux30eaux30c3ux30c8}{%
+\paragraph*{Rスクリプトを使うメリット：}\label{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046ux30e1ux30eaux30c3ux30c8}}
+\addcontentsline{toc}{paragraph}{Rスクリプトを使うメリット：}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  Find the \textbf{Build} pane in the RStudio IDE, and
+  コードが保存できる（毎回書き直さなくて良い！）
 \item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
+  長く複雑なコードを書いたり、管理するのが楽\\
+\item
+  他の人に配布できる（分析を再現してもらいやすい）\\
+  などなど\ldots{}
 \end{enumerate}
 
-Or build the book from the R console:
+\hypertarget{ux30d7ux30edux30b8ux30a7ux30afux30c8ux7ba1ux7406}{%
+\section{プロジェクト管理}\label{ux30d7ux30edux30b8ux30a7ux30afux30c8ux7ba1ux7406}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  研究プロジェクトが進むと、ひとつのRスクリプトだけでは管理しきれなくなる
+\item
+  \textbf{プロジェクト}を使えば、複数のRスクリプトや関連データなどを一つのフォルダにまとめて効率よく管理できる
+\end{itemize}
 
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+\hypertarget{ux30d7ux30edux30b8ux30a7ux30afux30c8ux306eux4f5cux6210}{%
+\paragraph*{プロジェクトの作成：}\label{ux30d7ux30edux30b8ux30a7ux30afux30c8ux306eux4f5cux6210}}
+\addcontentsline{toc}{paragraph}{プロジェクトの作成：}
 
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
+\begin{itemize}
+\tightlist
+\item
+  左上の をクリックし、「New Directry」→「New Project」の順に選択\\
+\item
+  次の画面で①プロジェクト名と、その②作成場所を指定して③「Create Project」
+\end{itemize}
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
+\begin{itemize}
+\tightlist
+\item
+  指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう
+\item
+  そのフォルダの中に「プロジェクト名.Rproj」というファイルができているのを確認しよう
+\item
+  以下は、macでDocumentフォルダ内にsugoi\_projectというプロジェクトを作った例
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+\begin{itemize}
+\tightlist
+\item
+  初めはご利益がわかりにくいが、研究プロジェクトごとにプロジェクトを作るクセをつけよう
+\item
+  そして、次の心得に従い、プロジェクト上で作業をするようにしよう
+\end{itemize}
 
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
-
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
-
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
-
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
-
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
-
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  毎回「プロジェクト名.Rproj」をダブルクリックしてRstudioを起動
+\item
+  関連するファイルはプロジェクト名のフォルダにまとめて一元管理
+\end{enumerate}
 
 \hypertarget{cross}{%
 \chapter{Cross-references}\label{cross}}

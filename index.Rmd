@@ -20,13 +20,14 @@ github-repo: rstudio/bookdown-demo
 ## R(Studio)とは？
 
 - Rは、オープンソースで利用可能な統計解析に特化したプログラミング言語
-- RStudioは、Rを使うための統合開発環境（なくてもRは使えるが、あるとめちゃ便利！）
+- RStudioは、Rを使うための統合開発環境（なくてもRは使えるが、あるとめちゃ便利！）  
+- 今は「まったく意味不明」で全然OK！
 
 ## Tips!
 
 - Rに関するお役立ちサイトや書籍をまとめる
 
-1. [「卒業論文のためのR入門」 by 森知春先生](https://tomoecon.github.io/R_for_graduate_thesis/)  
+1. [「卒業論文のためのR入門」 by 森知晴先生](https://tomoecon.github.io/R_for_graduate_thesis/)  
 Rの使い方と心理統計学の基礎が一挙に学べる！
 
 1. [「私たちのR」 by 宋財泫先生 & 矢内勇生先生](https://www.jaysong.net/RBook/datahandling1.html)   
@@ -37,4 +38,4 @@ Rの使い方と心理統計学の基礎が一挙に学べる！
 - 次のサイトにアクセス( https://posit.co/download/rstudio-desktop/ )
 - 「1:Install R」からRをインストール
 - 「2:Install RStudio」からRStudioをインストール
-- うまくインストールできない場合は、[「私たちのR」]( https://www.jaysong.net/RBook/installation.html )に詳しい解説がある
+- うまくインストールできない場合は、[「私たちのR」]( https://www.jaysong.net/RBook/installation.html )に超詳しい解説がある

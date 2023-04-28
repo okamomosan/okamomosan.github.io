@@ -19,3 +19,11 @@ rスクリプトを使う
 ファイル形式別のインポート方法
 csvファイルの場合.csv
 インポートしたデータの確認
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+インポート
+四則演算
+ベクトルと行列
+ベクトル
+変数とオブジェクト
+行列
+関数①数値に対する関数

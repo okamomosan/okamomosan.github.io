@@ -117,7 +117,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-04-26}
+\date{2023-04-29}
 
 \begin{document}
 \maketitle
@@ -137,7 +137,9 @@
 \item
   Rは、オープンソースで利用可能な統計解析に特化したプログラミング言語
 \item
-  RStudioは、Rを使うための統合開発環境（なくてもRは使えるが、あるとめちゃ便利！）
+  RStudioは、Rを使うための統合開発環境（なくてもRは使えるが、あるとめちゃ便利！）\\
+\item
+  今は「まったく意味不明」で全然OK！
 \end{itemize}
 
 \hypertarget{tips}{%
@@ -152,7 +154,7 @@
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \href{https://tomoecon.github.io/R_for_graduate_thesis/}{「卒業論文のためのR入門」 by 森知春先生}\\
+  \href{https://tomoecon.github.io/R_for_graduate_thesis/}{「卒業論文のためのR入門」 by 森知晴先生}\\
   Rの使い方と心理統計学の基礎が一挙に学べる！
 \item
   \href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」 by 宋財泫先生 \& 矢内勇生先生}\\
@@ -171,7 +173,7 @@
 \item
   「2:Install RStudio」からRStudioをインストール
 \item
-  うまくインストールできない場合は、\href{https://www.jaysong.net/RBook/installation.html}{「私たちのR」}に詳しい解説がある
+  うまくインストールできない場合は、\href{https://www.jaysong.net/RBook/installation.html}{「私たちのR」}に超詳しい解説がある
 \end{itemize}
 
 \hypertarget{go}{%
@@ -191,16 +193,11 @@
 \item
   RStudioのアイコンから起動
 \item
-  次のような、４つの枠（ペーン）に分かれた画面が表示される
+  次のような画面が表示される\\
+  \includegraphics{./img/01_rstudio_start.png}
 \end{itemize}
 
-\includegraphics{./img/2_rstudio_4pane.png}
-
-　　\textbf{①左上：}メインの作業場でコードを書くところ\\
-　　\textbf{②右上：}変数やオブジェクトのリストが表示されたり、バージョン管理を行う\\
-　　\textbf{③左下：}コードの実行結果が表示されるコンソールや、各種コマンドを実行するターミナルなど\\
-　　\textbf{④右下：}各種ファイルやパッケージの表示、出力した図の表示など\\
-　　
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{ux30b3ux30f3ux30bdux30fcux30ebux306bux76f4ux63a5ux6253ux3061ux8fbcux3080}{%
 \section{コンソールに直接打ち込む}\label{ux30b3ux30f3ux30bdux30fcux30ebux306bux76f4ux63a5ux6253ux3061ux8fbcux3080}}
@@ -208,11 +205,11 @@
 \begin{itemize}
 \tightlist
 \item
-  RStudioの左下のペーンを見る\\
+  左側の大きな枠を見る\\
 \item
   Consoleのタブが選択されていることを確認
 \item
-  簡単な足し算を実行しよう
+  この画面（＝コンソール）を使い、簡単な足し算を実行しよう
 \item
   最下段の\texttt{\textgreater{}}のあとに\texttt{1+1}と打ち込み\textbf{Enter（macはreturn）}を押す
 \item
@@ -220,6 +217,8 @@
 \item
   \texttt{2}の部分が\texttt{1+1}の計算結果（\texttt{{[}1{]}}は1行目という意味）
 \end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046}{%
 \section{Rスクリプトを使う}\label{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f7fux3046}}
@@ -230,12 +229,12 @@
   コンソールに書いたコードは、Rstudioを終了すると消える\\
   （実際に終了して再起動してみよう）\\
 \item
-  だから、保存可能な\textbf{Rスクリプト}にコードを書くことが多い
+  だから、\textbf{Rスクリプト}と呼ばれる保存可能なファイルにコードを書くことが多い
 \end{itemize}
 
-\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}{%
-\paragraph*{Rスクリプトに書く：}\label{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}}
-\addcontentsline{toc}{paragraph}{Rスクリプトに書く：}
+\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f5cux308b}{%
+\paragraph*{Rスクリプトを作る：}\label{rux30b9ux30afux30eaux30d7ux30c8ux3092ux4f5cux308b}}
+\addcontentsline{toc}{paragraph}{Rスクリプトを作る：}
 
 \begin{itemize}
 \tightlist
@@ -243,7 +242,35 @@
   RStudioの左上の
   をクリックし、「R Script」を選択
 \item
-  空のRスクリプトファイルが作成され、左上のペーンに表示される
+  左上に新しくできた枠に、空のRスクリプトファイルが表示される\\
+  （untitled1と表示されたタブが作成したRスクリプト）
+\end{itemize}
+
+\hypertarget{rstudioux306euxff14ux3064ux306eux30daux30fcux30f3}{%
+\paragraph*{RStudioの４つのペーン：}\label{rstudioux306euxff14ux3064ux306eux30daux30fcux30f3}}
+\addcontentsline{toc}{paragraph}{RStudioの４つのペーン：}
+
+\begin{itemize}
+\tightlist
+\item
+  実際には、この４つの枠（＝ペーン）に分かれた画面で作業することが多い
+\end{itemize}
+
+\includegraphics{./img/01_rstudio_4pane.png}
+
+　　\textbf{①左上：}メインの作業場で、Rスクリプトのコードなどを書くところ\\
+　　\textbf{②右上：}変数やオブジェクトのリストが表示されたり、バージョン管理を行う\\
+　　\textbf{③左下：}コードの実行結果が表示されるコンソールや、各種コマンドを実行するターミナルなど\\
+　　\textbf{④右下：}各種ファイルやパッケージの表示、出力した図の表示など
+
+\hypertarget{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}{%
+\subsubsection*{Rスクリプトに書く：}\label{rux30b9ux30afux30eaux30d7ux30c8ux306bux66f8ux304f}}
+\addcontentsline{toc}{subsubsection}{Rスクリプトに書く：}
+
+\begin{itemize}
+\tightlist
+\item
+  左上のペーンを見て、untitled1のタブが選択されていることを確認
 \item
   1行目に\texttt{1+1}と入力して\textbf{ctrl+Enter（macはcommand+return）}を押す\\
   （ をクリックしても良い）
@@ -258,14 +285,17 @@
 \begin{itemize}
 \tightlist
 \item
-  Rスクリプトは\textbf{ctrl+s（macはcommand+s）}で好きな時に保存できる
+  Rスクリプトは\textbf{ctrl+s（macはcommand+s）}で好きな時に保存できる\\
+  （ をクリックしても良い）
 \item
   初回はファイル名と保存場所も決める
+  （test.Rという名前でデスクトップに保存してみよう）
 \item
   試しに、保存したRスクリプトのタブを閉じてみよう
-  （タブの右側の×をクリック）
+  （test.Rのタブの右側の×をクリック）
 \item
   左上の をクリックし、保存したRスクリプトのファイルを選択\\
+  （つまり、デスクトップにあるtest.Rを選択）
 \item
   Rスクリプトが先ほど保存した状態で開く
 \end{itemize}
@@ -312,6 +342,8 @@
   などなど\ldots{}
 \end{enumerate}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{ux30d7ux30edux30b8ux30a7ux30afux30c8ux7ba1ux7406}{%
 \section{プロジェクト管理}\label{ux30d7ux30edux30b8ux30a7ux30afux30c8ux7ba1ux7406}}
 
@@ -340,9 +372,9 @@
 \item
   指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう
 \item
-  そのフォルダの中に「プロジェクト名.Rproj」というファイルができているのを確認しよう
+  そのフォルダの中に\texttt{プロジェクト名.Rproj}というファイルができているのを確認しよう
 \item
-  以下は、macでDocumentフォルダ内にsugoi\_projectというプロジェクトを作った例
+  以下は、macで\texttt{Document}フォルダ内に\texttt{sugoi\_project}というプロジェクトを作った例
 \end{itemize}
 
 \begin{itemize}
@@ -357,10 +389,25 @@
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  毎回「プロジェクト名.Rproj」をダブルクリックしてRstudioを起動
+  毎回\texttt{プロジェクト名.Rproj}をダブルクリックしてRstudioを起動
 \item
   関連するファイルはプロジェクト名のフォルダにまとめて一元管理
 \end{enumerate}
+
+\hypertarget{ux6f14ux7fd2ux554fux984c}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c}}
+
+\begin{itemize}
+\tightlist
+\item
+  自分の好きな場所に\texttt{zemi}という名前のプロジェクトを作る
+\item
+  指定した場所に\texttt{zemi}というフォルダができているのを確認する
+\item
+  フォルダの中に\texttt{zemi.Rproj}というファイルが出来ているのを確認
+\end{itemize}
+
+\textbf{※ 今後は、この\texttt{zemi}プロジェクトで作業していることを前提に解説する}
 
 \hypertarget{ux57faux672cux64cdux4f5c}{%
 \chapter{基本操作}\label{ux57faux672cux64cdux4f5c}}
@@ -368,100 +415,22 @@
 \begin{itemize}
 \tightlist
 \item
-  現状では、ベースにした森先生の資料の丸写しです
-\item
-  GW明けまでに完成させるので、外に出さないでください
-\item
-  森先生の以下の動画を参考にしてください
-\item
-  GW明けまでに全ての練習問題のコードをひとつのRスクリプトに書いて提出
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
 \end{itemize}
 
-\hypertarget{ux30aaux30d6ux30b8ux30a7ux30afux30c8}{%
-\section{オブジェクト}\label{ux30aaux30d6ux30b8ux30a7ux30afux30c8}}
-
-Rで使用するあらゆる「モノ」はオブジェクト（object）と呼ばれ管理されます。 オブジェクトの準備からRの分析はスタートします。まずは、オブジェクトを準備してみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{first\_object }\OtherTok{\textless{}{-}} \DecValTok{1}
-\end{Highlighting}
-\end{Shaded}
-
-オブジェクトは「名前」と「中身」で構成されます。 このコマンドでは、first\_objectという名前のオブジェクトに「1」という数値を入れています。 \textless-（不等号・ハイフン）は矢印を表していて、左側の名前のオブジェクトに右側の「モノ」を代入する命令です。 このコマンドを実行しても何も表示されませんが、それでOKです。
-
-オブジェクトの名前を指定すると、オブジェクトの中身を表示させることができます。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{first\_object}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 1
-\end{verbatim}
-
-{[}1{]}は「1行目」を意味しています。そのあとの「1」が中身です。
-
-また、代入する命令を()でくくることで、代入させつつ表示させることができます。 second\_objectに2を入れて表示させてみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(second\_object }\OtherTok{\textless{}{-}} \DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2
-\end{verbatim}
-
-文字列をオブジェクトに入れることもできます。 この場合、文字列を''\,``（引用符）でくくります。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{first\_string\_object }\OtherTok{\textless{}{-}} \StringTok{"Ritsumeikan University"}
-\NormalTok{first\_string\_object}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "Ritsumeikan University"
-\end{verbatim}
-
-ここでは、first\_string\_objectという名前のオブジェクトに、文字列''Ritsumeikan University''を入れています。
-
-オブジェクトに入れるものは1つの値ではなく、複数の値にすることもできます。 複数の値を並べたものは「ベクトル」と呼ばれます。 ベクトルはc()でまとめます。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{first\_vector\_object }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{)}
-\NormalTok{first\_vector\_object}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 1 2 3 4 5
-\end{verbatim}
-
-ここでは、first\_vector\_objectというオブジェクトに、1から5までの数値を代入しています。 文字列のベクトルも作ることができるので、試してみてください。
-
-\textbf{練習問題}
-
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  third\_objectという名前のオブジェクトに10000を代入し、確認してください。\\
+  \href{https://youtu.be/CblsIBlzqX0}{オブジェクトの使い方 in R}\\
 \item
-  my\_nameという名前のオブジェクトにあなたの名前（文字列）を代入し、確認してください。\\
-\item
-  second\_vector\_objectという名前のオブジェクトに数値のベクトル1, 1, 2, 3, 5, 8を代入し、確認してください。
-\end{itemize}
+  \href{https://youtu.be/q8MI6P2hoUM}{関数の使い方 in R}
+\end{enumerate}
 
-\hypertarget{ux7c21ux5358ux306aux8a08ux7b97}{%
-\section{簡単な計算}\label{ux7c21ux5358ux306aux8a08ux7b97}}
+\hypertarget{ux56dbux5247ux6f14ux7b97}{%
+\section{四則演算}\label{ux56dbux5247ux6f14ux7b97}}
 
-Rでの簡単な計算をしてみましょう。足し算・引き算は日常用語と同じく+, -を用います。
+\textbf{たし算:} \texttt{+}を使う
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -473,6 +442,8 @@ Rでの簡単な計算をしてみましょう。足し算・引き算は日常�
 ## [1] 2
 \end{verbatim}
 
+\textbf{ひき算:} \texttt{-}を使う
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \DecValTok{5} \SpecialCharTok{{-}} \DecValTok{2}
@@ -483,27 +454,31 @@ Rでの簡単な計算をしてみましょう。足し算・引き算は日常�
 ## [1] 3
 \end{verbatim}
 
-掛け算は*、割り算は/を使います。また、累乗は\^{}です。日常用語とは異なりますが、Excelと同じです。
+\textbf{かけ算:} \texttt{*}を使う
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{2} \SpecialCharTok{*} \DecValTok{3}
+\DecValTok{4} \SpecialCharTok{*} \DecValTok{5}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 6
+## [1] 20
 \end{verbatim}
+
+\textbf{わり算:} \texttt{/}を使う（分数のイメージ）
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{10} \SpecialCharTok{/} \DecValTok{2}
+\DecValTok{8} \SpecialCharTok{/} \DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5
+## [1] 4
 \end{verbatim}
+
+\textbf{累乗:} \texttt{\^{}}か\texttt{**}を使う（例：\(4^2\)なら次のとおり）
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -515,25 +490,75 @@ Rでの簡単な計算をしてみましょう。足し算・引き算は日常�
 ## [1] 16
 \end{verbatim}
 
-ここまでは数値同士で計算させていましたが、数値を代入したオブジェクトも使うことができます。例えば、`age'に年齢を代入しておき、10年後の年齢を計算させてみましょう。
-
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{age }\OtherTok{\textless{}{-}} \DecValTok{20}
-\NormalTok{age }\SpecialCharTok{+} \DecValTok{10}
+\DecValTok{4} \SpecialCharTok{**} \DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 30
+## [1] 16
 \end{verbatim}
 
-ここまでは計算結果を単に表示させていました。計算結果をオブジェクトに代入することもできます。 例えば、1 + 1の結果をone\_plus\_oneというオブジェクトに代入してみましょう。
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux5909ux6570ux3068ux30aaux30d6ux30b8ux30a7ux30afux30c8}{%
+\section{変数とオブジェクト}\label{ux5909ux6570ux3068ux30aaux30d6ux30b8ux30a7ux30afux30c8}}
+
+\begin{itemize}
+\item
+  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{厳密にはRで出てくるあらゆるモノはオブジェクトだが、ここでは深く踏みこまない}\\
+\item
+  オブジェクトを変数という人もいる（数学の変数のようなイメージだから）
+\item
+  本資料では変数と呼ぶことにする（字数が少ないから）
+\item
+  次のコードを見てみよう
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{one\_plus\_one }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
-\NormalTok{one\_plus\_one}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1} \CommentTok{\# \textless{}{-} は左向矢印のイメージ}
+
+\CommentTok{\# このように\#から始まる文章を書いてコメントを残せる}
+\CommentTok{\# これをコメントアウトと呼ぶ}
+\CommentTok{\# あとで見てわかりやすいような覚え書きなどを残そう}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  これはxという箱を作り、その中に数字の1を入れたイメージ\\
+  （変数xに１を代入したイメージでもOK！）
+\item
+  上のコードを実行しても何も表示されないが、それでOK\\
+  （「箱に入れる」だけのコードなので表示はされない）
+\item
+  変数の中身を確認したい時は、オブジェクトの名前を書いて実行
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  数値を代入した変数同士で演算もできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{1} 
+\NormalTok{z }\OtherTok{\textless{}{-}} \DecValTok{2}
+\NormalTok{y }\SpecialCharTok{*}\NormalTok{ z }\CommentTok{\# 1*2を計算したことになる}
 \end{Highlighting}
 \end{Shaded}
 
@@ -541,41 +566,851 @@ Rでの簡単な計算をしてみましょう。足し算・引き算は日常�
 ## [1] 2
 \end{verbatim}
 
-オブジェクトone\_plus\_oneには計算結果2が代入されています。
+\begin{itemize}
+\tightlist
+\item
+  変数はいつでも上書きできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1} \CommentTok{\#xに1を代入}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{2} \CommentTok{\#xを2に上書き}
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  計算結果を変数に代入することもできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{2}\SpecialCharTok{+}\DecValTok{5} 
+\NormalTok{x }\CommentTok{\# 計算結果の7が代入される}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  慣れるまでは不思議だが、こんなこともできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z }\OtherTok{\textless{}{-}} \DecValTok{2} \CommentTok{\#zに2を代入}
+\NormalTok{z }\OtherTok{\textless{}{-}}\NormalTok{ z }\SpecialCharTok{+} \DecValTok{1} \CommentTok{\#z=2に1を足したものを、もう一度zに代入}
+\NormalTok{z }\CommentTok{\#新しいzを表示}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  変数には数値以外も入れることができる
+\item
+  例えば、mojiという変数を作り文字列を入れてみる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 文字列は"ダブルコーテーション"で囲む}
+\CommentTok{\# \textquotesingle{}シングルコーテーション\textquotesingle{}でも良い}
+\CommentTok{\# 次のようにアルファベット以外も一応使えるが推奨しない}
+
+\NormalTok{moji }\OtherTok{\textless{}{-}} \StringTok{"岡田先生ステキ"}
+\NormalTok{moji}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "岡田先生ステキ"
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux95a2ux6570ux2460ux6570ux5024ux306bux5bfeux3059ux308bux95a2ux6570}{%
+\section{関数①（数値に対する関数）}\label{ux95a2ux6570ux2460ux6570ux5024ux306bux5bfeux3059ux308bux95a2ux6570}}
+
+\hypertarget{ux95a2ux6570ux306eux30adux30dbux30f3}{%
+\subsubsection*{関数のキホン：}\label{ux95a2ux6570ux306eux30adux30dbux30f3}}
+\addcontentsline{toc}{subsubsection}{関数のキホン：}
+
+\begin{itemize}
+\tightlist
+\item
+  Rにはさまざまな機能を実行できる関数が用意されている
+\item
+  例えば、平方根を計算する関数が\texttt{sqrt()}
+\item
+  \texttt{()}の中に数値を入れると、その平方根を返してくれる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.414214
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  このように関数は\texttt{xxx()}のように最後が丸括弧になっている
+\item
+  丸括弧の中に、引数(ひきすう)と呼ばれる指定された形式の値を入れて実行する
+\item
+  その結果、出力された値を戻り値という
+\item
+  先ほどの\texttt{sqrt(2)}なら\texttt{2}が引数で、計算結果の\texttt{1.414214}が戻り値
+\end{itemize}
+
+\hypertarget{ux8907ux6570ux306eux5f15ux6570ux3092ux6301ux3064ux95a2ux6570}{%
+\subsubsection*{複数の引数を持つ関数：}\label{ux8907ux6570ux306eux5f15ux6570ux3092ux6301ux3064ux95a2ux6570}}
+\addcontentsline{toc}{subsubsection}{複数の引数を持つ関数：}
+
+\begin{itemize}
+\tightlist
+\item
+  引数は１つとは限らないので注意
+\item
+  例えば、\texttt{log()}は対数を計算する関数
+\item
+  次のようにすると、10の自然対数を返してくれる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{log}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.302585
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  でも、2つ目の引数\texttt{base=10}を付け足すと、底が10の常用対数を返してくれる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{log}\NormalTok{(}\DecValTok{10}\NormalTok{, }\AttributeTok{base =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  他にも、数え切れないほどの関数がある
+\end{itemize}
+
+\hypertarget{ux95a2ux6570ux306eux6a5fux80fdux3084ux5f15ux6570ux306eux8abfux3079ux65b9}{%
+\subsubsection*{関数の機能や引数の調べ方：}\label{ux95a2ux6570ux306eux6a5fux80fdux3084ux5f15ux6570ux306eux8abfux3079ux65b9}}
+\addcontentsline{toc}{subsubsection}{関数の機能や引数の調べ方：}
+
+\begin{itemize}
+\tightlist
+\item
+  関数の機能や、どんな形式の引数をいくつ持つかを調べるには\texttt{help()}を使う
+\item
+  知りたい関数から\texttt{()}を除いたものを、\texttt{help()}の中に入れる
+\item
+  例えば、\texttt{log()}について知りたいなら\texttt{help(log)}と書いて実行
+\item
+  すると、Rstudioの右下（左下ではない！）のペーンに詳細が表示される
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux30d9ux30afux30c8ux30ebux3068ux884cux5217}{%
+\section{ベクトルと行列}\label{ux30d9ux30afux30c8ux30ebux3068ux884cux5217}}
+
+\begin{itemize}
+\tightlist
+\item
+  Rでは、複数のデータの値をひとまとめにして扱いやすくできる
+\end{itemize}
+
+\hypertarget{ux30d9ux30afux30c8ux30eb}{%
+\subsection{ベクトル}\label{ux30d9ux30afux30c8ux30eb}}
+
+\begin{itemize}
+\tightlist
+\item
+  データを1列に並べたものをベクトルと呼ぶ
+\item
+  ベクトルは関数\texttt{c()}を使って作る
+\item
+  ベクトルも変数に入れることができる
+\item
+  例として、5つの数字（例えば、2,4,2,3,5）を並べたベクトルを変数\texttt{v}に代入する
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{) }\CommentTok{\#ベクトルを作り変数に代入}
+\NormalTok{v }\CommentTok{\#変数vの中身を確認}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4 2 3 5
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  連番のベクトル（例えば2,3,4,5,6）を作りたい時は、次のようにも書ける
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{) }\CommentTok{\#「n:m」で「nからmまで」の意味}
+\NormalTok{v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 4 5 6
+\end{verbatim}
+
+\hypertarget{ux30d9ux30afux30c8ux30ebux3068ux6570ux5024ux306eux6f14ux7b97}{%
+\subsubsection*{ベクトルと数値の演算：}\label{ux30d9ux30afux30c8ux30ebux3068ux6570ux5024ux306eux6f14ux7b97}}
+\addcontentsline{toc}{subsubsection}{ベクトルと数値の演算：}
+
+\begin{itemize}
+\tightlist
+\item
+  ベクトルにも四則演算の記号（=演算子）を使った演算ができる
+\item
+  ベクトル内のそれぞれの数字に、四則演算が施される
+\item
+  以下の出力結果で確認してみよう
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v}\SpecialCharTok{+}\DecValTok{2}  \CommentTok{\#それぞれの数字に２を足す }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6 7 8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2}\SpecialCharTok{*}\NormalTok{v  }\CommentTok{\#それぞれの数字に２をかける  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  4  6  8 10 12
+\end{verbatim}
+
+\hypertarget{ux7df4ux7fd2ux554fux984c}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c}}
+\addcontentsline{toc}{paragraph}{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  上の\texttt{v}について、\texttt{v-2}、\texttt{v/2}、\texttt{v\^{}2}の実行結果を確認する
+\end{itemize}
+
+\hypertarget{ux30d9ux30afux30c8ux30ebux540cux58ebux306eux6f14ux7b97}{%
+\subsubsection*{ベクトル同士の演算：}\label{ux30d9ux30afux30c8ux30ebux540cux58ebux306eux6f14ux7b97}}
+\addcontentsline{toc}{subsubsection}{ベクトル同士の演算：}
+
+\begin{itemize}
+\tightlist
+\item
+  Rでは、ベクトル同士の演算もできる
+\item
+  まずは2つのベクトルを用意しよう
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{) }
+\NormalTok{v2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  これらを\texttt{+}を使って「足す」
+\item
+  すると、１つめの数同士（1と2）と、２つめの数同士(2と4)が足される
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 }\SpecialCharTok{+}\NormalTok{ v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 6
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{*}を使って「かける」場合も、同じように1つめの数同士、2つめの数同士がかけられる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 }\SpecialCharTok{*}\NormalTok{ v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 8
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  ベクトル同士の「かけ算」には内積がある
+\item
+  Rでは、\texttt{\%*\%}で内積を計算できる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 }\SpecialCharTok{\%*\%}\NormalTok{ v2 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+## [1,]   10
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  ベクトルの長さ（=入っている数値の個数）が違うとおかしな計算になり、警告が出る
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#以下のv1には3つの要素があるけど、v2には2つしかない}
+\CommentTok{\#この場合、v2の1つめの要素を無理やりv1の３つめに足してしまう}
+
+\NormalTok{v1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)  }\CommentTok{\#3つの数を代入}
+\NormalTok{v2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{) }\CommentTok{\#2つの数を代入}
+\NormalTok{v1 }\SpecialCharTok{+}\NormalTok{ v2 }\CommentTok{\#長さが違うからうまく計算できず警告が出る}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in v1 + v2: longer object length is not a multiple of shorter object
+## length
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 3 6 5
+\end{verbatim}
+
+\hypertarget{ux7df4ux7fd2ux554fux984c-1}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-1}}
+\addcontentsline{toc}{paragraph}{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  上の\texttt{v1}と\texttt{v2}を使い、\texttt{-}、\texttt{/}、\texttt{\^{}}の３つの演算を行う
+\item
+  いずれも1つめの数値同士、2つめの数値同士で対応した演算がなされることを確かめる
+\end{itemize}
+
+\hypertarget{ux8981ux7d20ux306eux62bdux51fa}{%
+\subsubsection*{要素の抽出：}\label{ux8981ux7d20ux306eux62bdux51fa}}
+\addcontentsline{toc}{subsubsection}{要素の抽出：}
+
+\begin{itemize}
+\tightlist
+\item
+  ベクトルから、任意の要素（\texttt{n}番目の数）を抽出する方法を説明する
+\item
+  \texttt{x}という名前のベクトルからn番目の要素を抽出する時は\texttt{x{[}n{]}}
+\item
+  具体例として、先ほどのベクトル\texttt{v=c(2,4,2,3,5)}で考える
+\item
+  2番目の要素（つまり4）を抜き出したいなら、\texttt{v{[}2{]}}と書く
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  2〜４番めの要素(つまり4,2,3)を抜き出したいなら、\texttt{v{[}2:4{]}}と書く
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 4 5
+\end{verbatim}
+
+\hypertarget{ux884cux5217}{%
+\subsection{行列}\label{ux884cux5217}}
+
+\hypertarget{ux884cux5217ux306eux30adux30dbux30f3}{%
+\subsubsection*{行列のキホン：}\label{ux884cux5217ux306eux30adux30dbux30f3}}
+\addcontentsline{toc}{subsubsection}{行列のキホン：}
+
+\begin{itemize}
+\tightlist
+\item
+  データを行と列の2次元に並べたものを行列と呼ぶ
+\item
+  例えば、2行3列の行列
+  \(\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ \end{pmatrix}\)
+  を作ってMに代入するには、\texttt{matrix()}を使い次のように書く
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#初めの1:6はc(1:6)と同じで「1,2,3,4,5,6」の意味}
+\CommentTok{\#この6つの数字を、2つの行(row)と3つの列(col)に分ける}
+\CommentTok{\#byrow = Tで、6つの数字を左から右（zの書き順）に埋めるよう指示}
+\CommentTok{\#byrow = Tを消すと、上から下に埋める（各自確かめよう）}
+
+\NormalTok{M }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{3}\NormalTok{, }\AttributeTok{byrow =}\NormalTok{ T)}
+\NormalTok{M}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  次の関数を使って、ベクトル同士を結合しても行列を作れる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) }
+\NormalTok{v2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{) }\CommentTok{\#2つのベクトルv1とv2を作る}
+
+\FunctionTok{rbind}\NormalTok{(v1, v2) }\CommentTok{\#v1とv2を行(row)方向に繋げる}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    [,1] [,2] [,3]
+## v1    1    2    3
+## v2    1    1    1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cbind}\NormalTok{(v1, v2) }\CommentTok{\#v1とv2を列(column)方向に繋げる}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      v1 v2
+## [1,]  1  1
+## [2,]  2  1
+## [3,]  3  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rbind}\NormalTok{(M, v1) }\CommentTok{\#「行列とベクトル」や「行列同士」も繋げられる}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    [,1] [,2] [,3]
+##       1    2    3
+##       4    5    6
+## v1    1    2    3
+\end{verbatim}
+
+\hypertarget{ux8981ux7d20ux306eux62bdux51fa-1}{%
+\subsubsection*{要素の抽出：}\label{ux8981ux7d20ux306eux62bdux51fa-1}}
+\addcontentsline{toc}{subsubsection}{要素の抽出：}
+
+\begin{itemize}
+\tightlist
+\item
+  行列\texttt{x}から要素を抜き出すには、\texttt{x{[}抜き出したい行、抜き出したい列{]}}と書く
+\item
+  具体例として、先の行列\texttt{M}から色々な要素を抜き出してみよう
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2行1列目を抽出し、変数M21に代入}
+\NormalTok{M21 }\OtherTok{\textless{}{-}}\NormalTok{ M[}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+
+\CommentTok{\# 2行めを抽出}
+\NormalTok{M[}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 1列めを抽出}
+\NormalTok{M[,}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 1,2行めと1,3列めを抽出}
+\NormalTok{M[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{),}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    4    6
+\end{verbatim}
+
+\hypertarget{ux884cux5217ux306eux6f14ux7b97}{%
+\subsubsection*{行列の演算：}\label{ux884cux5217ux306eux6f14ux7b97}}
+\addcontentsline{toc}{subsubsection}{行列の演算：}
+
+\begin{itemize}
+\tightlist
+\item
+  n行n列の２つの行列同士の計算について、足し算は\texttt{+}、引き算は\texttt{-}を使えば良い
+\item
+  以下の例のように、かけ算は\texttt{\%*\%}を使わなくてはいけないので注意
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M }\CommentTok{\#先ほど作った2行3列の行列を表示}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M2 }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{), }\AttributeTok{nrow =} \DecValTok{3}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{, }\AttributeTok{byrow =}\NormalTok{ T) }\CommentTok{\#新たに3行2列の行列を作る}
+\NormalTok{M2 }\CommentTok{\#今作った2行3列の行列を表示}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    0    1
+## [3,]    0    2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#２つの行列の積MN}
+\NormalTok{M }\SpecialCharTok{\%*\%}\NormalTok{ M2 }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1   10
+## [2,]    4   25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#２つの行列の積MN}
+\NormalTok{M2 }\SpecialCharTok{\%*\%}\NormalTok{ M　}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    9   12   15
+## [2,]    4    5    6
+## [3,]    8   10   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) }\CommentTok{\#要素が３つのベクトルを作る}
+
+\CommentTok{\#行列とベクトルのかけ算も\%*\%を使う}
+\CommentTok{\#縦ベクトルと横ベクトルは区別されないので、次のコードで計算できる}
+\NormalTok{v }\SpecialCharTok{\%*\%}\NormalTok{ M2 }\CommentTok{\# ただし、M2\%*\%vのように計算できない場合はエラーが出る（各自確かめよう）}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1   10
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux95a2ux6570ux2461ux30d9ux30afux30c8ux30ebux3084ux884cux5217ux306bux5bfeux3059ux308bux95a2ux6570}{%
+\section{関数②（ベクトルや行列に対する関数）}\label{ux95a2ux6570ux2461ux30d9ux30afux30c8ux30ebux3084ux884cux5217ux306bux5bfeux3059ux308bux95a2ux6570}}
+
+\begin{itemize}
+\tightlist
+\item
+  先の\texttt{rbind()}や\texttt{cbind()}はベクトルや行列も引数にとれる関数だった
+\item
+  ベクトルや行列に対して使える他の関数をいくつか紹介する
+\end{itemize}
+
+\hypertarget{ux30d9ux30afux30c8ux30ebux306eux983bux51faux95a2ux6570}{%
+\subsubsection*{ベクトルの頻出関数：}\label{ux30d9ux30afux30c8ux30ebux306eux983bux51faux95a2ux6570}}
+\addcontentsline{toc}{subsubsection}{ベクトルの頻出関数：}
+
+\begin{itemize}
+\tightlist
+\item
+  以下の関数はどれもよく使うので、しっかり覚えよう
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+関数(引数xはベクトル) & 意味 \\
+\midrule()
+\endhead
+summary(x) & 基本統計量の一括表示 \\
+max(x) & xの要素の最大値 \\
+min(x) & xの要素の最小値 \\
+mean(x) & xの平均値 \\
+median(x) & xの中央値 \\
+var(x) & xの不偏分散 \\
+sd(x) & xの不偏標準偏差 \\
+sum(x) & xの各要素の総和 \\
+range(x) & xのデータの範囲（最小値と最大値） \\
+length(x) & xのデータの個数（ベクトルの次元） \\
+sort(x) & xの各要素を小さい順に並び替え \\
+sort(x, decreasing = TRUE) & xの各要素を大きい順に並び替え \\
+\bottomrule()
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  具体的に理解するため、5人の年齢のデータを作成する
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{36}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{43}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{22}\NormalTok{) }\CommentTok{\#5人の年齢のベクトルを作成}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  このベクトル\texttt{age}を引数にして、上表のいくつかを実行してみる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(age) }\CommentTok{\#基本統計量を一括表示}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##      16      18      22      27      36      43
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{max}\NormalTok{(age) }\CommentTok{\#一番大きい値を取り出す（5人のうち最年長は43歳）}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 43
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(age) }\CommentTok{\#算術平均（5人の平均年齢は27歳）}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{(age) }\CommentTok{\#不偏分散（5人の平均の分散は141）}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 141
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(age) }\CommentTok{\#データの長さ（ベクトルの次元）（5個のデータなので5）}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\hypertarget{ux7df4ux7fd2ux554fux984c-2}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-2}}
+\addcontentsline{toc}{paragraph}{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  引数を\texttt{age}にして、\texttt{min()}, \texttt{median()},\texttt{sd()},\texttt{sum()},\texttt{range()},\texttt{sort()}を実行する
+\item
+  各々の結果が何を意味しているのかを解釈する
+\item
+  引数を行列\texttt{M}にして、上表の各関数の結果を確認する
+\end{itemize}
+
+\hypertarget{ux884cux5217ux306eux983bux51faux95a2ux6570}{%
+\subsubsection*{行列の頻出関数：}\label{ux884cux5217ux306eux983bux51faux95a2ux6570}}
+\addcontentsline{toc}{subsubsection}{行列の頻出関数：}
+
+\begin{itemize}
+\tightlist
+\item
+  行列を引数に持つ関数のうち、比較的よく使うものをまとめる
+\item
+  どのような結果になるかは各自確かめてみよう
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+関数(引数xは行列) & 意味 \\
+\midrule()
+\endhead
+matrix(0, nrow=2, ncol=3) & 2 行 3 列のゼロ行列を作成 \\
+diag(5) & 5×5の単位行列作成 \\
+diag(X) \textless- 1 & 行列 X の対角成分を全て 1 にする \\
+t(X) & 行列 X の転置行列 \\
+solve(X) & 行列 X の逆行列 \\
+det(X) & 行列 X の行列式 \\
+rowSums(X) & 行列 X の行和 \\
+colSums(X) & 行列 X の列和 \\
+RowMeans(X) & 行列 X の行平均 \\
+colMeand(X) & 行列 X の列平均 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux7df4ux7fd2ux554fux984c-3}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-3}}
+\addcontentsline{toc}{paragraph}{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  上の各関数を先の行列\texttt{M}に使い、結果を確かめよう
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux6f14ux7fd2ux554fux984c-1}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  オブジェクトincome\_vectorに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
+\item
+  income\_vectorの平均・中央値・標準偏差をそれぞれ求めてください。
+\end{itemize}
 
 \textbf{練習問題}
 
 \begin{itemize}
-\tightlist
+\item
+  third\_objectという名前のオブジェクトに10000を代入し、確認してください。\\
+\item
+  my\_nameという名前のオブジェクトにあなたの名前（文字列）を代入し、確認してください。\\
+\item
+  second\_vector\_objectという名前のオブジェクトに数値のベクトル1, 1, 2, 3, 5, 8を代入し、確認してください。\\
+  \textbf{練習問題}
 \item
   オブジェクトaに3を、オブジェクトbに4を代入してください。
 \item
   a, bそれぞれを2乗したものの和をとり、結果が25となることを確認してください。
 \end{itemize}
-
-\hypertarget{ux95a2ux6570}{%
-\section{5.3 関数}\label{ux95a2ux6570}}
-
-Rではオブジェクトから別のオブジェクトを生成するために「関数（function）」を用います。 関数の使い方に慣れていきましょう。 関数は関数名(引数)という構造で使います。 引数（argument）は「ひきすう」と読みます。
-
-ここでは、簡単な関数の例を紹介します。 その他の関数はその都度紹介します。
-
-\hypertarget{ux6570ux5024ux306bux5bfeux3059ux308bux95a2ux6570}{%
-\subsection{数値に対する関数}\label{ux6570ux5024ux306bux5bfeux3059ux308bux95a2ux6570}}
-
-皆さんが数学で勉強してきた関数をRの関数として使うことができます。例えば平方根をとる関数sqrt()を使ってみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sqrt}\NormalTok{(}\DecValTok{4}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2
-\end{verbatim}
-
-ここでは、sqrt()が関数、引数は4です。4の平方根をとった結果として2が表示されています。他の数式として例えば自然対数をとるlog()があります。
 
 \textbf{練習問題}
 
@@ -586,72 +1421,23 @@ Rではオブジェクトから別のオブジェクトを生成するために�
 \item
   a, bそれぞれの2乗して和をとったものの平方根をとり、結果が5となることを確認してください。\\
   ヒント：前の問題の計算全体をsqrt()のかっこでくくってください。
+  \#\#\# ベクトルに対する関数
 \end{itemize}
 
-\hypertarget{ux30d9ux30afux30c8ux30ebux306bux5bfeux3059ux308bux95a2ux6570}{%
-\subsection{ベクトルに対する関数}\label{ux30d9ux30afux30c8ux30ebux306bux5bfeux3059ux308bux95a2ux6570}}
-
-関数の引数は数値だけでなく、ベクトルをとることもできます。統計分析ではこちらをよく使います。例えば、年齢のデータが入ったベクトル\texttt{age\_vector\ \textless{}-\ c(18,\ 21,\ 22,\ 23,\ 34)}を考えます。
-
-例えば、ベクトルの最小値を取り出す\texttt{min()}を使ってみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{age\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{34}\NormalTok{)}
-\FunctionTok{min}\NormalTok{(age\_vector)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 18
-\end{verbatim}
-
-一番年齢が若い人が18歳であることが確認できます。最大値を取り出すのは\texttt{max()}です。
-
-心理学統計法で学んだ平均・標準偏差などの統計量も計算することができます。平均は\texttt{mean()}、中央値は\texttt{median()}、（不偏）標準偏差は\texttt{sd()}を使います。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(age\_vector)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 23.6
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{median}\NormalTok{(age\_vector)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 22
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sd}\NormalTok{(age\_vector)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 6.107373
-\end{verbatim}
-
-\textbf{練習問題}
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8}{%
+\chapter{パッケージ}\label{ux30d1ux30c3ux30b1ux30fcux30b8}}
 
 \begin{itemize}
 \tightlist
 \item
-  オブジェクトincome\_vectorに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
-\item
-  income\_vectorの平均・中央値・標準偏差をそれぞれ求めてください。
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
 \end{itemize}
 
-\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}{%
-\section{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}{%
+\section{パッケージとは？}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}}
+
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
+\section{パッケージのインストール}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
 
 多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。
 
@@ -704,7 +1490,6 @@ Rではオブジェクトから別のオブジェクトを生成するために�
 \textbf{練習問題}
 
 \begin{itemize}
-\tightlist
 \item
   オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
 \item
@@ -713,21 +1498,8 @@ Rではオブジェクトから別のオブジェクトを生成するために�
   incomeとcityを合わせたデータフレームincome\_dataを作成してください。\\
 \item
   income\_dataを用いて、incomeの中央値を求めてください。
-\end{itemize}
-
-\hypertarget{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f}{%
-\chapter{データの読み込み}\label{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f}}
-
-\begin{itemize}
-\tightlist
 \item
-  現状では、ベースにした森先生の資料の丸写しです
-\item
-  GW明けまでに完成させるので、外に出さないでください
-\item
-  森先生の以下の動画を参考にしてください
-\item
-  GW明けまでに全ての練習問題のコードをひとつのRスクリプトに書いて提出
+  データの読み込み
 \end{itemize}
 
 データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。
@@ -741,8 +1513,8 @@ Rではオブジェクトから別のオブジェクトを生成するために�
 
 インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。
 
-\hypertarget{ux30d5ux30a1ux30a4ux30ebux5f62ux5f0fux5225ux306eux30a4ux30f3ux30ddux30fcux30c8ux65b9ux6cd5}{%
-\section{ファイル形式別のインポート方法}\label{ux30d5ux30a1ux30a4ux30ebux5f62ux5f0fux5225ux306eux30a4ux30f3ux30ddux30fcux30c8ux65b9ux6cd5}}
+\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8}{%
+\section{インポート}\label{ux30a4ux30f3ux30ddux30fcux30c8}}
 
 \hypertarget{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv}{%
 \subsection{CSVファイルの場合（.csv）}\label{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv}}
@@ -770,6 +1542,139 @@ CSVファイルの場合は、\texttt{read.csv}を用います。ファイルの
 
 \hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}{%
 \section{インポートしたデータの確認}\label{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}}
+
+上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。
+
+右上のペーンの``Environment''に新しいオブジェクトができているか確認（上の例ではdata）
+クリックして左上のペーンに出てくるか確認
+\texttt{head(data)}で先頭のデータを確認
+\texttt{str(data)}で各変数の「型」（後で説明）を確認
+
+\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
+\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
+
+\begin{itemize}
+\tightlist
+\item
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
+\item
+  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
+\end{enumerate}
+
+\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}{%
+\paragraph*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
+\addcontentsline{toc}{paragraph}{データフレーム}
+
+多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。
+
+例として、年齢のベクトルage\_vectorと性別のベクトルgender\_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は\texttt{data.frame()}です。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{34}\NormalTok{) }\CommentTok{\#年齢のベクトルの作成}
+\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"female"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{, }\StringTok{"female"}\NormalTok{) }\CommentTok{\#性別のベクトルの作成}
+\NormalTok{first\_dataframe }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(age, gender)}
+\NormalTok{first\_dataframe}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   age gender
+## 1  18 female
+## 2  21   male
+## 3  22   male
+## 4  23 female
+## 5  34 female
+\end{verbatim}
+
+1人目が18歳の女性、2人目が21歳の男性\ldots を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。
+
+データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名\$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst\_dataframeから性別の変数のみを見てみましょう。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{first\_dataframe}\SpecialCharTok{$}\NormalTok{gender}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "female" "male"   "male"   "female" "female"
+\end{verbatim}
+
+性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(first\_dataframe}\SpecialCharTok{$}\NormalTok{age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23.6
+\end{verbatim}
+
+\textbf{練習問題}
+
+\begin{itemize}
+\item
+  オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
+\item
+  オブジェクトcityに文字列のベクトル''ibaraki'', ``takatsuki'', ``ibaraki'', ``takatsuki'', ``takatsuki''を代入してください。\\
+\item
+  incomeとcityを合わせたデータフレームincome\_dataを作成してください。\\
+\item
+  income\_dataを用いて、incomeの中央値を求めてください。
+\item
+  データの読み込み
+\end{itemize}
+
+データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。
+
+\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099-1}{%
+\section{インポートの準備}\label{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099-1}}
+
+インポートしたいファイルは、プロジェクトと同じフォルダに入れておきましょう。 プロジェクトはChapter 2で学習しています。
+
+インポートしたいファイルの形式も確認しておきましょう。 代表的な形式として、CSVファイル（.csv）、Excelファイル（.xlsx, .xls）があります。 拡張子が表示されていない場合はこちらを参考に表示させるようにしましょう。
+
+インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。
+
+\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8-1}{%
+\section{インポート}\label{ux30a4ux30f3ux30ddux30fcux30c8-1}}
+
+\hypertarget{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv-1}{%
+\subsection{CSVファイルの場合（.csv）}\label{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv-1}}
+
+CSVファイルの場合は、\texttt{read.csv}を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_original }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sotsuron.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+これは、csvファイルの内容をdata\_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data\_originalという名前にしています。
+
+\textbf{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  以下から「tidy\_data.csv」をダウンロード
+  \url{https://www.dropbox.com/s/wm46esg4dicye8j/tidy_data.csv?dl=0}\\
+\item
+  \texttt{read.csv}を使って読み込み、dataというオブジェクトに格納
+\end{itemize}
+
+\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d-1}{%
+\section{インポートしたデータの確認}\label{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d-1}}
 
 上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。
 

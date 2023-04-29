@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">行動経済学の実証分析</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
@@ -167,10 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.2" data-path="基本操作.html"><a href="基本操作.html#行列"><i class="fa fa-check"></i><b>3.4.2</b> 行列</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="基本操作.html"><a href="基本操作.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>3.5</b> 関数②（ベクトルや行列に対する関数）</a></li>
-<li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.6</b> 演習問題</a>
-<ul>
-<li class="chapter" data-level="3.6.1" data-path="基本操作.html"><a href="基本操作.html#ベクトルに対する関数"><i class="fa fa-check"></i><b>3.6.1</b> ベクトルに対する関数</a></li>
-</ul></li>
+<li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.6</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>4</b> パッケージ</a>
 <ul>
@@ -221,10 +218,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.2</span> パッケージのインストール<a href="パッケージ.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。</p>
 <p>例として、年齢のベクトルage_vectorと性別のベクトルgender_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は<code>data.frame()</code>です。</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="パッケージ.html#cb1-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">34</span>) <span class="co">#年齢のベクトルの作成</span></span>
-<span id="cb1-2"><a href="パッケージ.html#cb1-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>) <span class="co">#性別のベクトルの作成</span></span>
-<span id="cb1-3"><a href="パッケージ.html#cb1-3" aria-hidden="true" tabindex="-1"></a>first_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(age, gender)</span>
-<span id="cb1-4"><a href="パッケージ.html#cb1-4" aria-hidden="true" tabindex="-1"></a>first_dataframe</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="パッケージ.html#cb91-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">34</span>) <span class="co">#年齢のベクトルの作成</span></span>
+<span id="cb91-2"><a href="パッケージ.html#cb91-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>) <span class="co">#性別のベクトルの作成</span></span>
+<span id="cb91-3"><a href="パッケージ.html#cb91-3" aria-hidden="true" tabindex="-1"></a>first_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(age, gender)</span>
+<span id="cb91-4"><a href="パッケージ.html#cb91-4" aria-hidden="true" tabindex="-1"></a>first_dataframe</span></code></pre></div>
 <pre><code>##   age gender
 ## 1  18 female
 ## 2  21   male
@@ -233,10 +230,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  34 female</code></pre>
 <p>1人目が18歳の女性、2人目が21歳の男性…を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。</p>
 <p>データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst_dataframeから性別の変数のみを見てみましょう。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="パッケージ.html#cb3-1" aria-hidden="true" tabindex="-1"></a>first_dataframe<span class="sc">$</span>gender</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="パッケージ.html#cb93-1" aria-hidden="true" tabindex="-1"></a>first_dataframe<span class="sc">$</span>gender</span></code></pre></div>
 <pre><code>## [1] &quot;female&quot; &quot;male&quot;   &quot;male&quot;   &quot;female&quot; &quot;female&quot;</code></pre>
 <p>性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="パッケージ.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(first_dataframe<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="パッケージ.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(first_dataframe<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## [1] 23.6</code></pre>
 <p><strong>練習問題</strong></p>
 <ul>
@@ -262,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="csvファイルの場合.csv" class="section level3 hasAnchor" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> CSVファイルの場合（.csv）<a href="パッケージ.html#csvファイルの場合.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>CSVファイルの場合は、<code>read.csv</code>を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="パッケージ.html#cb7-1" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sotsuron.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="パッケージ.html#cb97-1" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sotsuron.csv&quot;</span>)</span></code></pre></div>
 <p>これは、csvファイルの内容をdata_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data_originalという名前にしています。</p>
 <p><strong>練習問題</strong></p>
 <ul>
@@ -343,6 +340,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

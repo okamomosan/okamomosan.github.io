@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 データのあつかい方 | 行動経済学の実証分析</title>
+  <title>Chapter 4 関数の作成とパッケージ | 行動経済学の実証分析</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 データのあつかい方 | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 4 関数の作成とパッケージ | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 データのあつかい方 | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 4 関数の作成とパッケージ | 行動経済学の実証分析" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="関数の自作とパッケージ.html"/>
-
+<link rel="prev" href="基本操作.html"/>
+<link rel="next" href="データのあつかい方.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">行動経済学の実証分析</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
@@ -169,20 +169,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="基本操作.html"><a href="基本操作.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>3.5</b> 関数②（ベクトルや行列に対する関数）</a></li>
 <li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.6</b> 演習問題</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html"><i class="fa fa-check"></i><b>4</b> 関数の自作とパッケージ</a>
+<li class="chapter" data-level="4" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html"><i class="fa fa-check"></i><b>4</b> 関数の作成とパッケージ</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#関数の自作"><i class="fa fa-check"></i><b>4.1</b> 関数の自作</a></li>
-<li class="chapter" data-level="4.2" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.2</b> パッケージとは？</a></li>
-<li class="chapter" data-level="4.3" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.3</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="4.1" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.1</b> パッケージとは？</a></li>
+<li class="chapter" data-level="4.2" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.2</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="4.3" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#インポートの準備"><i class="fa fa-check"></i><b>4.3</b> インポートの準備</a></li>
+<li class="chapter" data-level="4.4" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#インポート"><i class="fa fa-check"></i><b>4.4</b> インポート</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#csvファイルの場合.csv"><i class="fa fa-check"></i><b>4.4.1</b> CSVファイルの場合（.csv）</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="関数の作成とパッケージ.html"><a href="関数の作成とパッケージ.html#インポートしたデータの確認"><i class="fa fa-check"></i><b>4.5</b> インポートしたデータの確認</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="データのあつかい方.html"><a href="データのあつかい方.html"><i class="fa fa-check"></i><b>5</b> データのあつかい方</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートの準備"><i class="fa fa-check"></i><b>5.1</b> インポートの準備</a></li>
-<li class="chapter" data-level="5.2" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポート"><i class="fa fa-check"></i><b>5.2</b> インポート</a>
+<li class="chapter" data-level="5.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートの準備-1"><i class="fa fa-check"></i><b>5.1</b> インポートの準備</a></li>
+<li class="chapter" data-level="5.2" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポート-1"><i class="fa fa-check"></i><b>5.2</b> インポート</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#csvファイルの場合.csv"><i class="fa fa-check"></i><b>5.2.1</b> CSVファイルの場合（.csv）</a></li>
+<li class="chapter" data-level="5.2.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#csvファイルの場合.csv-1"><i class="fa fa-check"></i><b>5.2.1</b> CSVファイルの場合（.csv）</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートしたデータの確認"><i class="fa fa-check"></i><b>5.3</b> インポートしたデータの確認</a></li>
+<li class="chapter" data-level="5.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートしたデータの確認-1"><i class="fa fa-check"></i><b>5.3</b> インポートしたデータの確認</a></li>
 </ul></li>
 </ul>
 
@@ -201,24 +206,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="データのあつかい方" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> データのあつかい方<a href="データのあつかい方.html#データのあつかい方" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="関数の作成とパッケージ" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 関数の作成とパッケージ<a href="関数の作成とパッケージ.html#関数の作成とパッケージ" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！</li>
+<li>本章の説明がわからない人は、第１章で紹介した<a href="https://www.jaysong.net/RBook/datahandling1.html">「私たちのR」</a> を参照してください</li>
 </ul>
-<ol style="list-style-type: decimal">
-<li><a href="https://youtu.be/FugazO_rL7c">データの読み込み in R</a><br />
-</li>
-<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in R</a></li>
-</ol>
-<div id="データフレーム" class="section level5 unnumbered hasAnchor">
-<h5>データフレーム<a href="データのあつかい方.html#データフレーム" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="パッケージとは" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> パッケージとは？<a href="関数の作成とパッケージ.html#パッケージとは" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="パッケージのインストール" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> パッケージのインストール<a href="関数の作成とパッケージ.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。</p>
 <p>例として、年齢のベクトルage_vectorと性別のベクトルgender_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は<code>data.frame()</code>です。</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="データのあつかい方.html#cb97-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">34</span>) <span class="co">#年齢のベクトルの作成</span></span>
-<span id="cb97-2"><a href="データのあつかい方.html#cb97-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>) <span class="co">#性別のベクトルの作成</span></span>
-<span id="cb97-3"><a href="データのあつかい方.html#cb97-3" aria-hidden="true" tabindex="-1"></a>first_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(age, gender)</span>
-<span id="cb97-4"><a href="データのあつかい方.html#cb97-4" aria-hidden="true" tabindex="-1"></a>first_dataframe</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="関数の作成とパッケージ.html#cb1-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">34</span>) <span class="co">#年齢のベクトルの作成</span></span>
+<span id="cb1-2"><a href="関数の作成とパッケージ.html#cb1-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>) <span class="co">#性別のベクトルの作成</span></span>
+<span id="cb1-3"><a href="関数の作成とパッケージ.html#cb1-3" aria-hidden="true" tabindex="-1"></a>first_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(age, gender)</span>
+<span id="cb1-4"><a href="関数の作成とパッケージ.html#cb1-4" aria-hidden="true" tabindex="-1"></a>first_dataframe</span></code></pre></div>
 <pre><code>##   age gender
 ## 1  18 female
 ## 2  21   male
@@ -227,10 +230,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5  34 female</code></pre>
 <p>1人目が18歳の女性、2人目が21歳の男性…を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。</p>
 <p>データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst_dataframeから性別の変数のみを見てみましょう。</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="データのあつかい方.html#cb99-1" aria-hidden="true" tabindex="-1"></a>first_dataframe<span class="sc">$</span>gender</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="関数の作成とパッケージ.html#cb3-1" aria-hidden="true" tabindex="-1"></a>first_dataframe<span class="sc">$</span>gender</span></code></pre></div>
 <pre><code>## [1] &quot;female&quot; &quot;male&quot;   &quot;male&quot;   &quot;female&quot; &quot;female&quot;</code></pre>
 <p>性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="データのあつかい方.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(first_dataframe<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="関数の作成とパッケージ.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(first_dataframe<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## [1] 23.6</code></pre>
 <p><strong>練習問題</strong></p>
 <ul>
@@ -245,18 +248,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。</p>
 </div>
-<div id="インポートの準備" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> インポートの準備<a href="データのあつかい方.html#インポートの準備" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="インポートの準備" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> インポートの準備<a href="関数の作成とパッケージ.html#インポートの準備" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>インポートしたいファイルは、プロジェクトと同じフォルダに入れておきましょう。 プロジェクトはChapter 2で学習しています。</p>
 <p>インポートしたいファイルの形式も確認しておきましょう。 代表的な形式として、CSVファイル（.csv）、Excelファイル（.xlsx, .xls）があります。 拡張子が表示されていない場合はこちらを参考に表示させるようにしましょう。</p>
 <p>インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。</p>
 </div>
-<div id="インポート" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> インポート<a href="データのあつかい方.html#インポート" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="csvファイルの場合.csv" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> CSVファイルの場合（.csv）<a href="データのあつかい方.html#csvファイルの場合.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="インポート" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> インポート<a href="関数の作成とパッケージ.html#インポート" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="csvファイルの場合.csv" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> CSVファイルの場合（.csv）<a href="関数の作成とパッケージ.html#csvファイルの場合.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>CSVファイルの場合は、<code>read.csv</code>を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="データのあつかい方.html#cb103-1" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sotsuron.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="関数の作成とパッケージ.html#cb7-1" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sotsuron.csv&quot;</span>)</span></code></pre></div>
 <p>これは、csvファイルの内容をdata_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data_originalという名前にしています。</p>
 <p><strong>練習問題</strong></p>
 <ul>
@@ -267,8 +270,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="インポートしたデータの確認" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> インポートしたデータの確認<a href="データのあつかい方.html#インポートしたデータの確認" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="インポートしたデータの確認" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> インポートしたデータの確認<a href="関数の作成とパッケージ.html#インポートしたデータの確認" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。</p>
 <p>右上のペーンの“Environment”に新しいオブジェクトができているか確認（上の例ではdata）
 クリックして左上のペーンに出てくるか確認
@@ -277,20 +280,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="関数の自作とパッケージ.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="基本操作.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="データのあつかい方.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -344,20 +340,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

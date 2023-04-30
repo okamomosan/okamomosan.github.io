@@ -117,7 +117,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-04-29}
+\date{2023-04-30}
 
 \begin{document}
 \maketitle
@@ -415,7 +415,7 @@
 \begin{itemize}
 \tightlist
 \item
-  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！
 \end{itemize}
 
 \begin{enumerate}
@@ -507,7 +507,7 @@
 
 \begin{itemize}
 \item
-  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{厳密にはRで出てくるあらゆるモノはオブジェクトだが、ここでは深く踏みこまない}\\
+  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{tidyverseは複数の便利なパッケージをまとめた「パッケージのパッケージ」}\\
 \item
   オブジェクトを変数という人もいる（数学の変数のようなイメージだから）
 \item
@@ -615,6 +615,8 @@
 \tightlist
 \item
   慣れるまでは不思議だが、こんなこともできる
+\item
+  意外とよく使うので、頭の片隅に留めておこう
 \end{itemize}
 
 \begin{Shaded}
@@ -651,6 +653,10 @@
 \begin{verbatim}
 ## [1] "岡田先生ステキ"
 \end{verbatim}
+
+練習問題 \{-\}
+- 変数xに3、変数yに6を代入する
+- xとyをそれぞれ2乗して和をとり、結果が45となることを確認する
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1391,41 +1397,158 @@ colMeand(X) & 行列 X の列平均 \\
 \begin{itemize}
 \tightlist
 \item
-  オブジェクトincome\_vectorに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
+  aさんの身長は149cm, bさんは153cm, cさんは169cm, dさんは174cmとする
 \item
-  income\_vectorの平均・中央値・標準偏差をそれぞれ求めてください。
+  aさんの体重は36kg, bさんは48kg, cさんは61kg, dさんは65kgとする\\
 \end{itemize}
 
-\textbf{練習問題}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する\\
+\item
+  変数hの平均と標準偏差を求める\\
+\item
+  ベクトルのかけ算を使い、４人の身長をインチで表すといくらになるか求める\\
+  （1cm＝0.39インチで計算し、結果は変数に保存しない）\\
+\item
+  4人の体重を表した数値のみからなるベクトル（単位は不要）を作り、変数wに保存する
+\item
+  変数hと変数wを結合して、１行目が身長、２行目が体重となる2×4行列を作り、変数Mに保存\\
+\item
+  行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す
+\item
+  変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る
+\end{enumerate}
 
-\begin{itemize}
-\item
-  third\_objectという名前のオブジェクトに10000を代入し、確認してください。\\
-\item
-  my\_nameという名前のオブジェクトにあなたの名前（文字列）を代入し、確認してください。\\
-\item
-  second\_vector\_objectという名前のオブジェクトに数値のベクトル1, 1, 2, 3, 5, 8を代入し、確認してください。\\
-  \textbf{練習問題}
-\item
-  オブジェクトaに3を、オブジェクトbに4を代入してください。
-\item
-  a, bそれぞれを2乗したものの和をとり、結果が25となることを確認してください。
-\end{itemize}
-
-\textbf{練習問題}
+\hypertarget{ux95a2ux6570ux306eux81eaux4f5cux3068ux30d1ux30c3ux30b1ux30fcux30b8}{%
+\chapter{関数の自作とパッケージ}\label{ux95a2ux6570ux306eux81eaux4f5cux3068ux30d1ux30c3ux30b1ux30fcux30b8}}
 
 \begin{itemize}
 \tightlist
 \item
-  オブジェクトaに3を、オブジェクトbに4を代入してください。（前の問題と同様）\\
-\item
-  a, bそれぞれの2乗して和をとったものの平方根をとり、結果が5となることを確認してください。\\
-  ヒント：前の問題の計算全体をsqrt()のかっこでくくってください。
-  \#\#\# ベクトルに対する関数
+  本章の説明がわからない人は、第１章で紹介した\href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」} を参照しよう！
 \end{itemize}
 
-\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8}{%
-\chapter{パッケージ}\label{ux30d1ux30c3ux30b1ux30fcux30b8}}
+\hypertarget{ux95a2ux6570ux306eux81eaux4f5c}{%
+\section{関数の自作}\label{ux95a2ux6570ux306eux81eaux4f5c}}
+
+\textbf{本節は少し難しいのでスキップしてもOK }
+
+\begin{itemize}
+\tightlist
+\item
+  Rには、第３章で紹介した以外にもたくさんの関数が用意されている
+\item
+  でも、既存関数を駆使しても、長く煩雑なコードでしか処理できないことも多い
+\item
+  そのようなコーディングを繰り返し実行しなければいけない時は、自作関数を作ると便利
+\item
+  自作関数の作り方の基本は以下のとおり
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{関数名 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (引数名) \{}
+\NormalTok{  処理内容}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  例えば、\(a/(1-x)\)という計算を、様々な\texttt{a}と\texttt{x}の値で繰り返し実行する必要があるとする
+\item
+  この計算を実行する関数\texttt{inf\_geo()}は、次のように自作できる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{inf\_geo }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{ (a, x) \{}
+\NormalTok{  a}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  出来上がった関数を使うときは、次のようにする
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#a=1で、x=0.8を計算したい場合}
+\FunctionTok{inf\_geo}\NormalTok{(}\DecValTok{1}\NormalTok{, }\FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}{%
+\section{パッケージとは？}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}}
+
+\begin{itemize}
+\tightlist
+\item
+  実は、よく使う分析や処理の関数は既に誰かが作って公開していることが多い
+\item
+  誰かが作った便利な自作関数が配布用にまとめられたものをパッケージという
+\item
+  パッケージは、Rの機能を拡張しパワーアップさせる道具箱のイメージ
+\end{itemize}
+
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
+\section{パッケージのインストール}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
+
+\begin{itemize}
+\tightlist
+\item
+  数えきれないパッケージの中から、自分に合うものを適宜インストールして利用できる
+\item
+  インストール方法は、引数をインストールしたいパッケージ名にして\texttt{install.packages()}を実行
+\item
+  例えば、\texttt{tidyverse}というパッケージは、次のようにインストールする\footnote{tidyverseは複数の便利なパッケージをまとめた「パッケージのパッケージ」}
+\item
+  \textbf{この\texttt{tidyverse}を導入することでRが化ける！}（詳しい使い方は次章）
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 初回に一度だけ実行}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{) }\CommentTok{\#引数の"ダブルコーテーション"を忘れない}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  インストールするだけでは使えない、次のコードを実行して初めて\texttt{tidyverse}が使えるようになる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# RStudioを起動する度に実行}
+\FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\#引数の"ダブルコーテーション"は不要}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{install.packages()}は、初回に一度だけ実行すれば良い
+\item
+  ただし、\texttt{library()}はRstudioを起動するたびに実行する必要がある
+\item
+  そのため、Rスクリプトの最初に分析で使う\texttt{library(パッケージ名)}を並べておくと良い
+\end{itemize}
+
+\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
+\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
 
 \begin{itemize}
 \tightlist
@@ -1433,11 +1556,18 @@ colMeand(X) & 行列 X の列平均 \\
   本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
 \end{itemize}
 
-\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}{%
-\section{パッケージとは？}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
+\item
+  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
+\end{enumerate}
 
-\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
-\section{パッケージのインストール}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
+\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}{%
+\paragraph*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
+\addcontentsline{toc}{paragraph}{データフレーム}
 
 多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。
 
@@ -1542,139 +1672,6 @@ CSVファイルの場合は、\texttt{read.csv}を用います。ファイルの
 
 \hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}{%
 \section{インポートしたデータの確認}\label{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}}
-
-上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。
-
-右上のペーンの``Environment''に新しいオブジェクトができているか確認（上の例ではdata）
-クリックして左上のペーンに出てくるか確認
-\texttt{head(data)}で先頭のデータを確認
-\texttt{str(data)}で各変数の「型」（後で説明）を確認
-
-\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
-\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
-
-\begin{itemize}
-\tightlist
-\item
-  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
-\item
-  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
-\end{enumerate}
-
-\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}{%
-\paragraph*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
-\addcontentsline{toc}{paragraph}{データフレーム}
-
-多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。
-
-例として、年齢のベクトルage\_vectorと性別のベクトルgender\_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は\texttt{data.frame()}です。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{18}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{34}\NormalTok{) }\CommentTok{\#年齢のベクトルの作成}
-\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"female"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{, }\StringTok{"female"}\NormalTok{) }\CommentTok{\#性別のベクトルの作成}
-\NormalTok{first\_dataframe }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(age, gender)}
-\NormalTok{first\_dataframe}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   age gender
-## 1  18 female
-## 2  21   male
-## 3  22   male
-## 4  23 female
-## 5  34 female
-\end{verbatim}
-
-1人目が18歳の女性、2人目が21歳の男性\ldots を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。
-
-データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名\$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst\_dataframeから性別の変数のみを見てみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{first\_dataframe}\SpecialCharTok{$}\NormalTok{gender}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "female" "male"   "male"   "female" "female"
-\end{verbatim}
-
-性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(first\_dataframe}\SpecialCharTok{$}\NormalTok{age)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 23.6
-\end{verbatim}
-
-\textbf{練習問題}
-
-\begin{itemize}
-\item
-  オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
-\item
-  オブジェクトcityに文字列のベクトル''ibaraki'', ``takatsuki'', ``ibaraki'', ``takatsuki'', ``takatsuki''を代入してください。\\
-\item
-  incomeとcityを合わせたデータフレームincome\_dataを作成してください。\\
-\item
-  income\_dataを用いて、incomeの中央値を求めてください。
-\item
-  データの読み込み
-\end{itemize}
-
-データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。
-
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099-1}{%
-\section{インポートの準備}\label{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099-1}}
-
-インポートしたいファイルは、プロジェクトと同じフォルダに入れておきましょう。 プロジェクトはChapter 2で学習しています。
-
-インポートしたいファイルの形式も確認しておきましょう。 代表的な形式として、CSVファイル（.csv）、Excelファイル（.xlsx, .xls）があります。 拡張子が表示されていない場合はこちらを参考に表示させるようにしましょう。
-
-インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。
-
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8-1}{%
-\section{インポート}\label{ux30a4ux30f3ux30ddux30fcux30c8-1}}
-
-\hypertarget{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv-1}{%
-\subsection{CSVファイルの場合（.csv）}\label{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv-1}}
-
-CSVファイルの場合は、\texttt{read.csv}を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{data\_original }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sotsuron.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-これは、csvファイルの内容をdata\_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data\_originalという名前にしています。
-
-\textbf{練習問題}
-
-\begin{itemize}
-\tightlist
-\item
-  以下から「tidy\_data.csv」をダウンロード
-  \url{https://www.dropbox.com/s/wm46esg4dicye8j/tidy_data.csv?dl=0}\\
-\item
-  \texttt{read.csv}を使って読み込み、dataというオブジェクトに格納
-\end{itemize}
-
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d-1}{%
-\section{インポートしたデータの確認}\label{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d-1}}
 
 上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。
 

@@ -117,7 +117,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-04-30}
+\date{2023-05-02}
 
 \begin{document}
 \maketitle
@@ -160,6 +160,9 @@
   \href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」 by 宋財泫先生 \& 矢内勇生先生}\\
   辞書的に使える！Tidyverseを使ったモダンなRのプログラムが学べる！
 \end{enumerate}
+
+1, \href{https://htsuda.net/stats/}{「Rによる統計入門」 by 津田裕之先生}\\
+Rの基礎から簡単な統計分析まで（因子分析もカバー）
 
 \hypertarget{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
 \section{R(Studio)のインストール}\label{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
@@ -507,7 +510,7 @@
 
 \begin{itemize}
 \item
-  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{tidyverseは複数の便利なパッケージをまとめた「パッケージのパッケージ」}\\
+  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}\\
 \item
   オブジェクトを変数という人もいる（数学の変数のようなイメージだから）
 \item
@@ -1512,7 +1515,7 @@ colMeand(X) & 行列 X の列平均 \\
 \item
   インストール方法は、引数をインストールしたいパッケージ名にして\texttt{install.packages()}を実行
 \item
-  例えば、\texttt{tidyverse}というパッケージは、次のようにインストールする\footnote{tidyverseは複数の便利なパッケージをまとめた「パッケージのパッケージ」}
+  例えば、\texttt{tidyverse}というパッケージは、次のようにインストールする\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
 \item
   \textbf{この\texttt{tidyverse}を導入することでRが化ける！}（詳しい使い方は次章）
 \end{itemize}
@@ -1547,27 +1550,21 @@ colMeand(X) & 行列 X の列平均 \\
   そのため、Rスクリプトの最初に分析で使う\texttt{library(パッケージ名)}を並べておくと良い
 \end{itemize}
 
-\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
-\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
+\hypertarget{ux30c7ux30fcux30bfux69cbux9020}{%
+\chapter{データ構造}\label{ux30c7ux30fcux30bfux69cbux9020}}
 
 \begin{itemize}
 \tightlist
 \item
-  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
+  作成中です。完成までは1章で紹介した\href{https://htsuda.net/stats/}{「Rによる統計入門」} の３章を参照してください。
 \end{itemize}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
-\item
-  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
-\end{enumerate}
+\hypertarget{ux30c7ux30fcux30bfux306eux578b}{%
+\section{データの型}\label{ux30c7ux30fcux30bfux306eux578b}}
 
 \hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}{%
-\paragraph*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
-\addcontentsline{toc}{paragraph}{データフレーム}
+\section*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0}}
+\addcontentsline{toc}{section}{データフレーム}
 
 多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。
 
@@ -1615,6 +1612,143 @@ colMeand(X) & 行列 X の列平均 \\
 
 \begin{verbatim}
 ## [1] 23.6
+\end{verbatim}
+
+\textbf{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
+\item
+  オブジェクトcityに文字列のベクトル''ibaraki'', ``takatsuki'', ``ibaraki'', ``takatsuki'', ``takatsuki''を代入してください。\\
+\item
+  incomeとcityを合わせたデータフレームincome\_dataを作成してください。\\
+\item
+  income\_dataを用いて、incomeの中央値を求めてください。
+\end{itemize}
+
+\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
+\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
+
+\begin{itemize}
+\tightlist
+\item
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
+\item
+  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
+\end{enumerate}
+
+\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0-1}{%
+\section*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0-1}}
+\addcontentsline{toc}{section}{データフレーム}
+
+\begin{itemize}
+\item
+  データ分析をする時は、縦方向に観測値を、横方向に変数を並べることが多い
+\item
+  例えば\ldots{}
+\item
+  Rでこのようなデータをあつかう場合、データフレームというデータ構造を使う\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
+\end{itemize}
+
+データのことをRではデータフレームと呼びます。
+
+例として、年齢のベクトルage\_vectorと性別のベクトルgender\_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は\texttt{data.frame()}です。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{36}\NormalTok{, }\DecValTok{23}\NormalTok{) }\CommentTok{\#年齢のベクトルの作成}
+\NormalTok{height }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{149.5}\NormalTok{, }\FloatTok{153.0}\NormalTok{, }\FloatTok{169.0}\NormalTok{, }\FloatTok{174.5}\NormalTok{)}
+\NormalTok{weight }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{36}\NormalTok{, }\DecValTok{48}\NormalTok{, }\DecValTok{61}\NormalTok{, }\DecValTok{65}\NormalTok{)}
+\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"male"}\NormalTok{) }
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(age, height, weight, gender)}
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(age, height, weight, gender)}
+
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.4.0      v purrr   1.0.0 
+## v tibble  3.1.8      v dplyr   1.0.10
+## v tidyr   1.2.1      v stringr 1.5.0 
+## v readr   2.1.3      v forcats 0.5.2 
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DT)}
+
+
+
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 4
+##     age height weight gender
+##   <dbl>  <dbl>  <dbl> <chr> 
+## 1    10   150.     36 male  
+## 2    18   153      48 female
+## 3    36   169      61 male  
+## 4    23   174.     65 male
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# }
+\CommentTok{\# df \%\textgreater{}\%}
+\CommentTok{\#   datatable(}
+\CommentTok{\#     data =., }
+\CommentTok{\#     \#filter = \textquotesingle{}bottom\textquotesingle{},}
+\CommentTok{\#     extensions = \textquotesingle{}Scroller\textquotesingle{},}
+\CommentTok{\#     options = list(}
+\CommentTok{\#     deferRender = TRUE,}
+\CommentTok{\#     scrollY = 200,}
+\CommentTok{\#     scrollX = TRUE,}
+\CommentTok{\#     scroller = TRUE}
+\CommentTok{\#   ))}
+\end{Highlighting}
+\end{Shaded}
+
+1人目が18歳の女性、2人目が21歳の男性\ldots を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。
+
+データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名\$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst\_dataframeから性別の変数のみを見てみましょう。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{gender}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "male"   "female" "male"   "male"
+\end{verbatim}
+
+性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{age)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 21.75
 \end{verbatim}
 
 \textbf{練習問題}

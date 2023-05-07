@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析</title>
+  <title>Chapter 5 データ構造 | 行動経済学の実証分析</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 5 データ構造 | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 5 データ構造 | 行動経済学の実証分析" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="基本操作.html"/>
-<link rel="next" href="データ構造.html"/>
+<link rel="prev" href="関数の自作とパッケージ.html"/>
+<link rel="next" href="データのあつかい方.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -207,81 +207,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="関数の自作とパッケージ" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> 関数の自作とパッケージ<a href="関数の自作とパッケージ.html#関数の自作とパッケージ" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="データ構造" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> データ構造<a href="データ構造.html#データ構造" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>本章の説明がわからない人は、第１章で紹介した<a href="https://www.jaysong.net/RBook/datahandling1.html">「私たちのR」</a> を参照しよう！</li>
+<li>作成中です。完成までは1章で紹介した<a href="https://htsuda.net/stats/">「Rによる統計入門」</a> の３章を参照してください。</li>
 </ul>
-<div id="関数の自作" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> 関数の自作<a href="関数の自作とパッケージ.html#関数の自作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>少し難しいのでスキップして4.2に進んでもOK </strong></p>
-<ul>
-<li>Rには、第３章で紹介した以外にもたくさんの関数が用意されている</li>
-<li>でも、既存関数を駆使しても、長く煩雑なコードでしか処理できないことも多い</li>
-<li>そのようなコーディングを繰り返し実行しなければいけない時は、自作関数を作ると便利</li>
-<li>自作関数の作り方の基本は以下のとおり</li>
-</ul>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="関数の自作とパッケージ.html#cb91-1" aria-hidden="true" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
-<span id="cb91-2"><a href="関数の自作とパッケージ.html#cb91-2" aria-hidden="true" tabindex="-1"></a>  処理内容</span>
-<span id="cb91-3"><a href="関数の自作とパッケージ.html#cb91-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<ul>
-<li>例えば、<span class="math inline">\(a/(1-x)\)</span>という計算を、様々な<code>a</code>と<code>x</code>の値で繰り返し実行する必要があるとする</li>
-<li>この計算を実行する関数<code>inf_geo()</code>は、次のように自作できる</li>
-</ul>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="関数の自作とパッケージ.html#cb92-1" aria-hidden="true" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
-<span id="cb92-2"><a href="関数の自作とパッケージ.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
-<span id="cb92-3"><a href="関数の自作とパッケージ.html#cb92-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<ul>
-<li>出来上がった関数を使うときは、次のようにする</li>
-</ul>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="関数の自作とパッケージ.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
-<span id="cb93-2"><a href="関数の自作とパッケージ.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
+<div id="データの型" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> データの型<a href="データ構造.html#データの型" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="パッケージとは" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> パッケージとは？<a href="関数の自作とパッケージ.html#パッケージとは" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="データフレーム" class="section level2 unnumbered hasAnchor">
+<h2>データフレーム<a href="データ構造.html#データフレーム" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>多くのデータは、表形式でまとめられます。 縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。</p>
+<p>例として、年齢のベクトルage_vectorと性別のベクトルgender_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は<code>data.frame()</code>です。</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="データ構造.html#cb97-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">34</span>) <span class="co">#年齢のベクトルの作成</span></span>
+<span id="cb97-2"><a href="データ構造.html#cb97-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;female&quot;</span>) <span class="co">#性別のベクトルの作成</span></span>
+<span id="cb97-3"><a href="データ構造.html#cb97-3" aria-hidden="true" tabindex="-1"></a>first_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(age, gender)</span>
+<span id="cb97-4"><a href="データ構造.html#cb97-4" aria-hidden="true" tabindex="-1"></a>first_dataframe</span></code></pre></div>
+<pre><code>##   age gender
+## 1  18 female
+## 2  21   male
+## 3  22   male
+## 4  23 female
+## 5  34 female</code></pre>
+<p>1人目が18歳の女性、2人目が21歳の男性…を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。</p>
+<p>データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst_dataframeから性別の変数のみを見てみましょう。</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="データ構造.html#cb99-1" aria-hidden="true" tabindex="-1"></a>first_dataframe<span class="sc">$</span>gender</span></code></pre></div>
+<pre><code>## [1] &quot;female&quot; &quot;male&quot;   &quot;male&quot;   &quot;female&quot; &quot;female&quot;</code></pre>
+<p>性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="データ構造.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(first_dataframe<span class="sc">$</span>age)</span></code></pre></div>
+<pre><code>## [1] 23.6</code></pre>
+<p><strong>練習問題</strong></p>
 <ul>
-<li>実は、よく使う分析や処理の関数は既に誰かが作って公開していることが多い</li>
-<li>誰かが作った便利な自作関数が配布用にまとめられたものをパッケージという</li>
-<li>パッケージは、Rの機能を拡張しパワーアップさせる道具箱のイメージ</li>
-</ul>
-</div>
-<div id="パッケージのインストール" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> パッケージのインストール<a href="関数の自作とパッケージ.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>数えきれないパッケージの中から、自分に合うものを適宜インストールして利用できる</li>
-<li>インストール方法は、引数をインストールしたいパッケージ名にして<code>install.packages()</code>を実行</li>
-<li>例えば、<code>tidyverse</code>というパッケージは、次のようにインストールする<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
-<li><strong>この<code>tidyverse</code>を導入することでRが化ける！</strong>（詳しい使い方は次章）</li>
-</ul>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="関数の自作とパッケージ.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
-<span id="cb95-2"><a href="関数の自作とパッケージ.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
-<ul>
-<li>インストールするだけでは使えない、次のコードを実行して初めて<code>tidyverse</code>が使えるようになる</li>
-</ul>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="関数の自作とパッケージ.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
-<span id="cb96-2"><a href="関数の自作とパッケージ.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
-<ul>
-<li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
-<li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
-<li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を並べておくと良い</li>
+<li>オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。<br />
+</li>
+<li>オブジェクトcityに文字列のベクトル”ibaraki”, “takatsuki”, “ibaraki”, “takatsuki”, “takatsuki”を代入してください。<br />
+</li>
+<li>incomeとcityを合わせたデータフレームincome_dataを作成してください。<br />
+</li>
+<li>income_dataを用いて、incomeの中央値を求めてください。</li>
 </ul>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="関数の自作とパッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="基本操作.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="データ構造.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="関数の自作とパッケージ.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="データのあつかい方.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

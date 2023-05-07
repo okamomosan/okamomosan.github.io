@@ -4,39 +4,33 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 データの読み込み | 行動経済学の実証分析</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <title>Chapter 6 データの読み込み | 行動経済学の実証分析</title>
+  <meta name="description" content="Chapter 6 データの読み込み | 行動経済学の実証分析" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 データの読み込み | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 6 データの読み込み | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 データの読み込み | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 6 データの読み込み | 行動経済学の実証分析" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-04-26" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="基本操作.html"/>
+<link rel="prev" href="データ構造.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -154,26 +148,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="go.html"><a href="go.html#コンソールに直接打ち込む"><i class="fa fa-check"></i><b>2.2</b> コンソールに直接打ち込む</a></li>
 <li class="chapter" data-level="2.3" data-path="go.html"><a href="go.html#rスクリプトを使う"><i class="fa fa-check"></i><b>2.3</b> Rスクリプトを使う</a></li>
 <li class="chapter" data-level="2.4" data-path="go.html"><a href="go.html#プロジェクト管理"><i class="fa fa-check"></i><b>2.4</b> プロジェクト管理</a></li>
+<li class="chapter" data-level="2.5" data-path="go.html"><a href="go.html#演習問題"><i class="fa fa-check"></i><b>2.5</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="基本操作.html"><a href="基本操作.html"><i class="fa fa-check"></i><b>3</b> 基本操作</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="基本操作.html"><a href="基本操作.html#オブジェクト"><i class="fa fa-check"></i><b>3.1</b> オブジェクト</a></li>
-<li class="chapter" data-level="3.2" data-path="基本操作.html"><a href="基本操作.html#簡単な計算"><i class="fa fa-check"></i><b>3.2</b> 簡単な計算</a></li>
-<li class="chapter" data-level="3.3" data-path="基本操作.html"><a href="基本操作.html#関数"><i class="fa fa-check"></i><b>3.3</b> 5.3 関数</a>
+<li class="chapter" data-level="3.1" data-path="基本操作.html"><a href="基本操作.html#四則演算"><i class="fa fa-check"></i><b>3.1</b> 四則演算</a></li>
+<li class="chapter" data-level="3.2" data-path="基本操作.html"><a href="基本操作.html#変数とオブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数とオブジェクト</a></li>
+<li class="chapter" data-level="3.3" data-path="基本操作.html"><a href="基本操作.html#関数①数値に対する関数"><i class="fa fa-check"></i><b>3.3</b> 関数①（数値に対する関数）</a></li>
+<li class="chapter" data-level="3.4" data-path="基本操作.html"><a href="基本操作.html#ベクトルと行列"><i class="fa fa-check"></i><b>3.4</b> ベクトルと行列</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="基本操作.html"><a href="基本操作.html#数値に対する関数"><i class="fa fa-check"></i><b>3.3.1</b> 数値に対する関数</a></li>
-<li class="chapter" data-level="3.3.2" data-path="基本操作.html"><a href="基本操作.html#ベクトルに対する関数"><i class="fa fa-check"></i><b>3.3.2</b> ベクトルに対する関数</a></li>
+<li class="chapter" data-level="3.4.1" data-path="基本操作.html"><a href="基本操作.html#ベクトル"><i class="fa fa-check"></i><b>3.4.1</b> ベクトル</a></li>
+<li class="chapter" data-level="3.4.2" data-path="基本操作.html"><a href="基本操作.html#行列"><i class="fa fa-check"></i><b>3.4.2</b> 行列</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="基本操作.html"><a href="基本操作.html#データフレーム"><i class="fa fa-check"></i><b>3.4</b> データフレーム</a></li>
+<li class="chapter" data-level="3.5" data-path="基本操作.html"><a href="基本操作.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>3.5</b> 関数②（ベクトルや行列に対する関数）</a></li>
+<li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#関数の自作"><i class="fa fa-check"></i><b>3.6</b> 関数の自作</a></li>
+<li class="chapter" data-level="3.7" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.7</b> 演習問題</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>4</b> データの読み込み</a>
+<li class="chapter" data-level="4" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>4</b> パッケージ</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="データの読み込み.html"><a href="データの読み込み.html#インポートの準備"><i class="fa fa-check"></i><b>4.1</b> インポートの準備</a></li>
-<li class="chapter" data-level="4.2" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル形式別のインポート方法"><i class="fa fa-check"></i><b>4.2</b> ファイル形式別のインポート方法</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#csvファイルの場合.csv"><i class="fa fa-check"></i><b>4.2.1</b> CSVファイルの場合（.csv）</a></li>
+<li class="chapter" data-level="4.1" data-path="パッケージ.html"><a href="パッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.1</b> パッケージとは？</a></li>
+<li class="chapter" data-level="4.2" data-path="パッケージ.html"><a href="パッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.2</b> パッケージのインストール</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="データの読み込み.html"><a href="データの読み込み.html#インポートしたデータの確認"><i class="fa fa-check"></i><b>4.3</b> インポートしたデータの確認</a></li>
+<li class="chapter" data-level="5" data-path="データ構造.html"><a href="データ構造.html"><i class="fa fa-check"></i><b>5</b> データ構造</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="データ構造.html"><a href="データ構造.html#データの型"><i class="fa fa-check"></i><b>5.1</b> データの型</a></li>
+<li class="chapter" data-level="" data-path="データ構造.html"><a href="データ構造.html#データフレーム"><i class="fa fa-check"></i>データフレーム</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>6</b> データの読み込み</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム-1"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
+<li class="chapter" data-level="6.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
+<li class="chapter" data-level="6.2.2" data-path="データの読み込み.html"><a href="データの読み込み.html#csvファイルの読み込み"><i class="fa fa-check"></i><b>6.2.2</b> csvファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.3" data-path="データの読み込み.html"><a href="データの読み込み.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-2"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -192,55 +203,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="データの読み込み" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> データの読み込み<a href="データの読み込み.html#データの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="データの読み込み" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> データの読み込み<a href="データの読み込み.html#データの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>現状では、ベースにした森先生の資料の丸写しです</li>
-<li>GW明けまでに完成させるので、外に出さないでください</li>
-<li>森先生の以下の動画を参考にしてください</li>
-<li>GW明けまでに全ての練習問題のコードをひとつのRスクリプトに書いて提出</li>
+<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
 </ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FugazO_rL7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-</iframe>
-<p>データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。</p>
-<div id="インポートの準備" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> インポートの準備<a href="データの読み込み.html#インポートの準備" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>インポートしたいファイルは、プロジェクトと同じフォルダに入れておきましょう。 プロジェクトはChapter 2で学習しています。</p>
-<p>インポートしたいファイルの形式も確認しておきましょう。 代表的な形式として、CSVファイル（.csv）、Excelファイル（.xlsx, .xls）があります。 拡張子が表示されていない場合はこちらを参考に表示させるようにしましょう。</p>
-<p>インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。</p>
-</div>
-<div id="ファイル形式別のインポート方法" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> ファイル形式別のインポート方法<a href="データの読み込み.html#ファイル形式別のインポート方法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="csvファイルの場合.csv" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> CSVファイルの場合（.csv）<a href="データの読み込み.html#csvファイルの場合.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>CSVファイルの場合は、<code>read.csv</code>を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="データの読み込み.html#cb40-1" aria-hidden="true" tabindex="-1"></a>data_original <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sotsuron.csv&quot;</span>)</span></code></pre></div>
-<p>これは、csvファイルの内容をdata_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data_originalという名前にしています。</p>
-<p><strong>練習問題</strong></p>
-<ul>
-<li>以下から「tidy_data.csv」をダウンロード
-<a href="https://www.dropbox.com/s/wm46esg4dicye8j/tidy_data.csv?dl=0" class="uri">https://www.dropbox.com/s/wm46esg4dicye8j/tidy_data.csv?dl=0</a><br />
+<ol style="list-style-type: decimal">
+<li><a href="https://youtu.be/FugazO_rL7c">データの読み込み in R</a><br />
 </li>
-<li><code>read.csv</code>を使って読み込み、dataというオブジェクトに格納</li>
+<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in R</a></li>
+</ol>
+<ul>
+<li>さらに詳しいことを学びたいなら<a href="https://shohei-doi.github.io/quant_polisci/index.html">「Rで計量政治学入門」</a>がオススメ</li>
+</ul>
+<div id="データフレーム-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> データフレーム<a href="データの読み込み.html#データフレーム-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>データ分析をする時は、横方向（行）に観測値を、縦方向（列）に変数を並べることが多い</li>
+<li>例えば、ある4人の名前、年齢、身長、体重のデータは、次のように並べることが多い</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Age</th>
+<th align="left">Height</th>
+<th align="left">Weight</th>
+<th align="left">Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tanaka</td>
+<td align="left">10</td>
+<td align="left">149.5</td>
+<td align="left">36</td>
+<td align="left">male</td>
+</tr>
+<tr class="even">
+<td align="left">Suzuki</td>
+<td align="left">18</td>
+<td align="left">153</td>
+<td align="left">48</td>
+<td align="left">female</td>
+</tr>
+<tr class="odd">
+<td align="left">Okada</td>
+<td align="left">41</td>
+<td align="left">171</td>
+<td align="left">58</td>
+<td align="left">male</td>
+</tr>
+<tr class="even">
+<td align="left">Watanabe</td>
+<td align="left">26</td>
+<td align="left">174.5</td>
+<td align="left">65</td>
+<td align="left">male</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Rでこのようなデータをあつかう場合、データフレームを使う<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+<li>上のデータのデータフレームを作るには、以下のようにすれば良い</li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="データの読み込み.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># まず各変数のベクトルを作る</span></span>
+<span id="cb103-2"><a href="データの読み込み.html#cb103-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Tanaka&quot;</span>, <span class="st">&quot;Suzuki&quot;</span>, <span class="st">&quot;Okada&quot;</span>, <span class="st">&quot;Watanabe&quot;</span>)</span>
+<span id="cb103-3"><a href="データの読み込み.html#cb103-3" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">18</span>, <span class="dv">36</span>, <span class="dv">23</span>) <span class="co">#年齢のベクトルの作成</span></span>
+<span id="cb103-4"><a href="データの読み込み.html#cb103-4" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">149.5</span>, <span class="fl">153.0</span>, <span class="fl">171.0</span>, <span class="fl">174.5</span>)</span>
+<span id="cb103-5"><a href="データの読み込み.html#cb103-5" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">58</span>, <span class="dv">65</span>)</span>
+<span id="cb103-6"><a href="データの読み込み.html#cb103-6" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>) </span>
+<span id="cb103-7"><a href="データの読み込み.html#cb103-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-8"><a href="データの読み込み.html#cb103-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frame()の引数に、作成したベクトルを並べる</span></span>
+<span id="cb103-9"><a href="データの読み込み.html#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 出来上がったデータフレームを変数dfに格納</span></span>
+<span id="cb103-10"><a href="データの読み込み.html#cb103-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, age, height, weight, gender)</span></code></pre></div>
+</div>
+<div id="データの読み込み-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> データの読み込み<a href="データの読み込み.html#データの読み込み-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>実際にデータ分析する時に、上のように手入力でデータフレームを作ることはまれ</li>
+<li>ほとんどの場合は、外部からデータを読み込む（＝インポートする）</li>
+<li>以下、よく使われるCSVファイル（.csv）とExcelファイル（.xlsx, .xls）のインポート方法を説明</li>
+<li>以下の方法を使うと、取り込まれたデータは自動的にデータフレームになる</li>
+</ul>
+<div id="ワークディレクトリとインポートの準備" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> ワークディレクトリとインポートの準備<a href="データの読み込み.html#ワークディレクトリとインポートの準備" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>① ファイルをワークディレクトリに置く</strong></p>
+<ul>
+<li>インポートしたいデータファイルは、ワークディレクトリと呼ばれる場所に置く必要がある<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+<li>ワークディレクトリは、Rを使う時のメインの作業場で、さまざまな操作の起点になる</li>
+<li>通常Rでは、起動する度に作業ディレクトリを指定する必要がある</li>
+<li>しかし、２章で説明したプロジェクト機能を使っていれば、プロジェクトフォルダが作業ディレクトリになる（よって、<strong>プロジェクトフォルダにデータファイルを置けば良い</strong>）</li>
+</ul>
+<p><strong>② インポートするファイルの１行目を変数名にする</strong></p>
+<ul>
+<li>インポートするファイルの１行目が変数名になっているのを確認する</li>
+<li>なっていない場合は、１行目に変数名の行を付け加える</li>
+</ul>
+</div>
+<div id="csvファイルの読み込み" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> csvファイルの読み込み<a href="データの読み込み.html#csvファイルの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>csvファイルを読み込むときは、<code>read.csv()</code>を使う<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></li>
+<li>以下は<code>sokutei.csv</code>という名前のcsvファイルを、変数<code>data</code>に格納する例</li>
+<li>読み込んだデータを確認する場合は、<code>head()</code>をよく使う</li>
+</ul>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="データの読み込み.html#cb104-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sokutei.csv&quot;</span>)</span>
+<span id="cb104-2"><a href="データの読み込み.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="データの読み込み.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co">#head()はデータの最初の６行を返す関数</span></span></code></pre></div>
+</div>
+<div id="excelファイルの読み込み" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Excelファイルの読み込み<a href="データの読み込み.html#excelファイルの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Excelファイルを読み込むには、<code>readxl</code>というパッケージが必要</li>
+<li><code>readxl</code>をインストールして読み込んだあと、<code>read_excel()</code>の関数を使う</li>
+<li>以下は、<code>sokutei.xls</code>というファイルを読み込み、<code>sokutei</code>という変数に格納する例</li>
+</ul>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="データの読み込み.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co">#初回のみ（詳しくは第４章参照）</span></span>
+<span id="cb105-2"><a href="データの読み込み.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb105-3"><a href="データの読み込み.html#cb105-3" aria-hidden="true" tabindex="-1"></a>sokutei <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sokutei.xls&quot;</span>)</span></code></pre></div>
+</div>
+<div id="ファイル保管用のフォルダを作る" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> ファイル保管用のフォルダを作る<a href="データの読み込み.html#ファイル保管用のフォルダを作る" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>プロジェクトフォルダ内は、さまざまなファイルで溢れがち</li>
+<li>だから、プロジェクトフォルダ内にファイル保管用のフォルダを作ると良い</li>
+<li>今回は、プロジェクトフォルダ内に<code>data</code>という新しいフォルダを作ろう</li>
+<li>その中に<code>sokutei.csv</code>を置いた場合、<code>read_csv("data/sokutei.csv")</code>で読み込む</li>
 </ul>
 </div>
 </div>
-<div id="インポートしたデータの確認" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> インポートしたデータの確認<a href="データの読み込み.html#インポートしたデータの確認" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。</p>
-<p>右上のペーンの“Environment”に新しいオブジェクトができているか確認（上の例ではdata）
-クリックして左上のペーンに出てくるか確認
-<code>head(data)</code>で先頭のデータを確認
-<code>str(data)</code>で各変数の「型」（後で説明）を確認</p>
+<div id="演習問題-2" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 演習問題<a href="データの読み込み.html#演習問題-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>１章で作った<code>zemi</code>のプロジェクトフォルダ内に<code>data</code>というフォルダを作る</li>
+<li>以下から<a href="https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0"><code>sokutei.csv</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
+<li>このデータを読み込み、<code>sokutei_csv</code>というオブジェクトに格納する</li>
+<li><code>head()</code>を使って<code>sokutei_csv</code>の中身を確認する</li>
+<li>以下から<a href="https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0"><code>sokutei.xls</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
+<li>このデータを読み込み、<code>sokutei_excel</code>というオブジェクトに格納する</li>
+<li><code>head()</code>を使って<code>sokutei_excel</code>の中身を確認する</li>
+</ul>
+<!-- ```{r} -->
+<!-- sokutei_csv <- read.csv("data/sokutei.csv") -->
+<!-- head(sokutei_csv) -->
+<!-- #install.packages("readxl") #初回のみ（詳しくは第４章参照） -->
+<!-- library(readxl) -->
+<!-- sokutei_excel <- read_excel("data/sokutei.xls") -->
+<!-- head(sokutei_excel) -->
+<!-- ``` -->
 
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="データの読み込み.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>現在の作業ディレクトリの確認は<code>getwd()</code>、変更は<code>setwd("変更後のディレクトリのパス")</code><a href="データの読み込み.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>４章の<code>tidyverse</code>パッケージに含まれた<code>read_csv()</code>を使っても良い（この場合、データフレームによく似た<code>tibble</code>という形式で読み込まれる）<a href="データの読み込み.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="基本操作.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="データ構造.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -295,6 +433,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

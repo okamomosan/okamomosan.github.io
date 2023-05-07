@@ -117,7 +117,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-05-02}
+\date{2023-05-07}
 
 \begin{document}
 \maketitle
@@ -159,10 +159,13 @@
 \item
   \href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」 by 宋財泫先生 \& 矢内勇生先生}\\
   辞書的に使える！Tidyverseを使ったモダンなRのプログラムが学べる！
+\item
+  \href{https://htsuda.net/stats/}{「Rによる統計入門」 by 津田裕之先生}\\
+  Rの基礎から簡単な統計分析まで（因子分析もカバー）
+\item
+  \href{https://shohei-doi.github.io/quant_polisci/index.html}{「Rで計量政治学入門」 by 土井翔平先生}
+  政治学の研究者以外にも有用！特にデータの読み込みやtidyverseの使い方が詳しい！
 \end{enumerate}
-
-1, \href{https://htsuda.net/stats/}{「Rによる統計入門」 by 津田裕之先生}\\
-Rの基礎から簡単な統計分析まで（因子分析もカバー）
 
 \hypertarget{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{%
 \section{R(Studio)のインストール}\label{rstudioux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}}
@@ -373,7 +376,8 @@ Rの基礎から簡単な統計分析まで（因子分析もカバー）
 \begin{itemize}
 \tightlist
 \item
-  指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう
+  指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう\\
+  (以降、これを\textbf{プロジェクトフォルダ}と呼ぶ)
 \item
   そのフォルダの中に\texttt{プロジェクト名.Rproj}というファイルができているのを確認しよう
 \item
@@ -394,7 +398,7 @@ Rの基礎から簡単な統計分析まで（因子分析もカバー）
 \item
   毎回\texttt{プロジェクト名.Rproj}をダブルクリックしてRstudioを起動
 \item
-  関連するファイルはプロジェクト名のフォルダにまとめて一元管理
+  関連するファイルはプロジェクトフォルダにまとめて一元管理
 \end{enumerate}
 
 \hypertarget{ux6f14ux7fd2ux554fux984c}{%
@@ -1394,55 +1398,15 @@ colMeand(X) & 行列 X の列平均 \\
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{ux6f14ux7fd2ux554fux984c-1}{%
-\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-1}}
-
-\begin{itemize}
-\tightlist
-\item
-  aさんの身長は149cm, bさんは153cm, cさんは169cm, dさんは174cmとする
-\item
-  aさんの体重は36kg, bさんは48kg, cさんは61kg, dさんは65kgとする\\
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する\\
-\item
-  変数hの平均と標準偏差を求める\\
-\item
-  ベクトルのかけ算を使い、４人の身長をインチで表すといくらになるか求める\\
-  （1cm＝0.39インチで計算し、結果は変数に保存しない）\\
-\item
-  4人の体重を表した数値のみからなるベクトル（単位は不要）を作り、変数wに保存する
-\item
-  変数hと変数wを結合して、１行目が身長、２行目が体重となる2×4行列を作り、変数Mに保存\\
-\item
-  行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す
-\item
-  変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る
-\end{enumerate}
-
-\hypertarget{ux95a2ux6570ux306eux81eaux4f5cux3068ux30d1ux30c3ux30b1ux30fcux30b8}{%
-\chapter{関数の自作とパッケージ}\label{ux95a2ux6570ux306eux81eaux4f5cux3068ux30d1ux30c3ux30b1ux30fcux30b8}}
-
-\begin{itemize}
-\tightlist
-\item
-  本章の説明がわからない人は、第１章で紹介した\href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」} を参照しよう！
-\end{itemize}
-
 \hypertarget{ux95a2ux6570ux306eux81eaux4f5c}{%
 \section{関数の自作}\label{ux95a2ux6570ux306eux81eaux4f5c}}
 
-\textbf{少し難しいのでスキップして4.2に進んでもOK }
+\textbf{少し難しいのでスキップして3.7に進んでもOK }
 
 \begin{itemize}
 \tightlist
 \item
-  Rには、第３章で紹介した以外にもたくさんの関数が用意されている
+  Rには、他にもたくさんの関数が用意されている
 \item
   でも、既存関数を駆使しても、長く煩雑なコードでしか処理できないことも多い
 \item
@@ -1492,15 +1456,57 @@ colMeand(X) & 行列 X の列平均 \\
 ## [1] 5
 \end{verbatim}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux6f14ux7fd2ux554fux984c-1}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  aさんの身長は149cm, bさんは153cm, cさんは169cm, dさんは174cmとする
+\item
+  aさんの体重は36kg, bさんは48kg, cさんは61kg, dさんは65kgとする\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する\\
+\item
+  変数hの平均と標準偏差を求める\\
+\item
+  ベクトルのかけ算を使い、４人の身長をインチで表すといくらになるか求める\\
+  （1cm＝0.39インチで計算し、結果は変数に保存しない）\\
+\item
+  4人の体重を表した数値のみからなるベクトル（単位は不要）を作り、変数wに保存する
+\item
+  変数hと変数wを結合して、１行目が身長、２行目が体重となる2×4行列を作り、変数Mに保存\\
+\item
+  行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す
+\item
+  変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る
+\end{enumerate}
+
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8}{%
+\chapter{パッケージ}\label{ux30d1ux30c3ux30b1ux30fcux30b8}}
+
+\begin{itemize}
+\tightlist
+\item
+  本章の説明がわからない人は、第１章で紹介した\href{https://www.jaysong.net/RBook/datahandling1.html}{「私たちのR」} を参照しよう！
+\end{itemize}
+
 \hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}{%
 \section{パッケージとは？}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux3068ux306f}}
 
 \begin{itemize}
 \tightlist
 \item
-  実は、よく使う分析や処理の関数は既に誰かが作って公開していることが多い
+  主だった分析やデータ処理などの関数は、誰かが作って公開していることが多い
 \item
-  誰かが作った便利な自作関数が配布用にまとめられたものをパッケージという
+  誰かが作った便利な自作関数を配布用にまとめたものをパッケージという
 \item
   パッケージは、Rの機能を拡張しパワーアップさせる道具箱のイメージ
 \end{itemize}
@@ -1628,13 +1634,13 @@ colMeand(X) & 行列 X の列平均 \\
   income\_dataを用いて、incomeの中央値を求めてください。
 \end{itemize}
 
-\hypertarget{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}{%
-\chapter{データのあつかい方}\label{ux30c7ux30fcux30bfux306eux3042ux3064ux304bux3044ux65b9}}
+\hypertarget{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f}{%
+\chapter{データの読み込み}\label{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f}}
 
 \begin{itemize}
 \tightlist
 \item
-  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしてください！
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！
 \end{itemize}
 
 \begin{enumerate}
@@ -1646,173 +1652,177 @@ colMeand(X) & 行列 X の列平均 \\
   \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
 \end{enumerate}
 
+\begin{itemize}
+\tightlist
+\item
+  さらに詳しいことを学びたいなら\href{https://shohei-doi.github.io/quant_polisci/index.html}{「Rで計量政治学入門」}がオススメ
+\end{itemize}
+
 \hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0-1}{%
-\section*{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0-1}}
-\addcontentsline{toc}{section}{データフレーム}
-
-\begin{itemize}
-\item
-  データ分析をする時は、縦方向に観測値を、横方向に変数を並べることが多い
-\item
-  例えば\ldots{}
-\item
-  Rでこのようなデータをあつかう場合、データフレームというデータ構造を使う\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
-\end{itemize}
-
-データのことをRではデータフレームと呼びます。
-
-例として、年齢のベクトルage\_vectorと性別のベクトルgender\_vectorを合わせてデータフレームを作成してみましょう。 データフレームを作成する関数は\texttt{data.frame()}です。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{36}\NormalTok{, }\DecValTok{23}\NormalTok{) }\CommentTok{\#年齢のベクトルの作成}
-\NormalTok{height }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{149.5}\NormalTok{, }\FloatTok{153.0}\NormalTok{, }\FloatTok{169.0}\NormalTok{, }\FloatTok{174.5}\NormalTok{)}
-\NormalTok{weight }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{36}\NormalTok{, }\DecValTok{48}\NormalTok{, }\DecValTok{61}\NormalTok{, }\DecValTok{65}\NormalTok{)}
-\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"male"}\NormalTok{) }
-
-\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(age, height, weight, gender)}
-\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{tibble}\NormalTok{(age, height, weight, gender)}
-
-\FunctionTok{library}\NormalTok{(tidyverse)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
-## v ggplot2 3.4.0      v purrr   1.0.0 
-## v tibble  3.1.8      v dplyr   1.0.10
-## v tidyr   1.2.1      v stringr 1.5.0 
-## v readr   2.1.3      v forcats 0.5.2 
-## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(DT)}
-
-
-
-\NormalTok{df}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 4 x 4
-##     age height weight gender
-##   <dbl>  <dbl>  <dbl> <chr> 
-## 1    10   150.     36 male  
-## 2    18   153      48 female
-## 3    36   169      61 male  
-## 4    23   174.     65 male
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# }
-\CommentTok{\# df \%\textgreater{}\%}
-\CommentTok{\#   datatable(}
-\CommentTok{\#     data =., }
-\CommentTok{\#     \#filter = \textquotesingle{}bottom\textquotesingle{},}
-\CommentTok{\#     extensions = \textquotesingle{}Scroller\textquotesingle{},}
-\CommentTok{\#     options = list(}
-\CommentTok{\#     deferRender = TRUE,}
-\CommentTok{\#     scrollY = 200,}
-\CommentTok{\#     scrollX = TRUE,}
-\CommentTok{\#     scroller = TRUE}
-\CommentTok{\#   ))}
-\end{Highlighting}
-\end{Shaded}
-
-1人目が18歳の女性、2人目が21歳の男性\ldots を表すデータフレームが作成できました。 後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。
-
-データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。 その際は、データフレーム名\$変数名と表記することで、特定の変数を使うことができます。 例えば、先ほど作成したfirst\_dataframeから性別の変数のみを見てみましょう。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df}\SpecialCharTok{$}\NormalTok{gender}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "male"   "female" "male"   "male"
-\end{verbatim}
-
-性別のベクトルを取り出すことができました。 関数と組み合わせると、年齢の平均値を以下のように計算できます。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{age)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 21.75
-\end{verbatim}
-
-\textbf{練習問題}
-
-\begin{itemize}
-\item
-  オブジェクトincomeに数値のベクトル10, 100, 1000, 10000, 100000を代入してください。\\
-\item
-  オブジェクトcityに文字列のベクトル''ibaraki'', ``takatsuki'', ``ibaraki'', ``takatsuki'', ``takatsuki''を代入してください。\\
-\item
-  incomeとcityを合わせたデータフレームincome\_dataを作成してください。\\
-\item
-  income\_dataを用いて、incomeの中央値を求めてください。
-\item
-  データの読み込み
-\end{itemize}
-
-データ分析のためには、データをRStudioにインポート（読み込み）させなければなりません。インポートの方法は、持っているデータのファイル形式によって変わります。
-
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099}{%
-\section{インポートの準備}\label{ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099}}
-
-インポートしたいファイルは、プロジェクトと同じフォルダに入れておきましょう。 プロジェクトはChapter 2で学習しています。
-
-インポートしたいファイルの形式も確認しておきましょう。 代表的な形式として、CSVファイル（.csv）、Excelファイル（.xlsx, .xls）があります。 拡張子が表示されていない場合はこちらを参考に表示させるようにしましょう。
-
-インポートの前に、ファイルの1行目は変数名（英語）にしておきましょう。
-
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8}{%
-\section{インポート}\label{ux30a4ux30f3ux30ddux30fcux30c8}}
-
-\hypertarget{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv}{%
-\subsection{CSVファイルの場合（.csv）}\label{csvux30d5ux30a1ux30a4ux30ebux306eux5834ux5408.csv}}
-
-CSVファイルの場合は、\texttt{read.csv}を用います。ファイルの名前がsotsuron.csvの場合、以下のように実行します。
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{data\_original }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sotsuron.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-これは、csvファイルの内容をdata\_originalというオブジェクトに格納しています。 オブジェクト名は自由につけることができますが、わかりやすいものにしましょう。 ここでは、インポートした元データであることを明示するため、data\_originalという名前にしています。
-
-\textbf{練習問題}
+\section{データフレーム}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0-1}}
 
 \begin{itemize}
 \tightlist
 \item
-  以下から「tidy\_data.csv」をダウンロード
-  \url{https://www.dropbox.com/s/wm46esg4dicye8j/tidy_data.csv?dl=0}\\
+  データ分析をする時は、横方向（行）に観測値を、縦方向（列）に変数を並べることが多い
 \item
-  \texttt{read.csv}を使って読み込み、dataというオブジェクトに格納
+  例えば、ある4人の名前、年齢、身長、体重のデータは、次のように並べることが多い
 \end{itemize}
 
-\hypertarget{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}{%
-\section{インポートしたデータの確認}\label{ux30a4ux30f3ux30ddux30fcux30c8ux3057ux305fux30c7ux30fcux30bfux306eux78baux8a8d}}
+\begin{longtable}[]{@{}lllll@{}}
+\toprule()
+Name & Age & Height & Weight & Gender \\
+\midrule()
+\endhead
+Tanaka & 10 & 149.5 & 36 & male \\
+Suzuki & 18 & 153 & 48 & female \\
+Okada & 41 & 171 & 58 & male \\
+Watanabe & 26 & 174.5 & 65 & male \\
+\bottomrule()
+\end{longtable}
 
-上の練習問題のデータがきちんとインポートされたかどうか、確認しておきましょう。
+\begin{itemize}
+\tightlist
+\item
+  Rでこのようなデータをあつかう場合、データフレームを使う\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
+\item
+  上のデータのデータフレームを作るには、以下のようにすれば良い
+\end{itemize}
 
-右上のペーンの``Environment''に新しいオブジェクトができているか確認（上の例ではdata）
-クリックして左上のペーンに出てくるか確認
-\texttt{head(data)}で先頭のデータを確認
-\texttt{str(data)}で各変数の「型」（後で説明）を確認
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# まず各変数のベクトルを作る}
+\NormalTok{name }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Tanaka"}\NormalTok{, }\StringTok{"Suzuki"}\NormalTok{, }\StringTok{"Okada"}\NormalTok{, }\StringTok{"Watanabe"}\NormalTok{)}
+\NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{18}\NormalTok{, }\DecValTok{36}\NormalTok{, }\DecValTok{23}\NormalTok{) }\CommentTok{\#年齢のベクトルの作成}
+\NormalTok{height }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{149.5}\NormalTok{, }\FloatTok{153.0}\NormalTok{, }\FloatTok{171.0}\NormalTok{, }\FloatTok{174.5}\NormalTok{)}
+\NormalTok{weight }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{36}\NormalTok{, }\DecValTok{48}\NormalTok{, }\DecValTok{58}\NormalTok{, }\DecValTok{65}\NormalTok{)}
+\NormalTok{gender }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{, }\StringTok{"male"}\NormalTok{, }\StringTok{"male"}\NormalTok{) }
+
+\CommentTok{\# data.frame()の引数に、作成したベクトルを並べる}
+\CommentTok{\# 出来上がったデータフレームを変数dfに格納}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(name, age, height, weight, gender)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f-1}{%
+\section{データの読み込み}\label{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  実際にデータ分析する時に、上のように手入力でデータフレームを作ることはまれ
+\item
+  ほとんどの場合は、外部からデータを読み込む（＝インポートする）
+\item
+  以下、よく使われるCSVファイル（.csv）とExcelファイル（.xlsx, .xls）のインポート方法を説明
+\item
+  以下の方法を使うと、取り込まれたデータは自動的にデータフレームになる
+\end{itemize}
+
+\hypertarget{ux30efux30fcux30afux30c7ux30a3ux30ecux30afux30c8ux30eaux3068ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099}{%
+\subsection{ワークディレクトリとインポートの準備}\label{ux30efux30fcux30afux30c7ux30a3ux30ecux30afux30c8ux30eaux3068ux30a4ux30f3ux30ddux30fcux30c8ux306eux6e96ux5099}}
+
+\textbf{① ファイルをワークディレクトリに置く}
+
+\begin{itemize}
+\tightlist
+\item
+  インポートしたいデータファイルは、ワークディレクトリと呼ばれる場所に置く必要がある\footnote{現在の作業ディレクトリの確認は\texttt{getwd()}、変更は\texttt{setwd("変更後のディレクトリのパス")}}
+\item
+  ワークディレクトリは、Rを使う時のメインの作業場で、さまざまな操作の起点になる
+\item
+  通常Rでは、起動する度に作業ディレクトリを指定する必要がある
+\item
+  しかし、２章で説明したプロジェクト機能を使っていれば、プロジェクトフォルダが作業ディレクトリになる（よって、\textbf{プロジェクトフォルダにデータファイルを置けば良い}）
+\end{itemize}
+
+\textbf{② インポートするファイルの１行目を変数名にする}
+
+\begin{itemize}
+\tightlist
+\item
+  インポートするファイルの１行目が変数名になっているのを確認する
+\item
+  なっていない場合は、１行目に変数名の行を付け加える
+\end{itemize}
+
+\hypertarget{csvux30d5ux30a1ux30a4ux30ebux306eux8aadux307fux8fbcux307f}{%
+\subsection{csvファイルの読み込み}\label{csvux30d5ux30a1ux30a4ux30ebux306eux8aadux307fux8fbcux307f}}
+
+\begin{itemize}
+\tightlist
+\item
+  csvファイルを読み込むときは、\texttt{read.csv()}を使う\footnote{４章の\texttt{tidyverse}パッケージに含まれた\texttt{read\_csv()}を使っても良い（この場合、データフレームによく似た\texttt{tibble}という形式で読み込まれる）}
+\item
+  以下は\texttt{sokutei.csv}という名前のcsvファイルを、変数\texttt{data}に格納する例
+\item
+  読み込んだデータを確認する場合は、\texttt{head()}をよく使う
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"sokutei.csv"}\NormalTok{)}
+
+\FunctionTok{head}\NormalTok{(data) }\CommentTok{\#head()はデータの最初の６行を返す関数}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{excelux30d5ux30a1ux30a4ux30ebux306eux8aadux307fux8fbcux307f}{%
+\subsection{Excelファイルの読み込み}\label{excelux30d5ux30a1ux30a4ux30ebux306eux8aadux307fux8fbcux307f}}
+
+\begin{itemize}
+\tightlist
+\item
+  Excelファイルを読み込むには、\texttt{readxl}というパッケージが必要
+\item
+  \texttt{readxl}をインストールして読み込んだあと、\texttt{read\_excel()}の関数を使う
+\item
+  以下は、\texttt{sokutei.xls}というファイルを読み込み、\texttt{sokutei}という変数に格納する例
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"readxl"}\NormalTok{) }\CommentTok{\#初回のみ（詳しくは第４章参照）}
+\FunctionTok{library}\NormalTok{(readxl)}
+\NormalTok{sokutei }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"sokutei.xls"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux30d5ux30a1ux30a4ux30ebux4fddux7ba1ux7528ux306eux30d5ux30a9ux30ebux30c0ux3092ux4f5cux308b}{%
+\subsection{ファイル保管用のフォルダを作る}\label{ux30d5ux30a1ux30a4ux30ebux4fddux7ba1ux7528ux306eux30d5ux30a9ux30ebux30c0ux3092ux4f5cux308b}}
+
+\begin{itemize}
+\tightlist
+\item
+  プロジェクトフォルダ内は、さまざまなファイルで溢れがち
+\item
+  だから、プロジェクトフォルダ内にファイル保管用のフォルダを作ると良い
+\item
+  今回は、プロジェクトフォルダ内に\texttt{data}という新しいフォルダを作ろう
+\item
+  その中に\texttt{sokutei.csv}を置いた場合、\texttt{read\_csv("data/sokutei.csv")}で読み込む
+\end{itemize}
+
+\hypertarget{ux6f14ux7fd2ux554fux984c-2}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  １章で作った\texttt{zemi}のプロジェクトフォルダ内に\texttt{data}というフォルダを作る
+\item
+  以下から\href{https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0}{\texttt{sokutei.csv}}をダウンロードし、上の\texttt{data}フォルダ内に置く
+\item
+  このデータを読み込み、\texttt{sokutei\_csv}というオブジェクトに格納する
+\item
+  \texttt{head()}を使って\texttt{sokutei\_csv}の中身を確認する
+\item
+  以下から\href{https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0}{\texttt{sokutei.xls}}をダウンロードし、上の\texttt{data}フォルダ内に置く
+\item
+  このデータを読み込み、\texttt{sokutei\_excel}というオブジェクトに格納する
+\item
+  \texttt{head()}を使って\texttt{sokutei\_excel}の中身を確認する
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 

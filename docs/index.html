@@ -5,25 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>行動経済学の実証分析</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="行動経済学の実証分析" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="行動経済学の実証分析" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Tomohisa OKADA" />
@@ -60,6 +54,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -103,33 +161,30 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="3.4.2" data-path="基本操作.html"><a href="基本操作.html#行列"><i class="fa fa-check"></i><b>3.4.2</b> 行列</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="基本操作.html"><a href="基本操作.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>3.5</b> 関数②（ベクトルや行列に対する関数）</a></li>
-<li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.6</b> 演習問題</a></li>
+<li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#関数の自作"><i class="fa fa-check"></i><b>3.6</b> 関数の自作</a></li>
+<li class="chapter" data-level="3.7" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.7</b> 演習問題</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html"><i class="fa fa-check"></i><b>4</b> 関数の自作とパッケージ</a>
+<li class="chapter" data-level="4" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>4</b> パッケージ</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#関数の自作"><i class="fa fa-check"></i><b>4.1</b> 関数の自作</a></li>
-<li class="chapter" data-level="4.2" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.2</b> パッケージとは？</a></li>
-<li class="chapter" data-level="4.3" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.3</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="4.1" data-path="パッケージ.html"><a href="パッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.1</b> パッケージとは？</a></li>
+<li class="chapter" data-level="4.2" data-path="パッケージ.html"><a href="パッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.2</b> パッケージのインストール</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="データ構造.html"><a href="データ構造.html"><i class="fa fa-check"></i><b>5</b> データ構造</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="データ構造.html"><a href="データ構造.html#データの型"><i class="fa fa-check"></i><b>5.1</b> データの型</a></li>
 <li class="chapter" data-level="" data-path="データ構造.html"><a href="データ構造.html#データフレーム"><i class="fa fa-check"></i>データフレーム</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="データのあつかい方.html"><a href="データのあつかい方.html"><i class="fa fa-check"></i><b>6</b> データのあつかい方</a>
+<li class="chapter" data-level="6" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>6</b> データの読み込み</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#データフレーム-1"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
-<li class="chapter" data-level="6.2" data-path="データのあつかい方.html"><a href="データのあつかい方.html#データの読み込み"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
+<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム-1"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
+<li class="chapter" data-level="6.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
-<li class="chapter" data-level="6.2.2" data-path="データのあつかい方.html"><a href="データのあつかい方.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2.2</b> データの読み込み</a></li>
+<li class="chapter" data-level="6.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
+<li class="chapter" data-level="6.2.2" data-path="データの読み込み.html"><a href="データの読み込み.html#csvファイルの読み込み"><i class="fa fa-check"></i><b>6.2.2</b> csvファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.3" data-path="データの読み込み.html"><a href="データの読み込み.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートの準備"><i class="fa fa-check"></i><b>6.3</b> インポートの準備</a></li>
-<li class="chapter" data-level="6.4" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポート"><i class="fa fa-check"></i><b>6.4</b> インポート</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#csvファイルの場合.csv"><i class="fa fa-check"></i><b>6.4.1</b> CSVファイルの場合（.csv）</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートしたデータの確認"><i class="fa fa-check"></i><b>6.5</b> インポートしたデータの確認</a></li>
+<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-2"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -174,9 +229,11 @@ set in the _output.yml file.</p>" />
 Rの使い方と心理統計学の基礎が一挙に学べる！</p></li>
 <li><p><a href="https://www.jaysong.net/RBook/datahandling1.html">「私たちのR」 by 宋財泫先生 &amp; 矢内勇生先生</a><br />
 辞書的に使える！Tidyverseを使ったモダンなRのプログラムが学べる！</p></li>
+<li><p><a href="https://htsuda.net/stats/">「Rによる統計入門」 by 津田裕之先生</a><br />
+Rの基礎から簡単な統計分析まで（因子分析もカバー）</p></li>
+<li><p><a href="https://shohei-doi.github.io/quant_polisci/index.html">「Rで計量政治学入門」 by 土井翔平先生</a>
+政治学の研究者以外にも有用！特にデータの読み込みやtidyverseの使い方が詳しい！</p></li>
 </ol>
-<p>1, <a href="https://htsuda.net/stats/">「Rによる統計入門」 by 津田裕之先生</a><br />
-Rの基礎から簡単な統計分析まで（因子分析もカバー）</p>
 </div>
 <div id="rstudioのインストール" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> R(Studio)のインストール<a href="index.html#rstudioのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -249,6 +306,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

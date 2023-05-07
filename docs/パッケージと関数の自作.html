@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析</title>
-  <meta name="description" content="Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析" />
+  <title>Chapter 4 パッケージと関数の自作 | 行動経済学の実証分析</title>
+  <meta name="description" content="Chapter 4 パッケージと関数の自作 | 行動経済学の実証分析" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 4 パッケージと関数の自作 | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 関数の自作とパッケージ | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 4 パッケージと関数の自作 | 行動経済学の実証分析" />
   
   
   
@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">行動経済学の実証分析</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
@@ -163,11 +163,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5" data-path="基本操作.html"><a href="基本操作.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>3.5</b> 関数②（ベクトルや行列に対する関数）</a></li>
 <li class="chapter" data-level="3.6" data-path="基本操作.html"><a href="基本操作.html#演習問題-1"><i class="fa fa-check"></i><b>3.6</b> 演習問題</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html"><i class="fa fa-check"></i><b>4</b> 関数の自作とパッケージ</a>
+<li class="chapter" data-level="4" data-path="パッケージと関数の自作.html"><a href="パッケージと関数の自作.html"><i class="fa fa-check"></i><b>4</b> パッケージと関数の自作</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#関数の自作"><i class="fa fa-check"></i><b>4.1</b> 関数の自作</a></li>
-<li class="chapter" data-level="4.2" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>4.2</b> パッケージとは？</a></li>
-<li class="chapter" data-level="4.3" data-path="関数の自作とパッケージ.html"><a href="関数の自作とパッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.3</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="4.1" data-path="パッケージと関数の自作.html"><a href="パッケージと関数の自作.html#関数の自作"><i class="fa fa-check"></i><b>4.1</b> 関数の自作</a></li>
+<li class="chapter" data-level="4.2" data-path="パッケージと関数の自作.html"><a href="パッケージと関数の自作.html#パッケージとは"><i class="fa fa-check"></i><b>4.2</b> パッケージとは？</a></li>
+<li class="chapter" data-level="4.3" data-path="パッケージと関数の自作.html"><a href="パッケージと関数の自作.html#パッケージのインストール"><i class="fa fa-check"></i><b>4.3</b> パッケージのインストール</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="データ構造.html"><a href="データ構造.html"><i class="fa fa-check"></i><b>5</b> データ構造</a>
 <ul>
@@ -181,10 +181,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="データのあつかい方.html"><a href="データのあつかい方.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
 <li class="chapter" data-level="6.2.2" data-path="データのあつかい方.html"><a href="データのあつかい方.html#csvファイルの読み込み"><i class="fa fa-check"></i><b>6.2.2</b> csvファイルの読み込み</a></li>
-<li class="chapter" data-level="6.2.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2.3</b> データの読み込み</a></li>
+<li class="chapter" data-level="6.2.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.4" data-path="データのあつかい方.html"><a href="データのあつかい方.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポート"><i class="fa fa-check"></i><b>6.3</b> インポート</a></li>
-<li class="chapter" data-level="6.4" data-path="データのあつかい方.html"><a href="データのあつかい方.html#インポートしたデータの確認"><i class="fa fa-check"></i><b>6.4</b> インポートしたデータの確認</a></li>
 </ul></li>
 </ul>
 
@@ -203,13 +202,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="関数の自作とパッケージ" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> 関数の自作とパッケージ<a href="関数の自作とパッケージ.html#関数の自作とパッケージ" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="パッケージと関数の自作" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> パッケージと関数の自作<a href="パッケージと関数の自作.html#パッケージと関数の自作" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
 <li>本章の説明がわからない人は、第１章で紹介した<a href="https://www.jaysong.net/RBook/datahandling1.html">「私たちのR」</a> を参照しよう！</li>
 </ul>
 <div id="関数の自作" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> 関数の自作<a href="関数の自作とパッケージ.html#関数の自作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">4.1</span> 関数の自作<a href="パッケージと関数の自作.html#関数の自作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>少し難しいのでスキップして4.2に進んでもOK </strong></p>
 <ul>
 <li>Rには、第３章で紹介した以外にもたくさんの関数が用意されている</li>
@@ -217,25 +216,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>そのようなコーディングを繰り返し実行しなければいけない時は、自作関数を作ると便利</li>
 <li>自作関数の作り方の基本は以下のとおり</li>
 </ul>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="関数の自作とパッケージ.html#cb91-1" aria-hidden="true" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
-<span id="cb91-2"><a href="関数の自作とパッケージ.html#cb91-2" aria-hidden="true" tabindex="-1"></a>  処理内容</span>
-<span id="cb91-3"><a href="関数の自作とパッケージ.html#cb91-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="パッケージと関数の自作.html#cb1-1" aria-hidden="true" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
+<span id="cb1-2"><a href="パッケージと関数の自作.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  処理内容</span>
+<span id="cb1-3"><a href="パッケージと関数の自作.html#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>例えば、<span class="math inline">\(a/(1-x)\)</span>という計算を、様々な<code>a</code>と<code>x</code>の値で繰り返し実行する必要があるとする</li>
 <li>この計算を実行する関数<code>inf_geo()</code>は、次のように自作できる</li>
 </ul>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="関数の自作とパッケージ.html#cb92-1" aria-hidden="true" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
-<span id="cb92-2"><a href="関数の自作とパッケージ.html#cb92-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
-<span id="cb92-3"><a href="関数の自作とパッケージ.html#cb92-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="パッケージと関数の自作.html#cb2-1" aria-hidden="true" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
+<span id="cb2-2"><a href="パッケージと関数の自作.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
+<span id="cb2-3"><a href="パッケージと関数の自作.html#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>出来上がった関数を使うときは、次のようにする</li>
 </ul>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="関数の自作とパッケージ.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
-<span id="cb93-2"><a href="関数の自作とパッケージ.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="パッケージと関数の自作.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
+<span id="cb3-2"><a href="パッケージと関数の自作.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 </div>
 <div id="パッケージとは" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> パッケージとは？<a href="関数の自作とパッケージ.html#パッケージとは" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">4.2</span> パッケージとは？<a href="パッケージと関数の自作.html#パッケージとは" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>実は、よく使う分析や処理の関数は既に誰かが作って公開していることが多い</li>
 <li>誰かが作った便利な自作関数が配布用にまとめられたものをパッケージという</li>
@@ -243,20 +242,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="パッケージのインストール" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> パッケージのインストール<a href="関数の自作とパッケージ.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">4.3</span> パッケージのインストール<a href="パッケージと関数の自作.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>数えきれないパッケージの中から、自分に合うものを適宜インストールして利用できる</li>
 <li>インストール方法は、引数をインストールしたいパッケージ名にして<code>install.packages()</code>を実行</li>
-<li>例えば、<code>tidyverse</code>というパッケージは、次のようにインストールする<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li>例えば、<code>tidyverse</code>というパッケージは、次のようにインストールする<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 <li><strong>この<code>tidyverse</code>を導入することでRが化ける！</strong>（詳しい使い方は次章）</li>
 </ul>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="関数の自作とパッケージ.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
-<span id="cb95-2"><a href="関数の自作とパッケージ.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="パッケージと関数の自作.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
+<span id="cb5-2"><a href="パッケージと関数の自作.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
 <ul>
 <li>インストールするだけでは使えない、次のコードを実行して初めて<code>tidyverse</code>が使えるようになる</li>
 </ul>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="関数の自作とパッケージ.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
-<span id="cb96-2"><a href="関数の自作とパッケージ.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="パッケージと関数の自作.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
+<span id="cb6-2"><a href="パッケージと関数の自作.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
 <ul>
 <li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
@@ -267,8 +266,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="関数の自作とパッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p>tidyverseは複数の便利なパッケージをまとめた「パッケージのパッケージ」<a href="パッケージと関数の自作.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

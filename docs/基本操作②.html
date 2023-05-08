@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 基本操作② | 行動経済学の実証分析</title>
+  <meta name="description" content="Chapter 4 基本操作② | 行動経済学の実証分析" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 基本操作② | 行動経済学の実証分析" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 基本操作② | 行動経済学の実証分析" />
+  
+  
+  
+
+<meta name="author" content="Tomohisa OKADA" />
+
+
+<meta name="date" content="2023-05-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="基本操作①.html"/>
+<link rel="next" href="パッケージ.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">行動経済学の実証分析</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#rstudioのインストール"><i class="fa fa-check"></i><b>1.3</b> R(Studio)のインストール</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="go.html"><a href="go.html"><i class="fa fa-check"></i><b>2</b> Go!!</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="go.html"><a href="go.html#rstudioを開く"><i class="fa fa-check"></i><b>2.1</b> RStudioを開く</a></li>
+<li class="chapter" data-level="2.2" data-path="go.html"><a href="go.html#コンソールに直接打ち込む"><i class="fa fa-check"></i><b>2.2</b> コンソールに直接打ち込む</a></li>
+<li class="chapter" data-level="2.3" data-path="go.html"><a href="go.html#rスクリプトを使う"><i class="fa fa-check"></i><b>2.3</b> Rスクリプトを使う</a></li>
+<li class="chapter" data-level="2.4" data-path="go.html"><a href="go.html#プロジェクト管理"><i class="fa fa-check"></i><b>2.4</b> プロジェクト管理</a></li>
+<li class="chapter" data-level="2.5" data-path="go.html"><a href="go.html#演習問題"><i class="fa fa-check"></i><b>2.5</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="基本操作①.html"><a href="基本操作①.html"><i class="fa fa-check"></i><b>3</b> 基本操作①</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="基本操作①.html"><a href="基本操作①.html#四則演算"><i class="fa fa-check"></i><b>3.1</b> 四則演算</a></li>
+<li class="chapter" data-level="3.2" data-path="基本操作①.html"><a href="基本操作①.html#変数とオブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数とオブジェクト</a></li>
+<li class="chapter" data-level="3.3" data-path="基本操作①.html"><a href="基本操作①.html#関数①数値に対する関数"><i class="fa fa-check"></i><b>3.3</b> 関数①（数値に対する関数）</a></li>
+<li class="chapter" data-level="3.4" data-path="基本操作①.html"><a href="基本操作①.html#データ型のキホン"><i class="fa fa-check"></i><b>3.4</b> データ型のキホン</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="基本操作②.html"><a href="基本操作②.html"><i class="fa fa-check"></i><b>4</b> 基本操作②</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="基本操作②.html"><a href="基本操作②.html#ベクトルと行列"><i class="fa fa-check"></i><b>4.1</b> ベクトルと行列</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="基本操作②.html"><a href="基本操作②.html#ベクトル"><i class="fa fa-check"></i><b>4.1.1</b> ベクトル</a></li>
+<li class="chapter" data-level="4.1.2" data-path="基本操作②.html"><a href="基本操作②.html#行列"><i class="fa fa-check"></i><b>4.1.2</b> 行列</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="基本操作②.html"><a href="基本操作②.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>4.2</b> 関数②（ベクトルや行列に対する関数）</a></li>
+<li class="chapter" data-level="4.3" data-path="基本操作②.html"><a href="基本操作②.html#関数の自作"><i class="fa fa-check"></i><b>4.3</b> 関数の自作</a></li>
+<li class="chapter" data-level="4.4" data-path="基本操作②.html"><a href="基本操作②.html#データ構造"><i class="fa fa-check"></i><b>4.4</b> データ構造</a></li>
+<li class="chapter" data-level="4.5" data-path="基本操作②.html"><a href="基本操作②.html#演習問題-1"><i class="fa fa-check"></i><b>4.5</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>5</b> パッケージ</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="パッケージ.html"><a href="パッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>5.1</b> パッケージとは？</a></li>
+<li class="chapter" data-level="5.2" data-path="パッケージ.html"><a href="パッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>5.2</b> パッケージのインストール</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>6</b> データの読み込み</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
+<li class="chapter" data-level="6.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
+<li class="chapter" data-level="6.2.2" data-path="データの読み込み.html"><a href="データの読み込み.html#csvファイルの読み込み"><i class="fa fa-check"></i><b>6.2.2</b> csvファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.3" data-path="データの読み込み.html"><a href="データの読み込み.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
+<li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-2"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">行動経済学の実証分析</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="基本操作②" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 基本操作②<a href="基本操作②.html#基本操作②" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ul>
+<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><a href="https://youtu.be/CblsIBlzqX0">オブジェクトの使い方 in R</a><br />
+</li>
+<li><a href="https://youtu.be/q8MI6P2hoUM">関数の使い方 in R</a></li>
+</ol>
+<ul>
+<li>データ型やデータ構造については、逆瀬川浩孝先生のホームページを参照</li>
+</ul>
+<p>　 <a href="http://www.f.waseda.jp/sakas/R/index.html">「経営工学雑記帖」内のRのページ</a></p>
+<div id="ベクトルと行列" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> ベクトルと行列<a href="基本操作②.html#ベクトルと行列" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Rでは、複数のデータの値をひとまとめにして扱いやすくできる</li>
+</ul>
+<div id="ベクトル" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> ベクトル<a href="基本操作②.html#ベクトル" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>同じ型のデータを1列に並べたものをベクトルと呼ぶ</li>
+<li>ベクトルは関数<code>c()</code>を使って作る</li>
+<li>ベクトルも変数に入れることができる</li>
+<li>例として、5つの数字（例えば、2,4,2,3,5）を並べたベクトルを変数<code>v</code>に代入する</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="基本操作②.html#cb39-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>) <span class="co">#ベクトルを作り変数に代入</span></span>
+<span id="cb39-2"><a href="基本操作②.html#cb39-2" aria-hidden="true" tabindex="-1"></a>v <span class="co">#変数vの中身を確認</span></span></code></pre></div>
+<pre><code>## [1] 2 4 2 3 5</code></pre>
+<ul>
+<li>連番のベクトル（例えば2,3,4,5,6）を作りたい時は、次のようにも書ける</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="基本操作②.html#cb41-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="co">#「n:m」で「nからmまで」の意味</span></span>
+<span id="cb41-2"><a href="基本操作②.html#cb41-2" aria-hidden="true" tabindex="-1"></a>v</span></code></pre></div>
+<pre><code>## [1] 2 3 4 5 6</code></pre>
+<div id="ベクトルと数値の演算" class="section level4 unnumbered hasAnchor">
+<h4>ベクトルと数値の演算：<a href="基本操作②.html#ベクトルと数値の演算" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>ベクトルにも四則演算の記号（=演算子）を使った演算ができる</li>
+<li>ベクトル内のそれぞれの数字に、四則演算が施される</li>
+<li>以下の出力結果で確認してみよう</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="基本操作②.html#cb43-1" aria-hidden="true" tabindex="-1"></a>v<span class="sc">+</span><span class="dv">2</span>  <span class="co">#それぞれの数字に２を足す </span></span></code></pre></div>
+<pre><code>## [1] 4 5 6 7 8</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="基本操作②.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>v  <span class="co">#それぞれの数字に２をかける  </span></span></code></pre></div>
+<pre><code>## [1]  4  6  8 10 12</code></pre>
+<div id="練習問題-1" class="section level5 unnumbered hasAnchor">
+<h5>練習問題<a href="基本操作②.html#練習問題-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>上の<code>v</code>について、<code>v-2</code>、<code>v/2</code>、<code>v^2</code>の実行結果を確認する</li>
+</ul>
+</div>
+</div>
+<div id="ベクトル同士の演算" class="section level4 unnumbered hasAnchor">
+<h4>ベクトル同士の演算：<a href="基本操作②.html#ベクトル同士の演算" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Rでは、ベクトル同士の演算もできる</li>
+<li>まずは2つのベクトルを用意しよう</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="基本操作②.html#cb47-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) </span>
+<span id="cb47-2"><a href="基本操作②.html#cb47-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) </span></code></pre></div>
+<ul>
+<li>これらを<code>+</code>を使って「足す」</li>
+<li>すると、１つめの数同士（1と2）と、２つめの数同士(2と4)が足される</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="基本操作②.html#cb48-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2</span></code></pre></div>
+<pre><code>## [1] 3 6</code></pre>
+<ul>
+<li><code>*</code>を使って「かける」場合も、同じように1つめの数同士、2つめの数同士がかけられる</li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="基本操作②.html#cb50-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">*</span> v2</span></code></pre></div>
+<pre><code>## [1] 2 8</code></pre>
+<ul>
+<li>ベクトル同士の「かけ算」には内積がある</li>
+<li>Rでは、<code>%*%</code>で内積を計算できる</li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="基本操作②.html#cb52-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">%*%</span> v2 </span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]   10</code></pre>
+<ul>
+<li>ベクトルの長さ（=入っている数値の個数）が違うとおかしな計算になり、警告が出る</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="基本操作②.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#以下のv1には3つの要素があるけど、v2には2つしかない</span></span>
+<span id="cb54-2"><a href="基本操作②.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co">#この場合、v2の1つめの要素を無理やりv1の３つめに足してしまう</span></span>
+<span id="cb54-3"><a href="基本操作②.html#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="基本操作②.html#cb54-4" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co">#3つの数を代入</span></span>
+<span id="cb54-5"><a href="基本操作②.html#cb54-5" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#2つの数を代入</span></span>
+<span id="cb54-6"><a href="基本操作②.html#cb54-6" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="co">#長さが違うからうまく計算できず警告が出る</span></span></code></pre></div>
+<pre><code>## Warning in v1 + v2: longer object length is not a multiple of shorter object
+## length</code></pre>
+<pre><code>## [1] 3 6 5</code></pre>
+<div id="練習問題-2" class="section level5 unnumbered hasAnchor">
+<h5>練習問題<a href="基本操作②.html#練習問題-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>上の<code>v1</code>と<code>v2</code>を使い、<code>-</code>、<code>/</code>、<code>^</code>の３つの演算を行う</li>
+<li>いずれも1つめの数値同士、2つめの数値同士で対応した演算がなされることを確かめる</li>
+</ul>
+</div>
+</div>
+<div id="要素の抽出" class="section level4 unnumbered hasAnchor">
+<h4>要素の抽出：<a href="基本操作②.html#要素の抽出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>ベクトルから、任意の要素（<code>n</code>番目の数）を抽出する方法を説明する</li>
+<li><code>x</code>という名前のベクトルからn番目の要素を抽出する時は<code>x[n]</code></li>
+<li>具体例として、先ほどのベクトル<code>v=c(2,4,2,3,5)</code>で考える</li>
+<li>2番目の要素（つまり4）を抜き出したいなら、<code>v[2]</code>と書く</li>
+</ul>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="基本操作②.html#cb57-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<ul>
+<li>2〜４番めの要素(つまり4,2,3)を抜き出したいなら、<code>v[2:4]</code>と書く</li>
+</ul>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="基本操作②.html#cb59-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] 3 4 5</code></pre>
+</div>
+</div>
+<div id="行列" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> 行列<a href="基本操作②.html#行列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="行列のキホン" class="section level4 unnumbered hasAnchor">
+<h4>行列のキホン：<a href="基本操作②.html#行列のキホン" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>同じ型のデータを行と列の2次元に並べたものを行列と呼ぶ</li>
+<li>例えば、2行3列の行列
+<span class="math inline">\(\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ \end{pmatrix}\)</span>
+を作ってMに代入するには、<code>matrix()</code>を使い次のように書く</li>
+</ul>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="基本操作②.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co">#初めの1:6はc(1:6)と同じで「1,2,3,4,5,6」の意味</span></span>
+<span id="cb61-2"><a href="基本操作②.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co">#この6つの数字を、2つの行(row)と3つの列(col)に分ける</span></span>
+<span id="cb61-3"><a href="基本操作②.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co">#byrow = Tで、6つの数字を左から右（zの書き順）に埋めるよう指示</span></span>
+<span id="cb61-4"><a href="基本操作②.html#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co">#byrow = Tを消すと、上から下に埋める（各自確かめよう）</span></span>
+<span id="cb61-5"><a href="基本操作②.html#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-6"><a href="基本操作②.html#cb61-6" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb61-7"><a href="基本操作②.html#cb61-7" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<ul>
+<li>次の関数を使って、ベクトル同士を結合しても行列を作れる</li>
+</ul>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="基本操作②.html#cb63-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) </span>
+<span id="cb63-2"><a href="基本操作②.html#cb63-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="co">#2つのベクトルv1とv2を作る</span></span>
+<span id="cb63-3"><a href="基本操作②.html#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="基本操作②.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(v1, v2) <span class="co">#v1とv2を行(row)方向に繋げる</span></span></code></pre></div>
+<pre><code>##    [,1] [,2] [,3]
+## v1    1    2    3
+## v2    1    1    1</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="基本操作②.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(v1, v2) <span class="co">#v1とv2を列(column)方向に繋げる</span></span></code></pre></div>
+<pre><code>##      v1 v2
+## [1,]  1  1
+## [2,]  2  1
+## [3,]  3  1</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="基本操作②.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(M, v1) <span class="co">#「行列とベクトル」や「行列同士」も繋げられる</span></span></code></pre></div>
+<pre><code>##    [,1] [,2] [,3]
+##       1    2    3
+##       4    5    6
+## v1    1    2    3</code></pre>
+</div>
+<div id="要素の抽出-1" class="section level4 unnumbered hasAnchor">
+<h4>要素の抽出：<a href="基本操作②.html#要素の抽出-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>行列<code>x</code>から要素を抜き出すには、<code>x[抜き出したい行、抜き出したい列]</code>と書く</li>
+<li>具体例として、先の行列<code>M</code>から色々な要素を抜き出してみよう</li>
+</ul>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="基本操作②.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2行1列目を抽出し、変数M21に代入</span></span>
+<span id="cb69-2"><a href="基本操作②.html#cb69-2" aria-hidden="true" tabindex="-1"></a>M21 <span class="ot">&lt;-</span> M[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb69-3"><a href="基本操作②.html#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="基本操作②.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2行めを抽出</span></span>
+<span id="cb69-5"><a href="基本操作②.html#cb69-5" aria-hidden="true" tabindex="-1"></a>M[<span class="dv">2</span>,]</span></code></pre></div>
+<pre><code>## [1] 4 5 6</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="基本操作②.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1列めを抽出</span></span>
+<span id="cb71-2"><a href="基本操作②.html#cb71-2" aria-hidden="true" tabindex="-1"></a>M[,<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 1 4</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="基本操作②.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1,2行めと1,3列めを抽出</span></span>
+<span id="cb73-2"><a href="基本操作②.html#cb73-2" aria-hidden="true" tabindex="-1"></a>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    3
+## [2,]    4    6</code></pre>
+</div>
+<div id="行列の演算" class="section level4 unnumbered hasAnchor">
+<h4>行列の演算：<a href="基本操作②.html#行列の演算" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>n行n列の２つの行列同士の計算について、足し算は<code>+</code>、引き算は<code>-</code>を使えば良い</li>
+<li>以下の例のように、かけ算は<code>%*%</code>を使わなくてはいけないので注意</li>
+</ul>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="基本操作②.html#cb75-1" aria-hidden="true" tabindex="-1"></a>M <span class="co">#先ほど作った2行3列の行列を表示</span></span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="基本操作②.html#cb77-1" aria-hidden="true" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> T) <span class="co">#新たに3行2列の行列を作る</span></span>
+<span id="cb77-2"><a href="基本操作②.html#cb77-2" aria-hidden="true" tabindex="-1"></a>M2 <span class="co">#今作った2行3列の行列を表示</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    0    1
+## [3,]    0    2</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="基本操作②.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
+<span id="cb79-2"><a href="基本操作②.html#cb79-2" aria-hidden="true" tabindex="-1"></a>M <span class="sc">%*%</span> M2 </span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1   10
+## [2,]    4   25</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="基本操作②.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
+<span id="cb81-2"><a href="基本操作②.html#cb81-2" aria-hidden="true" tabindex="-1"></a>M2 <span class="sc">%*%</span> M　</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    9   12   15
+## [2,]    4    5    6
+## [3,]    8   10   12</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="基本操作②.html#cb83-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co">#要素が３つのベクトルを作る</span></span>
+<span id="cb83-2"><a href="基本操作②.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="基本操作②.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co">#行列とベクトルのかけ算も%*%を使う</span></span>
+<span id="cb83-4"><a href="基本操作②.html#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="co">#縦ベクトルと横ベクトルは区別されないので、次のコードで計算できる</span></span>
+<span id="cb83-5"><a href="基本操作②.html#cb83-5" aria-hidden="true" tabindex="-1"></a>v <span class="sc">%*%</span> M2 <span class="co"># ただし、M2%*%vのように計算できない場合はエラーが出る（各自確かめよう）</span></span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1   10</code></pre>
+<hr />
+</div>
+</div>
+</div>
+<div id="関数②ベクトルや行列に対する関数" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 関数②（ベクトルや行列に対する関数）<a href="基本操作②.html#関数②ベクトルや行列に対する関数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>先の<code>rbind()</code>や<code>cbind()</code>はベクトルや行列も引数にとれる関数だった</li>
+<li>ベクトルや行列に対して使える他の関数をいくつか紹介する</li>
+</ul>
+<div id="ベクトルの頻出関数" class="section level4 unnumbered hasAnchor">
+<h4>ベクトルの頻出関数：<a href="基本操作②.html#ベクトルの頻出関数" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>以下の関数はどれもよく使うので、しっかり覚えよう</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">関数(引数xはベクトル)</th>
+<th align="left">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">summary(x)</td>
+<td align="left">基本統計量の一括表示</td>
+</tr>
+<tr class="even">
+<td align="left">max(x)</td>
+<td align="left">xの要素の最大値</td>
+</tr>
+<tr class="odd">
+<td align="left">min(x)</td>
+<td align="left">xの要素の最小値</td>
+</tr>
+<tr class="even">
+<td align="left">mean(x)</td>
+<td align="left">xの平均値</td>
+</tr>
+<tr class="odd">
+<td align="left">median(x)</td>
+<td align="left">xの中央値</td>
+</tr>
+<tr class="even">
+<td align="left">var(x)</td>
+<td align="left">xの不偏分散</td>
+</tr>
+<tr class="odd">
+<td align="left">sd(x)</td>
+<td align="left">xの不偏標準偏差</td>
+</tr>
+<tr class="even">
+<td align="left">sum(x)</td>
+<td align="left">xの各要素の総和</td>
+</tr>
+<tr class="odd">
+<td align="left">range(x)</td>
+<td align="left">xのデータの範囲（最小値と最大値）</td>
+</tr>
+<tr class="even">
+<td align="left">length(x)</td>
+<td align="left">xのデータの個数（ベクトルの次元）</td>
+</tr>
+<tr class="odd">
+<td align="left">sort(x)</td>
+<td align="left">xの各要素を小さい順に並び替え</td>
+</tr>
+<tr class="even">
+<td align="left">sort(x, decreasing = TRUE)</td>
+<td align="left">xの各要素を大きい順に並び替え</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>具体的に理解するため、5人の年齢のデータを作成する</li>
+</ul>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="基本操作②.html#cb85-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">16</span>, <span class="dv">43</span>, <span class="dv">18</span>, <span class="dv">22</span>) <span class="co">#5人の年齢のベクトルを作成</span></span></code></pre></div>
+<ul>
+<li>このベクトル<code>age</code>を引数にして、上表のいくつかを実行してみる</li>
+</ul>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="基本操作②.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(age) <span class="co">#基本統計量を一括表示</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##      16      18      22      27      36      43</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="基本操作②.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(age) <span class="co">#一番大きい値を取り出す（5人のうち最年長は43歳）</span></span></code></pre></div>
+<pre><code>## [1] 43</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="基本操作②.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(age) <span class="co">#算術平均（5人の平均年齢は27歳）</span></span></code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="基本操作②.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(age) <span class="co">#不偏分散（5人の平均の分散は141）</span></span></code></pre></div>
+<pre><code>## [1] 141</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="基本操作②.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(age) <span class="co">#データの長さ（ベクトルの次元）（5個のデータなので5）</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div id="練習問題-3" class="section level5 unnumbered hasAnchor">
+<h5>練習問題<a href="基本操作②.html#練習問題-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>引数を<code>age</code>にして、<code>min()</code>, <code>median()</code>,<code>sd()</code>,<code>sum()</code>,<code>range()</code>,<code>sort()</code>を実行する</li>
+<li>各々の結果が何を意味しているのかを解釈する</li>
+<li>引数を行列<code>M</code>にして、上表の各関数の結果を確認する</li>
+</ul>
+</div>
+</div>
+<div id="行列の頻出関数" class="section level4 unnumbered hasAnchor">
+<h4>行列の頻出関数：<a href="基本操作②.html#行列の頻出関数" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>行列を引数に持つ関数のうち、比較的よく使うものをまとめる</li>
+<li>どのような結果になるかは各自確かめてみよう</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">関数(引数xは行列)</th>
+<th align="left">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">matrix(0, nrow=2, ncol=3)</td>
+<td align="left">2 行 3 列のゼロ行列を作成</td>
+</tr>
+<tr class="even">
+<td align="left">diag(5)</td>
+<td align="left">5×5の単位行列作成</td>
+</tr>
+<tr class="odd">
+<td align="left">diag(X) &lt;- 1</td>
+<td align="left">行列 X の対角成分を全て 1 にする</td>
+</tr>
+<tr class="even">
+<td align="left">t(X)</td>
+<td align="left">行列 X の転置行列</td>
+</tr>
+<tr class="odd">
+<td align="left">solve(X)</td>
+<td align="left">行列 X の逆行列</td>
+</tr>
+<tr class="even">
+<td align="left">det(X)</td>
+<td align="left">行列 X の行列式</td>
+</tr>
+<tr class="odd">
+<td align="left">rowSums(X)</td>
+<td align="left">行列 X の行和</td>
+</tr>
+<tr class="even">
+<td align="left">colSums(X)</td>
+<td align="left">行列 X の列和</td>
+</tr>
+<tr class="odd">
+<td align="left">RowMeans(X)</td>
+<td align="left">行列 X の行平均</td>
+</tr>
+<tr class="even">
+<td align="left">colMeand(X)</td>
+<td align="left">行列 X の列平均</td>
+</tr>
+</tbody>
+</table>
+<div id="練習問題-4" class="section level5 unnumbered hasAnchor">
+<h5>練習問題<a href="基本操作②.html#練習問題-4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>上の各関数を先の行列<code>M</code>に使い、結果を確かめよう</li>
+</ul>
+<hr />
+</div>
+</div>
+</div>
+<div id="関数の自作" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 関数の自作<a href="基本操作②.html#関数の自作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>少し難しいのでスキップして3.7に進んでもOK </strong></p>
+<ul>
+<li>Rには、他にもたくさんの関数が用意されている</li>
+<li>でも、既存関数を駆使しても、長く煩雑なコードでしか処理できないことも多い</li>
+<li>そのようなコーディングを繰り返し実行しなければいけない時は、自作関数を作ると便利</li>
+<li>自作関数の作り方の基本は以下のとおり</li>
+</ul>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="基本操作②.html#cb96-1" aria-hidden="true" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
+<span id="cb96-2"><a href="基本操作②.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  処理内容</span>
+<span id="cb96-3"><a href="基本操作②.html#cb96-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>例えば、<span class="math inline">\(a/(1-x)\)</span>という計算を、様々な<code>a</code>と<code>x</code>の値で繰り返し実行する必要があるとする</li>
+<li>この計算を実行する関数<code>inf_geo()</code>は、次のように自作できる</li>
+</ul>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="基本操作②.html#cb97-1" aria-hidden="true" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
+<span id="cb97-2"><a href="基本操作②.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
+<span id="cb97-3"><a href="基本操作②.html#cb97-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>出来上がった関数を使うときは、次のようにする</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="基本操作②.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
+<span id="cb98-2"><a href="基本操作②.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<hr />
+</div>
+<div id="データ構造" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> データ構造<a href="基本操作②.html#データ構造" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Rにおけるデータの基本単位はベクトル（数値は長さ１のベクトルとみなす）</li>
+<li>Rでは、ベクトルを束ねたさまざまなデータ構造が使われる</li>
+<li>例えば、行列は同じデータ型のベクトルを積み重ねた２次元のデータ構造</li>
+<li>他にも、<a href="データの読み込み.html#データフレーム">後の章</a>で詳しく説明される<a href="データの読み込み.html#データフレーム">データフレーム</a>などがよく使われる</li>
+<li>より詳しいデータ構造の説明は<a href="http://www.f.waseda.jp/sakas/R/Rdata.html">逆瀬川先生のホームページ内のコチラ</a>を参照</li>
+</ul>
+<hr />
+</div>
+<div id="演習問題-1" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> 演習問題<a href="基本操作②.html#演習問題-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>aさんの身長は149cm, bさんは153cm, cさんは169cm, dさんは174cmとする</li>
+<li>aさんの体重は36kg, bさんは48kg, cさんは61kg, dさんは65kgとする<br />
+<br></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する<br />
+</li>
+<li>変数hの平均と標準偏差を求める<br />
+</li>
+<li>ベクトルのかけ算を使い、４人の身長をインチで表すといくらになるか求める<br />
+（1cm＝0.39インチで計算し、結果は変数に保存しない）<br />
+</li>
+<li>4人の体重を表した数値のみからなるベクトル（単位は不要）を作り、変数wに保存する</li>
+<li>変数hと変数wを結合して、１行目が身長、２行目が体重となる2×4行列を作り、変数Mに保存<br />
+</li>
+<li>行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す</li>
+<li>変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="基本操作①.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="パッケージ.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

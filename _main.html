@@ -11,7 +11,7 @@
 
 <meta name="author" content="Tomohisa OKADA" />
 
-<meta name="date" content="2023-05-07" />
+<meta name="date" content="2023-05-08" />
 
 <title>行動経済学の実証分析</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">行動経済学の実証分析</h1>
 <h4 class="author">Tomohisa OKADA</h4>
-<h4 class="date">2023-05-07</h4>
+<h4 class="date">2023-05-08</h4>
 
 </div>
 
@@ -560,8 +560,8 @@ Project」</u></li>
 <!--chapter:end:01-Go.Rmd-->
 </div>
 </div>
-<div id="基本操作" class="section level1">
-<h1>基本操作</h1>
+<div id="基本操作①" class="section level1">
+<h1>基本操作①</h1>
 <ul>
 <li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
 </ul>
@@ -571,6 +571,10 @@ R</a><br />
 </li>
 <li><a href="https://youtu.be/q8MI6P2hoUM">関数の使い方 in R</a></li>
 </ol>
+<ul>
+<li>データ型やデータ構造については、逆瀬川浩孝先生のホームページを参照</li>
+</ul>
+<p>　 <a href="http://www.f.waseda.jp/sakas/R/index.html">「経営工学雑記帖」内のRのページ</a></p>
 <div id="四則演算" class="section level2">
 <h2>四則演算</h2>
 <p><strong>たし算:</strong> <code>+</code>を使う</p>
@@ -645,9 +649,9 @@ x # 計算結果の7が代入される</code></pre>
 <li>慣れるまでは不思議だが、こんなこともできる</li>
 <li>意外とよく使うので、頭の片隅に留めておこう</li>
 </ul>
-<pre class="r"><code>z &lt;- 2 #zに2を代入
-z &lt;- z + 1 #z=2に1を足したものを、もう一度zに代入
-z #新しいzを表示</code></pre>
+<pre class="r"><code>suuji &lt;- 2 #suujiに2を代入
+suuji &lt;- suuji + 1 #suuji=2に1を足したものを、もう一度suujiに代入
+suuji #新しいsuujiを表示</code></pre>
 <pre><code>## [1] 3</code></pre>
 <ul>
 <li>変数には数値以外も入れることができる</li>
@@ -711,6 +715,60 @@ xとyをそれぞれ2乗して和をとり、結果が45となることを確認
 <hr />
 </div>
 </div>
+<div id="データ型のキホン" class="section level2">
+<h2>データ型のキホン</h2>
+<ul>
+<li>次の２つの変数に対して<code>+ 1</code>という演算を実行してみよう</li>
+</ul>
+<pre class="r"><code>suuji &lt;- 2 
+suuji + 1 
+
+moji &lt;- &quot;岡田先生ステキ&quot;
+moji + 1</code></pre>
+<ul>
+<li>ひとつ目は<code>3</code>という結果を得るが、ふたつ目はエラーが出て処理できない</li>
+<li>この理由を考えてみよう</li>
+<li><code>suuji</code>に格納された<code>2</code>というデータは、数字の型（<code>numeric</code>）を持っている<br />
+</li>
+<li><code>moji</code>に格納された文字列のデータは、文字列の型（<code>character</code>）を持っている<br />
+</li>
+<li><code>character</code>型のデータに対しては、<code>+</code>を使った演算が定義されていないからエラーが出た<br />
+</li>
+<li>このように、<code>+</code>のような演算子や関数は、特定のデータ型に対してしか使えない</li>
+<li>データ型を確認するには<code>typeof()</code>か<code>mode()</code>の関数を使う</li>
+</ul>
+<pre class="r"><code>typeof(suuji)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>typeof(moji)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<ul>
+<li>他によく使うデータ型には真偽値（TRUEとFALSE）をあつかう<code>logical</code>がある</li>
+<li>データ型についての詳しい説明は<a href="http://www.f.waseda.jp/sakas/R/Rdata.html">逆瀬川先生のホームページ内のコチラ</a>を参照</li>
+</ul>
+<div id="練習問題" class="section level5 unnumbered">
+<h5 class="unnumbered">練習問題</h5>
+<ul>
+<li>上の<code>suuji</code>と<code>moji</code>について、<code>mode(suuji)</code>と<code>mode(moji)</code>を実行する</li>
+</ul>
+<!--chapter:end:02-kihon1.Rmd-->
+</div>
+</div>
+</div>
+<div id="基本操作②" class="section level1">
+<h1>基本操作②</h1>
+<ul>
+<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><a href="https://youtu.be/CblsIBlzqX0">オブジェクトの使い方 in
+R</a><br />
+</li>
+<li><a href="https://youtu.be/q8MI6P2hoUM">関数の使い方 in R</a></li>
+</ol>
+<ul>
+<li>データ型やデータ構造については、逆瀬川浩孝先生のホームページを参照</li>
+</ul>
+<p>　 <a href="http://www.f.waseda.jp/sakas/R/index.html">「経営工学雑記帖」内のRのページ</a></p>
 <div id="ベクトルと行列" class="section level2">
 <h2>ベクトルと行列</h2>
 <ul>
@@ -719,7 +777,7 @@ xとyをそれぞれ2乗して和をとり、結果が45となることを確認
 <div id="ベクトル" class="section level3">
 <h3>ベクトル</h3>
 <ul>
-<li>データを1列に並べたものをベクトルと呼ぶ</li>
+<li>同じ型のデータを1列に並べたものをベクトルと呼ぶ</li>
 <li>ベクトルは関数<code>c()</code>を使って作る</li>
 <li>ベクトルも変数に入れることができる</li>
 <li>例として、5つの数字（例えば、2,4,2,3,5）を並べたベクトルを変数<code>v</code>に代入する</li>
@@ -744,7 +802,7 @@ v</code></pre>
 <pre><code>## [1] 4 5 6 7 8</code></pre>
 <pre class="r"><code>2*v  #それぞれの数字に２をかける  </code></pre>
 <pre><code>## [1]  4  6  8 10 12</code></pre>
-<div id="練習問題" class="section level5 unnumbered">
+<div id="練習問題-1" class="section level5 unnumbered">
 <h5 class="unnumbered">練習問題</h5>
 <ul>
 <li>上の<code>v</code>について、<code>v-2</code>、<code>v/2</code>、<code>v^2</code>の実行結果を確認する</li>
@@ -789,7 +847,7 @@ v1 + v2 #長さが違うからうまく計算できず警告が出る</code></pr
 <pre><code>## Warning in v1 + v2: longer object length is not a multiple of shorter object
 ## length</code></pre>
 <pre><code>## [1] 3 6 5</code></pre>
-<div id="練習問題-1" class="section level5 unnumbered">
+<div id="練習問題-2" class="section level5 unnumbered">
 <h5 class="unnumbered">練習問題</h5>
 <ul>
 <li>上の<code>v1</code>と<code>v2</code>を使い、<code>-</code>、<code>/</code>、<code>^</code>の３つの演算を行う</li>
@@ -819,7 +877,7 @@ v1 + v2 #長さが違うからうまく計算できず警告が出る</code></pr
 <div id="行列のキホン" class="section level4 unnumbered">
 <h4 class="unnumbered">行列のキホン：</h4>
 <ul>
-<li>データを行と列の2次元に並べたものを行列と呼ぶ</li>
+<li>同じ型のデータを行と列の2次元に並べたものを行列と呼ぶ</li>
 <li>例えば、2行3列の行列 <span class="math inline">\(\begin{pmatrix} 1
 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ \end{pmatrix}\)</span>
 を作ってMに代入するには、<code>matrix()</code>を使い次のように書く</li>
@@ -1001,7 +1059,7 @@ v %*% M2 # ただし、M2%*%vのように計算できない場合はエラーが
 <pre><code>## [1] 141</code></pre>
 <pre class="r"><code>length(age) #データの長さ（ベクトルの次元）（5個のデータなので5）</code></pre>
 <pre><code>## [1] 5</code></pre>
-<div id="練習問題-2" class="section level5 unnumbered">
+<div id="練習問題-3" class="section level5 unnumbered">
 <h5 class="unnumbered">練習問題</h5>
 <ul>
 <li>引数を<code>age</code>にして、<code>min()</code>,
@@ -1067,7 +1125,7 @@ v %*% M2 # ただし、M2%*%vのように計算できない場合はエラーが
 </tr>
 </tbody>
 </table>
-<div id="練習問題-3" class="section level5 unnumbered">
+<div id="練習問題-4" class="section level5 unnumbered">
 <h5 class="unnumbered">練習問題</h5>
 <ul>
 <li>上の各関数を先の行列<code>M</code>に使い、結果を確かめよう</li>
@@ -1103,6 +1161,17 @@ inf_geo(1, 0.8)</code></pre>
 <pre><code>## [1] 5</code></pre>
 <hr />
 </div>
+<div id="データ構造" class="section level2">
+<h2>データ構造</h2>
+<ul>
+<li>Rにおけるデータの基本単位はベクトル（数値は長さ１のベクトルとみなす）</li>
+<li>Rでは、ベクトルを束ねたさまざまなデータ構造が使われる</li>
+<li>例えば、行列は同じデータ型のベクトルを積み重ねた２次元のデータ構造</li>
+<li>他にも、<a href="#データフレーム">後の章</a>で詳しく説明される<a href="#データフレーム">データフレーム</a>などがよく使われる</li>
+<li>より詳しいデータ構造の説明は<a href="http://www.f.waseda.jp/sakas/R/Rdata.html">逆瀬川先生のホームページ内のコチラ</a>を参照</li>
+</ul>
+<hr />
+</div>
 <div id="演習問題-1" class="section level2">
 <h2>演習問題</h2>
 <ul>
@@ -1125,7 +1194,7 @@ dさんは174cmとする</li>
 <li>行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す</li>
 <li>変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る</li>
 </ol>
-<!--chapter:end:02-kihon.Rmd-->
+<!--chapter:end:03-kihon2.Rmd-->
 </div>
 </div>
 <div id="パッケージ" class="section level1">
@@ -1162,86 +1231,7 @@ library(tidyverse) #引数の&quot;ダブルコーテーション&quot;は不要
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
 <li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を並べておくと良い</li>
 </ul>
-<!--chapter:end:03-package.Rmd-->
-</div>
-</div>
-<div id="データ構造" class="section level1">
-<h1>データ構造</h1>
-<ul>
-<li>作成中です。完成までは1章で紹介した<a href="https://htsuda.net/stats/">「Rによる統計入門」</a>
-の３章を参照してください。</li>
-</ul>
-<div id="データの型" class="section level2">
-<h2>データの型</h2>
-</div>
-<div id="データフレーム" class="section level2 unnumbered">
-<h2 class="unnumbered">データフレーム</h2>
-<p>多くのデータは、表形式でまとめられます。
-縦方向に観測値を、横方向に変数を並べたデータのことをRではデータフレームと呼びます。</p>
-<p>例として、年齢のベクトルage_vectorと性別のベクトルgender_vectorを合わせてデータフレームを作成してみましょう。
-データフレームを作成する関数は<code>data.frame()</code>です。</p>
-<pre class="r"><code>age &lt;- c(18, 21, 22, 23, 34) #年齢のベクトルの作成
-gender &lt;- c(&quot;female&quot;, &quot;male&quot;, &quot;male&quot;, &quot;female&quot;, &quot;female&quot;) #性別のベクトルの作成
-first_dataframe &lt;- data.frame(age, gender)
-first_dataframe</code></pre>
-<table style="width:21%;">
-<colgroup>
-<col width="8%" />
-<col width="12%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">age</th>
-<th align="center">gender</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">18</td>
-<td align="center">female</td>
-</tr>
-<tr class="even">
-<td align="center">21</td>
-<td align="center">male</td>
-</tr>
-<tr class="odd">
-<td align="center">22</td>
-<td align="center">male</td>
-</tr>
-<tr class="even">
-<td align="center">23</td>
-<td align="center">female</td>
-</tr>
-<tr class="odd">
-<td align="center">34</td>
-<td align="center">female</td>
-</tr>
-</tbody>
-</table>
-<p>1人目が18歳の女性、2人目が21歳の男性…を表すデータフレームが作成できました。
-後ほどExcelファイルなどからデータのRにインポートする方法を学びますが、その際は自動的にデータフレームとしてインポートされます。</p>
-<p>データ分析の際に、データフレームのうち特定の変数だけを使いたい場合がよくあります。
-その際は、データフレーム名$変数名と表記することで、特定の変数を使うことができます。
-例えば、先ほど作成したfirst_dataframeから性別の変数のみを見てみましょう。</p>
-<pre class="r"><code>first_dataframe$gender</code></pre>
-<pre><code>## [1] &quot;female&quot; &quot;male&quot;   &quot;male&quot;   &quot;female&quot; &quot;female&quot;</code></pre>
-<p>性別のベクトルを取り出すことができました。
-関数と組み合わせると、年齢の平均値を以下のように計算できます。</p>
-<pre class="r"><code>mean(first_dataframe$age)</code></pre>
-<pre><code>## [1] 23.6</code></pre>
-<p><strong>練習問題</strong></p>
-<ul>
-<li>オブジェクトincomeに数値のベクトル10, 100, 1000, 10000,
-100000を代入してください。<br />
-</li>
-<li>オブジェクトcityに文字列のベクトル”ibaraki”, “takatsuki”, “ibaraki”,
-“takatsuki”, “takatsuki”を代入してください。<br />
-</li>
-<li>incomeとcityを合わせたデータフレームincome_dataを作成してください。<br />
-</li>
-<li>income_dataを用いて、incomeの中央値を求めてください。</li>
-</ul>
-<!--chapter:end:04-data.Rmd-->
+<!--chapter:end:04-package.Rmd-->
 </div>
 </div>
 <div id="データの読み込み" class="section level1">
@@ -1259,7 +1249,7 @@ R</a></li>
 <ul>
 <li>さらに詳しいことを学びたいなら<a href="https://shohei-doi.github.io/quant_polisci/index.html">「Rで計量政治学入門」</a>がオススメ</li>
 </ul>
-<div id="データフレーム-1" class="section level2">
+<div id="データフレーム" class="section level2">
 <h2>データフレーム</h2>
 <ul>
 <li>データ分析をする時は、横方向（行）に観測値を、縦方向（列）に変数を並べることが多い</li>
@@ -1308,7 +1298,7 @@ R</a></li>
 </table>
 <ul>
 <li>Rでこのようなデータをあつかう場合、データフレームを使う<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
-<li>上のデータのデータフレームを作るには、以下のようにすれば良い</li>
+<li>上のデータのデータフレームを作るには、以下のように関数<code>data.frame()</code>を使う</li>
 </ul>
 <pre class="r"><code># まず各変数のベクトルを作る
 name &lt;- c(&quot;Tanaka&quot;, &quot;Suzuki&quot;, &quot;Okada&quot;, &quot;Watanabe&quot;)
@@ -1319,7 +1309,56 @@ gender &lt;- c(&quot;male&quot;, &quot;female&quot;, &quot;male&quot;, &quot;mal
 
 # data.frame()の引数に、作成したベクトルを並べる
 # 出来上がったデータフレームを変数dfに格納
-df &lt;- data.frame(name, age, height, weight, gender)</code></pre>
+df &lt;- data.frame(name, age, height, weight, gender)
+df</code></pre>
+<table style="width:61%;">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">name</th>
+<th align="center">age</th>
+<th align="center">height</th>
+<th align="center">weight</th>
+<th align="center">gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Tanaka</td>
+<td align="center">10</td>
+<td align="center">149.5</td>
+<td align="center">36</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Suzuki</td>
+<td align="center">18</td>
+<td align="center">153</td>
+<td align="center">48</td>
+<td align="center">female</td>
+</tr>
+<tr class="odd">
+<td align="center">Okada</td>
+<td align="center">36</td>
+<td align="center">171</td>
+<td align="center">58</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Watanabe</td>
+<td align="center">23</td>
+<td align="center">174.5</td>
+<td align="center">65</td>
+<td align="center">male</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="データの読み込み-1" class="section level2">
 <h2>データの読み込み</h2>
@@ -1337,7 +1376,7 @@ df &lt;- data.frame(name, age, height, weight, gender)</code></pre>
 <li>インポートしたいデータファイルは、ワークディレクトリと呼ばれる場所に置く必要がある<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
 <li>ワークディレクトリは、Rを使う時のメインの作業場で、さまざまな操作の起点になる</li>
 <li>通常Rでは、起動する度に作業ディレクトリを指定する必要がある</li>
-<li>しかし、２章で説明したプロジェクト機能を使っていれば、プロジェクトフォルダが作業ディレクトリになる（よって、<strong>プロジェクトフォルダにデータファイルを置けば良い</strong>）</li>
+<li>しかし、2章で説明したプロジェクト機能を使っていれば、プロジェクトフォルダが作業ディレクトリになる（よって、<strong>プロジェクトフォルダにデータファイルを置けば良い</strong>）</li>
 </ul>
 <p><strong>② インポートするファイルの１行目を変数名にする</strong></p>
 <ul>
@@ -1406,7 +1445,7 @@ sokutei &lt;- read_excel(&quot;sokutei.xls&quot;)</code></pre>
 <li id="fn2"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 <li id="fn3"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
 <li id="fn4"><p>現在の作業ディレクトリの確認は<code>getwd()</code>、変更は<code>setwd(&quot;変更後のディレクトリのパス&quot;)</code><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>４章の<code>tidyverse</code>パッケージに含まれた<code>read_csv()</code>を使っても良い（この場合、データフレームによく似た<code>tibble</code>という形式で読み込まれる）<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>5章の<code>tidyverse</code>パッケージに含まれた<code>read_csv()</code>を使っても良い（この場合、データフレームによく似た<code>tibble</code>という形式で読み込まれる）<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

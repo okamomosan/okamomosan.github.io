@@ -33,11 +33,16 @@ Rの使い方と心理統計学の基礎が一挙に学べる！
 1. [「私たちのR」 by 宋財泫先生 & 矢内勇生先生](https://www.jaysong.net/RBook/datahandling1.html)   
 辞書的に使える！Tidyverseを使ったモダンなRのプログラムが学べる！
 
+1. [「経営工学雑記帖」内のRのページ by 逆瀬川浩孝先生](http://www.f.waseda.jp/sakas/R/index.html)  
+網羅的でスッキリわかりやすい！辞書的に使うのにオススメ
+
 1. [「Rによる統計入門」 by 津田裕之先生](https://htsuda.net/stats/)  
 Rの基礎から簡単な統計分析まで（因子分析もカバー）
 
-1. [「Rで計量政治学入門」 by 土井翔平先生](https://shohei-doi.github.io/quant_polisci/index.html)
+1. [「Rで計量政治学入門」 by 土井翔平先生](https://shohei-doi.github.io/quant_polisci/index.html)  
 政治学の研究者以外にも有用！特にデータの読み込みやtidyverseの使い方が詳しい！
+
+
 
 ## R(Studio)のインストール
 

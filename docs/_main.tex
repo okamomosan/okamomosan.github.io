@@ -518,10 +518,42 @@
 ## [1] 16
 \end{verbatim}
 
+\begin{itemize}
+\tightlist
+\item
+  例えば、9÷2の答えは「4余り1」
+\item
+  この時、４を整数の商、1を剰余という
+\end{itemize}
+
+\textbf{整数の商:} \texttt{\%/\%}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{9}\SpecialCharTok{\%/\%}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\textbf{剰余（mod）:} \texttt{\%\%}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{9}\SpecialCharTok{\%\%}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{ux5909ux6570ux3068ux30aaux30d6ux30b8ux30a7ux30afux30c8}{%
-\section{変数とオブジェクト}\label{ux5909ux6570ux3068ux30aaux30d6ux30b8ux30a7ux30afux30c8}}
+\hypertarget{ux5909ux6570ux30aaux30d6ux30b8ux30a7ux30afux30c8}{%
+\section{変数（オブジェクト）}\label{ux5909ux6570ux30aaux30d6ux30b8ux30a7ux30afux30c8}}
 
 \begin{itemize}
 \item
@@ -672,9 +704,17 @@
 ## [1] "岡田先生ステキ"
 \end{verbatim}
 
-練習問題 \{-\}
-- 変数xに3、変数yに6を代入する
-- xとyをそれぞれ2乗して和をとり、結果が45となることを確認する
+\hypertarget{ux7df4ux7fd2ux554fux984c}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c}}
+\addcontentsline{toc}{paragraph}{練習問題}
+
+\begin{itemize}
+\tightlist
+\item
+  変数xに3、変数yに6を代入する
+\item
+  xとyをそれぞれ2乗して和をとり、結果が45となることを確認する
+\end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -760,6 +800,34 @@
 \begin{itemize}
 \tightlist
 \item
+  数値(numeric型)を引数にする関数のうち、よく使うものを列挙する
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+関数(引数xは数値)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+意味
+\end{minipage} \\
+\midrule()
+\endhead
+log(x) & 自然対数 \\
+log(x, base=y) & yを底とする常用対数 \\
+sqrt(x) & xの平方根 \\
+exp(x) & x指数関数（\(e^x\))） \\
+abs(x) & xの絶対値 \\
+round(x,y) & 小数点以下y桁になるようxを四捨五入（IEEE754方式）※ 詳細は演習問題参照 \\
+floor(x) & xの小数点以下切り捨て \\
+ceiling(x) & xの小数点以下切り上げ \\
+\bottomrule()
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
   他にも、数え切れないほどの関数がある
 \end{itemize}
 
@@ -807,7 +875,7 @@
 \item
   この理由を考えてみよう
 \item
-  \texttt{suuji}に格納された\texttt{2}というデータは、数字の型（\texttt{numeric}）を持っている\\
+  \texttt{suuji}に格納された\texttt{2}というデータは、数字の型（\texttt{numeric}ないし\texttt{double}）を持っている\\
 \item
   \texttt{moji}に格納された文字列のデータは、文字列の型（\texttt{character}）を持っている\\
 \item
@@ -846,15 +914,52 @@
   データ型についての詳しい説明は\href{http://www.f.waseda.jp/sakas/R/Rdata.html}{逆瀬川先生のホームページ内のコチラ}を参照
 \end{itemize}
 
-\hypertarget{ux7df4ux7fd2ux554fux984c}{%
-\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c}}
+\hypertarget{ux7df4ux7fd2ux554fux984c-1}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-1}}
 \addcontentsline{toc}{paragraph}{練習問題}
 
 \begin{itemize}
 \tightlist
 \item
   上の\texttt{suuji}と\texttt{moji}について、\texttt{mode(suuji)}と\texttt{mode(moji)}を実行する
+\item
+  \texttt{typeof(suuji)}と\texttt{mode(suuji)}の結果を比較する
 \end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux6f14ux7fd2ux554fux984c-1}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{zemi}という名前のプロジェクトの中に、\texttt{exercise\_ch3.R}というRスクリプトを作りなさい
+\item
+  \texttt{exercise\_ch3.R}に、以下の問題に答るためのコードを書きなさい
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{abs(-5)}の結果を確認する
+\item
+  \texttt{x\ \textless{}-\ exp(10)}とした上で、\texttt{log(x)}の結果を確認
+\end{enumerate}
+
+\textbf{挑戦問題：}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{round(0.45,\ 1)}が\texttt{0.5}ではなく\texttt{0.4}になることを確認する\\
+  （IEEE式の四捨五入では、末尾が偶数になるように5を丸める）
+\item
+  \texttt{floor(0.45\ *\ 10)/10}で、通常の四捨五入（\texttt{0.5}）になることを確認する\\
+  （xに対し、小数点以下y桁となるように通常の四捨五入をするには\texttt{floor(x\ *\ 10\^{}y\ +\ 0.5)/10\^{}y}）
+\end{enumerate}
 
 \hypertarget{ux57faux672cux64cdux4f5cux2461}{%
 \chapter{基本操作②}\label{ux57faux672cux64cdux4f5cux2461}}
@@ -925,8 +1030,8 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{) }\CommentTok{\#「n:m」で「nからmまで」の意味}
-\NormalTok{v}
+\NormalTok{v2\_6 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{) }\CommentTok{\#「n:m」で「nからmまで」の意味}
+\NormalTok{v2\_6}
 \end{Highlighting}
 \end{Shaded}
 
@@ -950,12 +1055,22 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4 2 3 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{v}\SpecialCharTok{+}\DecValTok{2}  \CommentTok{\#それぞれの数字に２を足す }
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4 5 6 7 8
+## [1] 4 6 4 5 7
 \end{verbatim}
 
 \begin{Shaded}
@@ -965,11 +1080,11 @@
 \end{Shaded}
 
 \begin{verbatim}
-## [1]  4  6  8 10 12
+## [1]  4  8  4  6 10
 \end{verbatim}
 
-\hypertarget{ux7df4ux7fd2ux554fux984c-1}{%
-\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-1}}
+\hypertarget{ux7df4ux7fd2ux554fux984c-2}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-2}}
 \addcontentsline{toc}{paragraph}{練習問題}
 
 \begin{itemize}
@@ -1076,8 +1191,24 @@
 ## [1] 3 6 5
 \end{verbatim}
 
-\hypertarget{ux7df4ux7fd2ux554fux984c-2}{%
-\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-2}}
+\begin{itemize}
+\tightlist
+\item
+  ベクトルの長さを確認するには\texttt{length()}を使えば良い
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{length}\NormalTok{(v1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\hypertarget{ux7df4ux7fd2ux554fux984c-3}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-3}}
 \addcontentsline{toc}{paragraph}{練習問題}
 
 \begin{itemize}
@@ -1093,7 +1224,6 @@
 \addcontentsline{toc}{subsubsection}{要素の抽出：}
 
 \begin{itemize}
-\tightlist
 \item
   ベクトルから、任意の要素（\texttt{n}番目の数）を抽出する方法を説明する
 \item
@@ -1102,20 +1232,6 @@
   具体例として、先ほどのベクトル\texttt{v=c(2,4,2,3,5)}で考える
 \item
   2番目の要素（つまり4）を抜き出したいなら、\texttt{v{[}2{]}}と書く
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{v[}\DecValTok{2}\NormalTok{]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 3
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
 \item
   2〜４番めの要素(つまり4,2,3)を抜き出したいなら、\texttt{v{[}2:4{]}}と書く
 \end{itemize}
@@ -1127,7 +1243,7 @@
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3 4 5
+## [1] 4 2 3
 \end{verbatim}
 
 \hypertarget{ux884cux5217}{%
@@ -1444,24 +1560,14 @@ sort(x, decreasing = TRUE) & xの各要素を大きい順に並び替え \\
 ## [1] 141
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{length}\NormalTok{(age) }\CommentTok{\#データの長さ（ベクトルの次元）（5個のデータなので5）}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 5
-\end{verbatim}
-
-\hypertarget{ux7df4ux7fd2ux554fux984c-3}{%
-\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-3}}
+\hypertarget{ux7df4ux7fd2ux554fux984c-4}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-4}}
 \addcontentsline{toc}{paragraph}{練習問題}
 
 \begin{itemize}
 \tightlist
 \item
-  引数を\texttt{age}にして、\texttt{min()}, \texttt{median()},\texttt{sd()},\texttt{sum()},\texttt{range()},\texttt{sort()}を実行する
+  引数を\texttt{age}にして、\texttt{min()}, \texttt{median()},\texttt{sd()},\texttt{sum()},\texttt{range()},\texttt{length()},\texttt{sort()}を実行する
 \item
   各々の結果が何を意味しているのかを解釈する
 \item
@@ -1498,8 +1604,8 @@ colMeand(X) & 行列 X の列平均 \\
 \bottomrule()
 \end{longtable}
 
-\hypertarget{ux7df4ux7fd2ux554fux984c-4}{%
-\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-4}}
+\hypertarget{ux7df4ux7fd2ux554fux984c-5}{%
+\paragraph*{練習問題}\label{ux7df4ux7fd2ux554fux984c-5}}
 \addcontentsline{toc}{paragraph}{練習問題}
 
 \begin{itemize}
@@ -1570,8 +1676,8 @@ colMeand(X) & 行列 X の列平均 \\
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{ux30c7ux30fcux30bfux69cbux9020}{%
-\section{データ構造}\label{ux30c7ux30fcux30bfux69cbux9020}}
+\hypertarget{ux30c7ux30fcux30bfux69cbux9020ux306eux30adux30dbux30f3}{%
+\section{データ構造のキホン}\label{ux30c7ux30fcux30bfux69cbux9020ux306eux30adux30dbux30f3}}
 
 \begin{itemize}
 \tightlist
@@ -1589,11 +1695,14 @@ colMeand(X) & 行列 X の列平均 \\
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{ux6f14ux7fd2ux554fux984c-1}{%
-\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-1}}
+\hypertarget{ux6f14ux7fd2ux554fux984c-2}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-2}}
 
 \begin{itemize}
-\tightlist
+\item
+  \texttt{zemi}という名前のプロジェクトの中に、\texttt{exercise\_ch4.R}というRスクリプトを作りなさい
+\item
+  \texttt{exercise\_ch4.R}に、以下の問題に答るためのコードを書きなさい
 \item
   aさんの身長は149cm, bさんは153cm, cさんは169cm, dさんは174cmとする
 \item
@@ -1604,7 +1713,7 @@ colMeand(X) & 行列 X の列平均 \\
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する\\
+  4人の身長を表した数値のみからなるベクトル（単位は不要）を作り、変数hに保存する
 \item
   変数hの平均と標準偏差を求める\\
 \item
@@ -1618,6 +1727,18 @@ colMeand(X) & 行列 X の列平均 \\
   行列の要素抽出を使い、変数Mからbさんの体重のデータを抜き出す
 \item
   変数wを小さい順に並べ替えることで、身長の低い順に並び替えた変数h2を作る
+\end{enumerate}
+
+\textbf{挑戦問題：}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  xを小数点以下y桁となるように通常の四捨五入をする関数\texttt{sisya\_gonyu(x,y)}を自作する\\
+  （通常の四捨五入については、前章の演習問題参照）
+\item
+  \texttt{sisya\_gonyu(0.4445,3)}の結果を確認する
 \end{enumerate}
 
 \hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8}{%
@@ -1865,8 +1986,8 @@ Watanabe & 26 & 174.5 & 65 & male \\
   その中に\texttt{sokutei.csv}を置いた場合、\texttt{read\_csv("data/sokutei.csv")}で読み込む
 \end{itemize}
 
-\hypertarget{ux6f14ux7fd2ux554fux984c-2}{%
-\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-2}}
+\hypertarget{ux6f14ux7fd2ux554fux984c-3}{%
+\section{演習問題}\label{ux6f14ux7fd2ux554fux984c-3}}
 
 \begin{itemize}
 \tightlist

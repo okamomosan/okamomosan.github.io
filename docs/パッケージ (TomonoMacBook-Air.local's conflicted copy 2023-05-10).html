@@ -153,10 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="基本操作①.html"><a href="基本操作①.html"><i class="fa fa-check"></i><b>3</b> 基本操作①</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="基本操作①.html"><a href="基本操作①.html#四則演算"><i class="fa fa-check"></i><b>3.1</b> 四則演算</a></li>
-<li class="chapter" data-level="3.2" data-path="基本操作①.html"><a href="基本操作①.html#変数オブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数（オブジェクト）</a></li>
+<li class="chapter" data-level="3.2" data-path="基本操作①.html"><a href="基本操作①.html#変数とオブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数とオブジェクト</a></li>
 <li class="chapter" data-level="3.3" data-path="基本操作①.html"><a href="基本操作①.html#関数①数値に対する関数"><i class="fa fa-check"></i><b>3.3</b> 関数①（数値に対する関数）</a></li>
 <li class="chapter" data-level="3.4" data-path="基本操作①.html"><a href="基本操作①.html#データ型のキホン"><i class="fa fa-check"></i><b>3.4</b> データ型のキホン</a></li>
-<li class="chapter" data-level="3.5" data-path="基本操作①.html"><a href="基本操作①.html#演習問題-1"><i class="fa fa-check"></i><b>3.5</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="基本操作②.html"><a href="基本操作②.html"><i class="fa fa-check"></i><b>4</b> 基本操作②</a>
 <ul>
@@ -167,8 +166,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="基本操作②.html"><a href="基本操作②.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>4.2</b> 関数②（ベクトルや行列に対する関数）</a></li>
 <li class="chapter" data-level="4.3" data-path="基本操作②.html"><a href="基本操作②.html#関数の自作"><i class="fa fa-check"></i><b>4.3</b> 関数の自作</a></li>
-<li class="chapter" data-level="4.4" data-path="基本操作②.html"><a href="基本操作②.html#データ構造のキホン"><i class="fa fa-check"></i><b>4.4</b> データ構造のキホン</a></li>
-<li class="chapter" data-level="4.5" data-path="基本操作②.html"><a href="基本操作②.html#演習問題-2"><i class="fa fa-check"></i><b>4.5</b> 演習問題</a></li>
+<li class="chapter" data-level="4.4" data-path="基本操作②.html"><a href="基本操作②.html#データ構造"><i class="fa fa-check"></i><b>4.4</b> データ構造</a></li>
+<li class="chapter" data-level="4.5" data-path="基本操作②.html"><a href="基本操作②.html#演習問題-1"><i class="fa fa-check"></i><b>4.5</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>5</b> パッケージ</a>
 <ul>
@@ -185,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="データの読み込み.html"><a href="データの読み込み.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
 <li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-3"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
+<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-2"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -225,13 +224,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>例えば、<code>tidyverse</code>というパッケージは、次のようにインストールする<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 <li><strong>この<code>tidyverse</code>を導入することでRが化ける！</strong>（詳しい使い方は次章）</li>
 </ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="パッケージ.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
-<span id="cb104-2"><a href="パッケージ.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="パッケージ.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
+<span id="cb100-2"><a href="パッケージ.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
 <ul>
 <li>インストールするだけでは使えない、次のコードを実行して初めて<code>tidyverse</code>が使えるようになる</li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="パッケージ.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
-<span id="cb105-2"><a href="パッケージ.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="パッケージ.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
+<span id="cb101-2"><a href="パッケージ.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
 <ul>
 <li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>

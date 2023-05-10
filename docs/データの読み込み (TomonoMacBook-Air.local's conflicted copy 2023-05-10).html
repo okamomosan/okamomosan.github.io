@@ -153,10 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="基本操作①.html"><a href="基本操作①.html"><i class="fa fa-check"></i><b>3</b> 基本操作①</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="基本操作①.html"><a href="基本操作①.html#四則演算"><i class="fa fa-check"></i><b>3.1</b> 四則演算</a></li>
-<li class="chapter" data-level="3.2" data-path="基本操作①.html"><a href="基本操作①.html#変数オブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数（オブジェクト）</a></li>
+<li class="chapter" data-level="3.2" data-path="基本操作①.html"><a href="基本操作①.html#変数とオブジェクト"><i class="fa fa-check"></i><b>3.2</b> 変数とオブジェクト</a></li>
 <li class="chapter" data-level="3.3" data-path="基本操作①.html"><a href="基本操作①.html#関数①数値に対する関数"><i class="fa fa-check"></i><b>3.3</b> 関数①（数値に対する関数）</a></li>
 <li class="chapter" data-level="3.4" data-path="基本操作①.html"><a href="基本操作①.html#データ型のキホン"><i class="fa fa-check"></i><b>3.4</b> データ型のキホン</a></li>
-<li class="chapter" data-level="3.5" data-path="基本操作①.html"><a href="基本操作①.html#演習問題-1"><i class="fa fa-check"></i><b>3.5</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="基本操作②.html"><a href="基本操作②.html"><i class="fa fa-check"></i><b>4</b> 基本操作②</a>
 <ul>
@@ -167,8 +166,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="基本操作②.html"><a href="基本操作②.html#関数②ベクトルや行列に対する関数"><i class="fa fa-check"></i><b>4.2</b> 関数②（ベクトルや行列に対する関数）</a></li>
 <li class="chapter" data-level="4.3" data-path="基本操作②.html"><a href="基本操作②.html#関数の自作"><i class="fa fa-check"></i><b>4.3</b> 関数の自作</a></li>
-<li class="chapter" data-level="4.4" data-path="基本操作②.html"><a href="基本操作②.html#データ構造のキホン"><i class="fa fa-check"></i><b>4.4</b> データ構造のキホン</a></li>
-<li class="chapter" data-level="4.5" data-path="基本操作②.html"><a href="基本操作②.html#演習問題-2"><i class="fa fa-check"></i><b>4.5</b> 演習問題</a></li>
+<li class="chapter" data-level="4.4" data-path="基本操作②.html"><a href="基本操作②.html#データ構造"><i class="fa fa-check"></i><b>4.4</b> データ構造</a></li>
+<li class="chapter" data-level="4.5" data-path="基本操作②.html"><a href="基本操作②.html#演習問題-1"><i class="fa fa-check"></i><b>4.5</b> 演習問題</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="パッケージ.html"><a href="パッケージ.html"><i class="fa fa-check"></i><b>5</b> パッケージ</a>
 <ul>
@@ -185,7 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="データの読み込み.html"><a href="データの読み込み.html#excelファイルの読み込み"><i class="fa fa-check"></i><b>6.2.3</b> Excelファイルの読み込み</a></li>
 <li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-3"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
+<li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-2"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -268,17 +267,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Rでこのようなデータをあつかう場合、データフレームを使う<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
 <li>上のデータのデータフレームを作るには、以下のように関数<code>data.frame()</code>を使う</li>
 </ul>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="データの読み込み.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># まず各変数のベクトルを作る</span></span>
-<span id="cb106-2"><a href="データの読み込み.html#cb106-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Tanaka&quot;</span>, <span class="st">&quot;Suzuki&quot;</span>, <span class="st">&quot;Okada&quot;</span>, <span class="st">&quot;Watanabe&quot;</span>)</span>
-<span id="cb106-3"><a href="データの読み込み.html#cb106-3" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">18</span>, <span class="dv">36</span>, <span class="dv">23</span>) <span class="co">#年齢のベクトルの作成</span></span>
-<span id="cb106-4"><a href="データの読み込み.html#cb106-4" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">149.5</span>, <span class="fl">153.0</span>, <span class="fl">171.0</span>, <span class="fl">174.5</span>)</span>
-<span id="cb106-5"><a href="データの読み込み.html#cb106-5" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">58</span>, <span class="dv">65</span>)</span>
-<span id="cb106-6"><a href="データの読み込み.html#cb106-6" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>) </span>
-<span id="cb106-7"><a href="データの読み込み.html#cb106-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-8"><a href="データの読み込み.html#cb106-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frame()の引数に、作成したベクトルを並べる</span></span>
-<span id="cb106-9"><a href="データの読み込み.html#cb106-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 出来上がったデータフレームを変数dfに格納</span></span>
-<span id="cb106-10"><a href="データの読み込み.html#cb106-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, age, height, weight, gender)</span>
-<span id="cb106-11"><a href="データの読み込み.html#cb106-11" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="データの読み込み.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># まず各変数のベクトルを作る</span></span>
+<span id="cb102-2"><a href="データの読み込み.html#cb102-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Tanaka&quot;</span>, <span class="st">&quot;Suzuki&quot;</span>, <span class="st">&quot;Okada&quot;</span>, <span class="st">&quot;Watanabe&quot;</span>)</span>
+<span id="cb102-3"><a href="データの読み込み.html#cb102-3" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">18</span>, <span class="dv">36</span>, <span class="dv">23</span>) <span class="co">#年齢のベクトルの作成</span></span>
+<span id="cb102-4"><a href="データの読み込み.html#cb102-4" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">149.5</span>, <span class="fl">153.0</span>, <span class="fl">171.0</span>, <span class="fl">174.5</span>)</span>
+<span id="cb102-5"><a href="データの読み込み.html#cb102-5" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">48</span>, <span class="dv">58</span>, <span class="dv">65</span>)</span>
+<span id="cb102-6"><a href="データの読み込み.html#cb102-6" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>, <span class="st">&quot;male&quot;</span>, <span class="st">&quot;male&quot;</span>) </span>
+<span id="cb102-7"><a href="データの読み込み.html#cb102-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-8"><a href="データの読み込み.html#cb102-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frame()の引数に、作成したベクトルを並べる</span></span>
+<span id="cb102-9"><a href="データの読み込み.html#cb102-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 出来上がったデータフレームを変数dfに格納</span></span>
+<span id="cb102-10"><a href="データの読み込み.html#cb102-10" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, age, height, weight, gender)</span>
+<span id="cb102-11"><a href="データの読み込み.html#cb102-11" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>##       name age height weight gender
 ## 1   Tanaka  10  149.5     36   male
 ## 2   Suzuki  18  153.0     48 female
@@ -315,9 +314,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>以下は<code>sokutei.csv</code>という名前のcsvファイルを、変数<code>data</code>に格納する例</li>
 <li>読み込んだデータを確認する場合は、<code>head()</code>をよく使う</li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="データの読み込み.html#cb108-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sokutei.csv&quot;</span>)</span>
-<span id="cb108-2"><a href="データの読み込み.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="データの読み込み.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co">#head()はデータの最初の６行を返す関数</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="データの読み込み.html#cb104-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sokutei.csv&quot;</span>)</span>
+<span id="cb104-2"><a href="データの読み込み.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="データの読み込み.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co">#head()はデータの最初の６行を返す関数</span></span></code></pre></div>
 </div>
 <div id="excelファイルの読み込み" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Excelファイルの読み込み<a href="データの読み込み.html#excelファイルの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -326,9 +325,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>readxl</code>をインストールして読み込んだあと、<code>read_excel()</code>の関数を使う</li>
 <li>以下は、<code>sokutei.xls</code>というファイルを読み込み、<code>sokutei</code>という変数に格納する例</li>
 </ul>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="データの読み込み.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co">#初回のみ（詳しくは第４章参照）</span></span>
-<span id="cb109-2"><a href="データの読み込み.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb109-3"><a href="データの読み込み.html#cb109-3" aria-hidden="true" tabindex="-1"></a>sokutei <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sokutei.xls&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="データの読み込み.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co">#初回のみ（詳しくは第４章参照）</span></span>
+<span id="cb105-2"><a href="データの読み込み.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb105-3"><a href="データの読み込み.html#cb105-3" aria-hidden="true" tabindex="-1"></a>sokutei <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sokutei.xls&quot;</span>)</span></code></pre></div>
 </div>
 <div id="ファイル保管用のフォルダを作る" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> ファイル保管用のフォルダを作る<a href="データの読み込み.html#ファイル保管用のフォルダを作る" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -340,8 +339,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="演習問題-3" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> 演習問題<a href="データの読み込み.html#演習問題-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="演習問題-2" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 演習問題<a href="データの読み込み.html#演習問題-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>１章で作った<code>zemi</code>のプロジェクトフォルダ内に<code>data</code>というフォルダを作る</li>
 <li>以下から<a href="https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0"><code>sokutei.csv</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>

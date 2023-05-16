@@ -6,7 +6,6 @@ library(tidyverse)
 
 - 本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！
 1. [データの読み込み in R](https://youtu.be/FugazO_rL7c)  
-1. [データフレームの操作 in R](https://youtu.be/96AZJmGNass)  
 
 - さらに詳しいことを学びたいなら[「Rで計量政治学入門」](https://shohei-doi.github.io/quant_polisci/index.html)がオススメ
 
@@ -22,8 +21,10 @@ library(tidyverse)
 |Okada|41|171|58|male|
 |Watanabe|26|174.5|65|male|
 
-
 - Rでこのようなデータをあつかう場合、データフレームを使う[^1]
+
+### データフレームの作成
+
 - 上のデータのデータフレームを作るには、以下のように関数`data.frame()`を使う
 
 ```{r}
@@ -38,6 +39,21 @@ gender <- c("male", "female", "male", "male")
 # 出来上がったデータフレームを変数dfに格納
 df <- data.frame(name, age, height, weight, gender)
 df
+```
+
+### データフレームからの変数の抽出
+
+- 例えば、`df`というデータフレームから変数`age`を抜き出すには、`$`を使って次のように書く
+
+```{r}
+df$age
+```
+
+- 抜き出した変数`df$age`を、別の変数に格納することもできる
+
+```{r}
+toshi <- df$age
+toshi
 ```
 
 
@@ -96,26 +112,48 @@ sokutei <- read_excel("sokutei.xls")
 
 ## 演習問題
   
-- １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作る
-- 以下から[`sokutei.csv`](https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0 )をダウンロードし、上の`data`フォルダ内に置く
-- このデータを読み込み、`sokutei_csv`というオブジェクトに格納する
-- `head()`を使って`sokutei_csv`の中身を確認する
-- 以下から[`sokutei.xls`](https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0)をダウンロードし、上の`data`フォルダ内に置く
-- このデータを読み込み、`sokutei_excel`というオブジェクトに格納する
-- `head()`を使って`sokutei_excel`の中身を確認する
+1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作る
+1. 以下から[`sokutei.csv`](https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0 )をダウンロードし、上の`data`フォルダ内に置く
+1. このデータを読み込み、`sokutei_csv`という変数に格納する
+1. `head()`を使って`sokutei_csv`の中身を確認する
+1. 以下から[`sokutei.xls`](https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0)をダウンロードし、上の`data`フォルダ内に置く
+1. このデータを読み込み、`sokutei_excel`という変数に格納する
+1. `head()`を使って`sokutei_excel`の中身を確認する
+1. `sokutei_excel`から変数`weight`を抜き出し、`w`という新たな変数に格納する
+1. `w`の中身を確認する
+<br><br>
+  
+**挑戦問題：**  <br>
+  
+- 計量経済学の有名な教科書にWooldridgeの書いたものがある  
+- その本に登場するデータをまとめて収録したのがwooldridgeというパッケージ  
+ （このようにデータをまとめたパッケージもある）  
+- 以下の問題がわからない場合は[前章][パッケージ]を参照  
+
+1. wooldridgeという名前のパッケージをインストールする
+2. wooldridgeのパッケージを呼び出す
+3. `data("wage1")`を実行して、wooldridgeに収録された`wage1`というデータを読み込む[^4]
+4. `head(wage1)`を実行して、`wage1`の中身を確認する
+5. `help(package="wooldridge")`を実行して、`wage1`以外にどんなデータが収録されているか確認
 
 
-<!-- ```{r} -->
-<!-- sokutei_csv <- read.csv("data/sokutei.csv") -->
-<!-- head(sokutei_csv) -->
-<!-- #install.packages("readxl") #初回のみ（詳しくは第４章参照） -->
-<!-- library(readxl) -->
-<!-- sokutei_excel <- read_excel("data/sokutei.xls") -->
-<!-- head(sokutei_excel) -->
-<!-- ``` -->
+```{r eval=FALSE, include=FALSE}
+sokutei_csv <- read.csv("data/sokutei.csv")
+head(sokutei_csv)
+#install.packages("readxl") #初回のみ（詳しくは第４章参照）
+library(readxl)
+sokutei_excel <- read_excel("data/sokutei.xls")
+head(sokutei_excel)
+
+#install.packages("wooldridge") #初回のみ（"で囲むのを忘れない）
+library("wooldridge") # "で囲まなくて良い
+data("wage1")
+head(wage1)
+```
 
 
 
 [^1]: 行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる
 [^2]: 現在の作業ディレクトリの確認は`getwd()`、変更は`setwd("変更後のディレクトリのパス")`
 [^3]: 5章の`tidyverse`パッケージに含まれた`read_csv()`を使っても良い（この場合、データフレームによく似た`tibble`という形式で読み込まれる）
+[^4]: `data()`はRに最初から組み込まれたデータを読み込む時に使う関数（例:`data(iris)`)

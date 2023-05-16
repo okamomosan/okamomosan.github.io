@@ -117,7 +117,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-05-10}
+\date{2023-05-17}
 
 \begin{document}
 \maketitle
@@ -557,7 +557,7 @@
 
 \begin{itemize}
 \item
-  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}\\
+  オブジェクトとは、色々なモノを入れる箱のようなもの\footnote{エラーが出る場合は、\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{以前の章}を参考にパッケージが正しくインストールされているか確認しよう}\\
 \item
   オブジェクトを変数という人もいる（数学の変数のようなイメージだから）
 \item
@@ -1781,7 +1781,7 @@ colMeand(X) & 行列 X の列平均 \\
 \item
   インストール方法は、引数をインストールしたいパッケージ名にして\texttt{install.packages()}を実行
 \item
-  例えば、\texttt{tidyverse}というパッケージは、次のようにインストールする\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
+  例えば、\texttt{tidyverse}というパッケージは、次のようにインストールする\footnote{エラーが出る場合は、\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{以前の章}を参考にパッケージが正しくインストールされているか確認しよう}
 \item
   \textbf{この\texttt{tidyverse}を導入することでRが化ける！}（詳しい使い方は次章）
 \end{itemize}
@@ -1793,10 +1793,15 @@ colMeand(X) & 行列 X の列平均 \\
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux547cux3073ux51faux3057}{%
+\section{パッケージの呼び出し}\label{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux547cux3073ux51faux3057}}
+
 \begin{itemize}
 \tightlist
 \item
-  インストールするだけでは使えない、次のコードを実行して初めて\texttt{tidyverse}が使えるようになる
+  インストールするだけではパッケージは使えない
+\item
+  次のコードを実行して呼び出すことで初めて\texttt{tidyverse}が使えるようになる
 \end{itemize}
 
 \begin{Shaded}
@@ -1813,7 +1818,7 @@ colMeand(X) & 行列 X の列平均 \\
 \item
   ただし、\texttt{library()}はRstudioを起動するたびに実行する必要がある
 \item
-  そのため、Rスクリプトの最初に分析で使う\texttt{library(パッケージ名)}を並べておくと良い
+  そのため、Rスクリプトの最初に分析で使う\texttt{library(パッケージ名)}を列挙しておくと良い
 \end{itemize}
 
 \hypertarget{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f}{%
@@ -1829,9 +1834,7 @@ colMeand(X) & 行列 X の列平均 \\
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}\\
-\item
-  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
+  \href{https://youtu.be/FugazO_rL7c}{データの読み込み in R}
 \end{enumerate}
 
 \begin{itemize}
@@ -1866,7 +1869,14 @@ Watanabe & 26 & 174.5 & 65 & male \\
 \begin{itemize}
 \tightlist
 \item
-  Rでこのようなデータをあつかう場合、データフレームを使う\footnote{行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる}
+  Rでこのようなデータをあつかう場合、データフレームを使う\footnote{エラーが出る場合は、\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{以前の章}を参考にパッケージが正しくインストールされているか確認しよう}
+\end{itemize}
+
+\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0ux306eux4f5cux6210}{%
+\subsection{データフレームの作成}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0ux306eux4f5cux6210}}
+
+\begin{itemize}
+\tightlist
 \item
   上のデータのデータフレームを作るには、以下のように関数\texttt{data.frame()}を使う
 \end{itemize}
@@ -1895,6 +1905,42 @@ Watanabe & 26 & 174.5 & 65 & male \\
 ## 4 Watanabe  23  174.5     65   male
 \end{verbatim}
 
+\hypertarget{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0ux304bux3089ux306eux5909ux6570ux306eux62bdux51fa}{%
+\subsection{データフレームからの変数の抽出}\label{ux30c7ux30fcux30bfux30d5ux30ecux30fcux30e0ux304bux3089ux306eux5909ux6570ux306eux62bdux51fa}}
+
+\begin{itemize}
+\tightlist
+\item
+  例えば、\texttt{df}というデータフレームから変数\texttt{age}を抜き出すには、\texttt{\$}を使って次のように書く
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df}\SpecialCharTok{$}\NormalTok{age}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10 18 36 23
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  抜き出した変数\texttt{df\$age}を、別の変数に格納することもできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{toshi }\OtherTok{\textless{}{-}}\NormalTok{ df}\SpecialCharTok{$}\NormalTok{age}
+\NormalTok{toshi}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10 18 36 23
+\end{verbatim}
+
 \hypertarget{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f-1}{%
 \section{データの読み込み}\label{ux30c7ux30fcux30bfux306eux8aadux307fux8fbcux307f-1}}
 
@@ -1918,7 +1964,7 @@ Watanabe & 26 & 174.5 & 65 & male \\
 \begin{itemize}
 \tightlist
 \item
-  インポートしたいデータファイルは、ワークディレクトリと呼ばれる場所に置く必要がある\footnote{現在の作業ディレクトリの確認は\texttt{getwd()}、変更は\texttt{setwd("変更後のディレクトリのパス")}}
+  インポートしたいデータファイルは、ワークディレクトリと呼ばれる場所に置く必要がある\footnote{厳密には、\texttt{tidyverse}にも含まる\texttt{magrittr}パッケージを呼び出すと使えるようになる}
 \item
   ワークディレクトリは、Rを使う時のメインの作業場で、さまざまな操作の起点になる
 \item
@@ -1943,7 +1989,7 @@ Watanabe & 26 & 174.5 & 65 & male \\
 \begin{itemize}
 \tightlist
 \item
-  csvファイルを読み込むときは、\texttt{read.csv()}を使う\footnote{5章の\texttt{tidyverse}パッケージに含まれた\texttt{read\_csv()}を使っても良い（この場合、データフレームによく似た\texttt{tibble}という形式で読み込まれる）}
+  csvファイルを読み込むときは、\texttt{read.csv()}を使う\footnote{Rのver4.1.0以降は、\texttt{tidyverse}がなくてもパイプ（\texttt{\textbar{}\textgreater{}}）が使えるようになったが、現在主流の\texttt{\%\textgreater{}\%}の説明をする}
 \item
   以下は\texttt{sokutei.csv}という名前のcsvファイルを、変数\texttt{data}に格納する例
 \item
@@ -1997,22 +2043,210 @@ Watanabe & 26 & 174.5 & 65 & male \\
 \hypertarget{ux6f14ux7fd2ux554fux984c-3}{%
 \section{演習問題}\label{ux6f14ux7fd2ux554fux984c-3}}
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   １章で作った\texttt{zemi}のプロジェクトフォルダ内に\texttt{data}というフォルダを作る
 \item
   以下から\href{https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0}{\texttt{sokutei.csv}}をダウンロードし、上の\texttt{data}フォルダ内に置く
 \item
-  このデータを読み込み、\texttt{sokutei\_csv}というオブジェクトに格納する
+  このデータを読み込み、\texttt{sokutei\_csv}という変数に格納する
 \item
   \texttt{head()}を使って\texttt{sokutei\_csv}の中身を確認する
 \item
   以下から\href{https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0}{\texttt{sokutei.xls}}をダウンロードし、上の\texttt{data}フォルダ内に置く
 \item
-  このデータを読み込み、\texttt{sokutei\_excel}というオブジェクトに格納する
+  このデータを読み込み、\texttt{sokutei\_excel}という変数に格納する
 \item
   \texttt{head()}を使って\texttt{sokutei\_excel}の中身を確認する
+\item
+  \texttt{sokutei\_excel}から変数\texttt{weight}を抜き出し、\texttt{w}という新たな変数に格納する
+\item
+  \texttt{w}の中身を確認する
+\end{enumerate}
+
+\textbf{挑戦問題：}
+
+\begin{itemize}
+\tightlist
+\item
+  計量経済学の有名な教科書にWooldridgeの書いたものがある\\
+\item
+  その本に登場するデータをまとめて収録したのがwooldridgeというパッケージ\\
+  （このようにデータをまとめたパッケージもある）\\
+\item
+  以下の問題がわからない場合は\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8}{前章}を参照
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  wooldridgeという名前のパッケージをインストールする
+\item
+  wooldridgeのパッケージを呼び出す
+\item
+  \texttt{data("wage1")}を実行して、wooldridgeに収録された\texttt{wage1}というデータを読み込む\footnote{\texttt{data()}はRに最初から組み込まれたデータを読み込む時に使う関数（例:\texttt{data(iris)})}
+\item
+  \texttt{head(wage1)}を実行して、\texttt{wage1}の中身を確認する
+\item
+  \texttt{help(package="wooldridge")}を実行して、\texttt{wage1}以外にどんなデータが収録されているか確認
+\end{enumerate}
+
+\hypertarget{ux30c7ux30fcux30bfux306eux524dux51e6ux7406}{%
+\chapter{データの前処理}\label{ux30c7ux30fcux30bfux306eux524dux51e6ux7406}}
+
+\begin{itemize}
+\tightlist
+\item
+  本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://youtu.be/96AZJmGNass}{データフレームの操作 in R}
+\end{enumerate}
+
+\hypertarget{ux524dux51e6ux7406}{%
+\section{前処理}\label{ux524dux51e6ux7406}}
+
+\begin{itemize}
+\tightlist
+\item
+  集めたデータを分析ができる形に加工することを「前処理」という
+\item
+  地味だけど、「データ分析の８割は前処理」と言われるくらい大事な作業
+\item
+  本章では、\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{以前導入した\texttt{tidyverse}のパッケージ}を使った前処理のキホンを説明
+\item
+  まずは以下のコードを実行して\texttt{tidyverse}を呼び出そう\footnote{エラーが出る場合は、\protect\hyperlink{ux30d1ux30c3ux30b1ux30fcux30b8ux306eux30a4ux30f3ux30b9ux30c8ux30fcux30eb}{以前の章}を参考にパッケージが正しくインストールされているか確認しよう}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux30d1ux30a4ux30d7ux306bux3088ux308bux51e6ux7406}{%
+\section{パイプによる処理}\label{ux30d1ux30a4ux30d7ux306bux3088ux308bux51e6ux7406}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{tidyverse}を呼び出すと、パイプ演算子(\texttt{\%\textgreater{}\%})と呼ばれるものが使えるようになる\footnote{厳密には、\texttt{tidyverse}にも含まる\texttt{magrittr}パッケージを呼び出すと使えるようになる} \footnote{Rのver4.1.0以降は、\texttt{tidyverse}がなくてもパイプ（\texttt{\textbar{}\textgreater{}}）が使えるようになったが、現在主流の\texttt{\%\textgreater{}\%}の説明をする}
+\item
+  パイプを使いこなせるととても便利！（Rが化ける！）
+\item
+  例えば、\texttt{x}というベクトルの平均を求めるには、次のようにすればよかった
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{3}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{5}\NormalTok{)}
+
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  同じことを、パイプを使って以下のように書ける
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mean}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  要するに、\textbf{引数をパイプで繋いで関数の中に入れてあげているイメージ}
+\item
+  ベクトルだけでなく、\textbf{どんなものでもパイプで繋げられる}
+\item
+  例えば、前章で作った\texttt{df}というデータフレームの中身を、パイプを使って確認しよう
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{() }\CommentTok{\#データフレームもパイプで繋げられる}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       name age height weight gender
+## 1   Tanaka  10  149.5     36   male
+## 2   Suzuki  18  153.0     48 female
+## 3    Okada  36  171.0     58   male
+## 4 Watanabe  23  174.5     65   male
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  関数同士をパイプで繋ぐこともできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/sokutei.csv"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        Name Age Height Weight Gender
+## 1    Tanaka  10  149.5     36   male
+## 2    Suzuki  18  153.0     48 female
+## 3     Okada  41  171.0     58   male
+## 4  Watanabe  26  174.5     65   male
+## 5      Sato  32  159.0     54 female
+## 6 Takahashi  16  169.0     87   male
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  また、\textbf{パイプはいくらでも繋げられる}
+\item
+  結果を変数に格納することもできる
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_x }\OtherTok{\textless{}{-}} 
+\NormalTok{  x }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{abs}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\#xの各要素の絶対値をとった}
+  \FunctionTok{mean}\NormalTok{()　　}\CommentTok{\#絶対値をとったベクトルの平均を計算}
+
+\NormalTok{mean\_x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{どんなものの処理でも、いくらで簡単に繋げられる}のがパイプのすごいところ！
+\item
+  このあとデータの前処理で使ってみると、パイプの便利さがわかるはず
 \end{itemize}
 
   \bibliography{book.bib,packages.bib}

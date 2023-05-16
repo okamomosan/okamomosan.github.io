@@ -23,7 +23,7 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-10" />
+<meta name="date" content="2023-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,10 +174,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="パッケージ.html"><a href="パッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>5.1</b> パッケージとは？</a></li>
 <li class="chapter" data-level="5.2" data-path="パッケージ.html"><a href="パッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>5.2</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="5.3" data-path="パッケージ.html"><a href="パッケージ.html#パッケージの呼び出し"><i class="fa fa-check"></i><b>5.3</b> パッケージの呼び出し</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>6</b> データの読み込み</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
+<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレームの作成"><i class="fa fa-check"></i><b>6.1.1</b> データフレームの作成</a></li>
+<li class="chapter" data-level="6.1.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレームからの変数の抽出"><i class="fa fa-check"></i><b>6.1.2</b> データフレームからの変数の抽出</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
@@ -186,6 +191,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-3"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="データの前処理.html"><a href="データの前処理.html"><i class="fa fa-check"></i><b>7</b> データの前処理</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="データの前処理.html"><a href="データの前処理.html#前処理"><i class="fa fa-check"></i><b>7.1</b> 前処理</a></li>
+<li class="chapter" data-level="7.2" data-path="データの前処理.html"><a href="データの前処理.html#パイプによる処理"><i class="fa fa-check"></i><b>7.2</b> パイプによる処理</a></li>
 </ul></li>
 </ul>
 
@@ -227,15 +237,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="パッケージ.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
 <span id="cb104-2"><a href="パッケージ.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
+</div>
+<div id="パッケージの呼び出し" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> パッケージの呼び出し<a href="パッケージ.html#パッケージの呼び出し" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>インストールするだけでは使えない、次のコードを実行して初めて<code>tidyverse</code>が使えるようになる</li>
+<li>インストールするだけではパッケージは使えない</li>
+<li>次のコードを実行して呼び出すことで初めて<code>tidyverse</code>が使えるようになる</li>
 </ul>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="パッケージ.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
 <span id="cb105-2"><a href="パッケージ.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
 <ul>
 <li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
-<li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を並べておくと良い</li>
+<li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を列挙しておくと良い</li>
 </ul>
 
 </div>
@@ -243,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="footnotes">
 <hr />
 <ol start="2">
-<li id="fn2"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="パッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="パッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

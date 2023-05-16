@@ -23,7 +23,7 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-10" />
+<meta name="date" content="2023-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="パッケージ.html"/>
-
+<link rel="next" href="データの前処理.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -174,10 +174,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="パッケージ.html"><a href="パッケージ.html#パッケージとは"><i class="fa fa-check"></i><b>5.1</b> パッケージとは？</a></li>
 <li class="chapter" data-level="5.2" data-path="パッケージ.html"><a href="パッケージ.html#パッケージのインストール"><i class="fa fa-check"></i><b>5.2</b> パッケージのインストール</a></li>
+<li class="chapter" data-level="5.3" data-path="パッケージ.html"><a href="パッケージ.html#パッケージの呼び出し"><i class="fa fa-check"></i><b>5.3</b> パッケージの呼び出し</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="データの読み込み.html"><a href="データの読み込み.html"><i class="fa fa-check"></i><b>6</b> データの読み込み</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a></li>
+<li class="chapter" data-level="6.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレーム"><i class="fa fa-check"></i><b>6.1</b> データフレーム</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレームの作成"><i class="fa fa-check"></i><b>6.1.1</b> データフレームの作成</a></li>
+<li class="chapter" data-level="6.1.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データフレームからの変数の抽出"><i class="fa fa-check"></i><b>6.1.2</b> データフレームからの変数の抽出</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="データの読み込み.html"><a href="データの読み込み.html#データの読み込み-1"><i class="fa fa-check"></i><b>6.2</b> データの読み込み</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="データの読み込み.html"><a href="データの読み込み.html#ワークディレクトリとインポートの準備"><i class="fa fa-check"></i><b>6.2.1</b> ワークディレクトリとインポートの準備</a></li>
@@ -186,6 +191,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.4" data-path="データの読み込み.html"><a href="データの読み込み.html#ファイル保管用のフォルダを作る"><i class="fa fa-check"></i><b>6.2.4</b> ファイル保管用のフォルダを作る</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="データの読み込み.html"><a href="データの読み込み.html#演習問題-3"><i class="fa fa-check"></i><b>6.3</b> 演習問題</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="データの前処理.html"><a href="データの前処理.html"><i class="fa fa-check"></i><b>7</b> データの前処理</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="データの前処理.html"><a href="データの前処理.html#前処理"><i class="fa fa-check"></i><b>7.1</b> 前処理</a></li>
+<li class="chapter" data-level="7.2" data-path="データの前処理.html"><a href="データの前処理.html#パイプによる処理"><i class="fa fa-check"></i><b>7.2</b> パイプによる処理</a></li>
 </ul></li>
 </ul>
 
@@ -210,9 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li><a href="https://youtu.be/FugazO_rL7c">データの読み込み in R</a><br />
-</li>
-<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in R</a></li>
+<li><a href="https://youtu.be/FugazO_rL7c">データの読み込み in R</a></li>
 </ol>
 <ul>
 <li>さらに詳しいことを学びたいなら<a href="https://shohei-doi.github.io/quant_polisci/index.html">「Rで計量政治学入門」</a>がオススメ</li>
@@ -266,6 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <ul>
 <li>Rでこのようなデータをあつかう場合、データフレームを使う<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+</ul>
+<div id="データフレームの作成" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> データフレームの作成<a href="データの読み込み.html#データフレームの作成" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
 <li>上のデータのデータフレームを作るには、以下のように関数<code>data.frame()</code>を使う</li>
 </ul>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="データの読み込み.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># まず各変数のベクトルを作る</span></span>
@@ -284,6 +296,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2   Suzuki  18  153.0     48 female
 ## 3    Okada  36  171.0     58   male
 ## 4 Watanabe  23  174.5     65   male</code></pre>
+</div>
+<div id="データフレームからの変数の抽出" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> データフレームからの変数の抽出<a href="データの読み込み.html#データフレームからの変数の抽出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>例えば、<code>df</code>というデータフレームから変数<code>age</code>を抜き出すには、<code>$</code>を使って次のように書く</li>
+</ul>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="データの読み込み.html#cb108-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>age</span></code></pre></div>
+<pre><code>## [1] 10 18 36 23</code></pre>
+<ul>
+<li>抜き出した変数<code>df$age</code>を、別の変数に格納することもできる</li>
+</ul>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="データの読み込み.html#cb110-1" aria-hidden="true" tabindex="-1"></a>toshi <span class="ot">&lt;-</span> df<span class="sc">$</span>age</span>
+<span id="cb110-2"><a href="データの読み込み.html#cb110-2" aria-hidden="true" tabindex="-1"></a>toshi</span></code></pre></div>
+<pre><code>## [1] 10 18 36 23</code></pre>
+</div>
 </div>
 <div id="データの読み込み-1" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> データの読み込み<a href="データの読み込み.html#データの読み込み-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -315,9 +342,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>以下は<code>sokutei.csv</code>という名前のcsvファイルを、変数<code>data</code>に格納する例</li>
 <li>読み込んだデータを確認する場合は、<code>head()</code>をよく使う</li>
 </ul>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="データの読み込み.html#cb108-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sokutei.csv&quot;</span>)</span>
-<span id="cb108-2"><a href="データの読み込み.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="データの読み込み.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co">#head()はデータの最初の６行を返す関数</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="データの読み込み.html#cb112-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sokutei.csv&quot;</span>)</span>
+<span id="cb112-2"><a href="データの読み込み.html#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="データの読み込み.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co">#head()はデータの最初の６行を返す関数</span></span></code></pre></div>
 </div>
 <div id="excelファイルの読み込み" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Excelファイルの読み込み<a href="データの読み込み.html#excelファイルの読み込み" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -326,9 +353,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>readxl</code>をインストールして読み込んだあと、<code>read_excel()</code>の関数を使う</li>
 <li>以下は、<code>sokutei.xls</code>というファイルを読み込み、<code>sokutei</code>という変数に格納する例</li>
 </ul>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="データの読み込み.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co">#初回のみ（詳しくは第４章参照）</span></span>
-<span id="cb109-2"><a href="データの読み込み.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb109-3"><a href="データの読み込み.html#cb109-3" aria-hidden="true" tabindex="-1"></a>sokutei <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sokutei.xls&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="データの読み込み.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>) <span class="co">#初回のみ（詳しくは第４章参照）</span></span>
+<span id="cb113-2"><a href="データの読み込み.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb113-3"><a href="データの読み込み.html#cb113-3" aria-hidden="true" tabindex="-1"></a>sokutei <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sokutei.xls&quot;</span>)</span></code></pre></div>
 </div>
 <div id="ファイル保管用のフォルダを作る" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> ファイル保管用のフォルダを作る<a href="データの読み込み.html#ファイル保管用のフォルダを作る" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -342,42 +369,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="演習問題-3" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> 演習問題<a href="データの読み込み.html#演習問題-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
+<ol style="list-style-type: decimal">
 <li>１章で作った<code>zemi</code>のプロジェクトフォルダ内に<code>data</code>というフォルダを作る</li>
 <li>以下から<a href="https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0"><code>sokutei.csv</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
-<li>このデータを読み込み、<code>sokutei_csv</code>というオブジェクトに格納する</li>
+<li>このデータを読み込み、<code>sokutei_csv</code>という変数に格納する</li>
 <li><code>head()</code>を使って<code>sokutei_csv</code>の中身を確認する</li>
 <li>以下から<a href="https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0"><code>sokutei.xls</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
-<li>このデータを読み込み、<code>sokutei_excel</code>というオブジェクトに格納する</li>
+<li>このデータを読み込み、<code>sokutei_excel</code>という変数に格納する</li>
 <li><code>head()</code>を使って<code>sokutei_excel</code>の中身を確認する</li>
+<li><code>sokutei_excel</code>から変数<code>weight</code>を抜き出し、<code>w</code>という新たな変数に格納する</li>
+<li><code>w</code>の中身を確認する
+<br><br></li>
+</ol>
+<p><strong>挑戦問題：</strong> <br></p>
+<ul>
+<li>計量経済学の有名な教科書にWooldridgeの書いたものがある<br />
+</li>
+<li>その本に登場するデータをまとめて収録したのがwooldridgeというパッケージ<br />
+（このようにデータをまとめたパッケージもある）<br />
+</li>
+<li>以下の問題がわからない場合は<a href="パッケージ.html#パッケージ">前章</a>を参照</li>
 </ul>
-<!-- ```{r} -->
-<!-- sokutei_csv <- read.csv("data/sokutei.csv") -->
-<!-- head(sokutei_csv) -->
-<!-- #install.packages("readxl") #初回のみ（詳しくは第４章参照） -->
-<!-- library(readxl) -->
-<!-- sokutei_excel <- read_excel("data/sokutei.xls") -->
-<!-- head(sokutei_excel) -->
-<!-- ``` -->
+<ol style="list-style-type: decimal">
+<li>wooldridgeという名前のパッケージをインストールする</li>
+<li>wooldridgeのパッケージを呼び出す</li>
+<li><code>data("wage1")</code>を実行して、wooldridgeに収録された<code>wage1</code>というデータを読み込む<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></li>
+<li><code>head(wage1)</code>を実行して、<code>wage1</code>の中身を確認する</li>
+<li><code>help(package="wooldridge")</code>を実行して、<code>wage1</code>以外にどんなデータが収録されているか確認</li>
+</ol>
 
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="データの読み込み.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>現在の作業ディレクトリの確認は<code>getwd()</code>、変更は<code>setwd("変更後のディレクトリのパス")</code><a href="データの読み込み.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>5章の<code>tidyverse</code>パッケージに含まれた<code>read_csv()</code>を使っても良い（この場合、データフレームによく似た<code>tibble</code>という形式で読み込まれる）<a href="データの読み込み.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="データの読み込み.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる<a href="データの読み込み.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする<a href="データの読み込み.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><code>data()</code>はRに最初から組み込まれたデータを読み込む時に使う関数（例:<code>data(iris)</code>)<a href="データの読み込み.html#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -385,8 +414,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="パッケージ.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="パッケージ.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="データの前処理.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

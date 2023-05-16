@@ -11,7 +11,7 @@
 
 <meta name="author" content="Tomohisa OKADA" />
 
-<meta name="date" content="2023-05-10" />
+<meta name="date" content="2023-05-17" />
 
 <title>行動経済学の実証分析</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">行動経済学の実証分析</h1>
 <h4 class="author">Tomohisa OKADA</h4>
-<h4 class="date">2023-05-10</h4>
+<h4 class="date">2023-05-17</h4>
 
 </div>
 
@@ -1322,15 +1322,19 @@ dさんは174cmとする</li>
 </ul>
 <pre class="r"><code># 初回に一度だけ実行
 install.packages(&quot;tidyverse&quot;) #引数の&quot;ダブルコーテーション&quot;を忘れない</code></pre>
+</div>
+<div id="パッケージの呼び出し" class="section level2">
+<h2>パッケージの呼び出し</h2>
 <ul>
-<li>インストールするだけでは使えない、次のコードを実行して初めて<code>tidyverse</code>が使えるようになる</li>
+<li>インストールするだけではパッケージは使えない</li>
+<li>次のコードを実行して呼び出すことで初めて<code>tidyverse</code>が使えるようになる</li>
 </ul>
 <pre class="r"><code># RStudioを起動する度に実行
 library(tidyverse) #引数の&quot;ダブルコーテーション&quot;は不要</code></pre>
 <ul>
 <li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
-<li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を並べておくと良い</li>
+<li>そのため、Rスクリプトの最初に分析で使う<code>library(パッケージ名)</code>を列挙しておくと良い</li>
 </ul>
 <!--chapter:end:04-package.Rmd-->
 </div>
@@ -1342,9 +1346,6 @@ library(tidyverse) #引数の&quot;ダブルコーテーション&quot;は不要
 </ul>
 <ol style="list-style-type: decimal">
 <li><a href="https://youtu.be/FugazO_rL7c">データの読み込み in
-R</a><br />
-</li>
-<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in
 R</a></li>
 </ol>
 <ul>
@@ -1399,6 +1400,10 @@ R</a></li>
 </table>
 <ul>
 <li>Rでこのようなデータをあつかう場合、データフレームを使う<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+</ul>
+<div id="データフレームの作成" class="section level3">
+<h3>データフレームの作成</h3>
+<ul>
 <li>上のデータのデータフレームを作るには、以下のように関数<code>data.frame()</code>を使う</li>
 </ul>
 <pre class="r"><code># まず各変数のベクトルを作る
@@ -1461,6 +1466,21 @@ df</code></pre>
 </tbody>
 </table>
 </div>
+<div id="データフレームからの変数の抽出" class="section level3">
+<h3>データフレームからの変数の抽出</h3>
+<ul>
+<li>例えば、<code>df</code>というデータフレームから変数<code>age</code>を抜き出すには、<code>$</code>を使って次のように書く</li>
+</ul>
+<pre class="r"><code>df$age</code></pre>
+<pre><code>## [1] 10 18 36 23</code></pre>
+<ul>
+<li>抜き出した変数<code>df$age</code>を、別の変数に格納することもできる</li>
+</ul>
+<pre class="r"><code>toshi &lt;- df$age
+toshi</code></pre>
+<pre><code>## [1] 10 18 36 23</code></pre>
+</div>
+</div>
 <div id="データの読み込み-1" class="section level2">
 <h2>データの読み込み</h2>
 <ul>
@@ -1519,34 +1539,221 @@ sokutei &lt;- read_excel(&quot;sokutei.xls&quot;)</code></pre>
 </div>
 <div id="演習問題-3" class="section level2">
 <h2>演習問題</h2>
-<ul>
+<ol style="list-style-type: decimal">
 <li>１章で作った<code>zemi</code>のプロジェクトフォルダ内に<code>data</code>というフォルダを作る</li>
 <li>以下から<a href="https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0"><code>sokutei.csv</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
-<li>このデータを読み込み、<code>sokutei_csv</code>というオブジェクトに格納する</li>
+<li>このデータを読み込み、<code>sokutei_csv</code>という変数に格納する</li>
 <li><code>head()</code>を使って<code>sokutei_csv</code>の中身を確認する</li>
 <li>以下から<a href="https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0"><code>sokutei.xls</code></a>をダウンロードし、上の<code>data</code>フォルダ内に置く</li>
-<li>このデータを読み込み、<code>sokutei_excel</code>というオブジェクトに格納する</li>
+<li>このデータを読み込み、<code>sokutei_excel</code>という変数に格納する</li>
 <li><code>head()</code>を使って<code>sokutei_excel</code>の中身を確認する</li>
+<li><code>sokutei_excel</code>から変数<code>weight</code>を抜き出し、<code>w</code>という新たな変数に格納する</li>
+<li><code>w</code>の中身を確認する <br><br></li>
+</ol>
+<p><strong>挑戦問題：</strong> <br></p>
+<ul>
+<li>計量経済学の有名な教科書にWooldridgeの書いたものがある<br />
+</li>
+<li>その本に登場するデータをまとめて収録したのがwooldridgeというパッケージ<br />
+（このようにデータをまとめたパッケージもある）<br />
+</li>
+<li>以下の問題がわからない場合は<a href="#パッケージ">前章</a>を参照</li>
 </ul>
-<!-- ```{r} -->
-<!-- sokutei_csv <- read.csv("data/sokutei.csv") -->
-<!-- head(sokutei_csv) -->
-<!-- #install.packages("readxl") #初回のみ（詳しくは第４章参照） -->
-<!-- library(readxl) -->
-<!-- sokutei_excel <- read_excel("data/sokutei.xls") -->
-<!-- head(sokutei_excel) -->
-<!-- ``` -->
+<ol style="list-style-type: decimal">
+<li>wooldridgeという名前のパッケージをインストールする</li>
+<li>wooldridgeのパッケージを呼び出す</li>
+<li><code>data(&quot;wage1&quot;)</code>を実行して、wooldridgeに収録された<code>wage1</code>というデータを読み込む<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></li>
+<li><code>head(wage1)</code>を実行して、<code>wage1</code>の中身を確認する</li>
+<li><code>help(package=&quot;wooldridge&quot;)</code>を実行して、<code>wage1</code>以外にどんなデータが収録されているか確認</li>
+</ol>
 <!--chapter:end:05-read.Rmd-->
+</div>
+</div>
+<div id="データの前処理" class="section level1">
+<h1>データの前処理</h1>
+<ul>
+<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in
+R</a></li>
+</ol>
+<div id="前処理" class="section level2">
+<h2>前処理</h2>
+<ul>
+<li>集めたデータを分析ができる形に加工することを「前処理」という</li>
+<li>地味だけど、「データ分析の８割は前処理」と言われるくらい大事な作業</li>
+<li>本章では、<a href="#パッケージのインストール">以前導入した<code>tidyverse</code>のパッケージ</a>を使った前処理のキホンを説明</li>
+<li>まずは以下のコードを実行して<code>tidyverse</code>を呼び出そう<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+</ul>
+<pre class="r"><code>library(tidyverse)</code></pre>
+</div>
+<div id="パイプによる処理" class="section level2">
+<h2>パイプによる処理</h2>
+<ul>
+<li><code>tidyverse</code>を呼び出すと、パイプ演算子(<code>%&gt;%</code>)と呼ばれるものが使えるようになる<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> <a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></li>
+<li>パイプを使いこなせるととても便利！（Rが化ける！）</li>
+<li>例えば、<code>x</code>というベクトルの平均を求めるには、次のようにすればよかった</li>
+</ul>
+<pre class="r"><code>x &lt;- c(-1,-2,-3,-4,-5)
+
+mean(x)</code></pre>
+<pre><code>## [1] -3</code></pre>
+<ul>
+<li>同じことを、パイプを使って以下のように書ける</li>
+</ul>
+<pre class="r"><code>x %&gt;% mean()</code></pre>
+<pre><code>## [1] -3</code></pre>
+<ul>
+<li>要するに、<strong>引数をパイプで繋いで関数の中に入れてあげているイメージ</strong></li>
+<li>ベクトルだけでなく、<strong>どんなものでもパイプで繋げられる</strong></li>
+<li>例えば、前章で作った<code>df</code>というデータフレームの中身を、パイプを使って確認しよう</li>
+</ul>
+<pre class="r"><code>df %&gt;% head() #データフレームもパイプで繋げられる</code></pre>
+<table style="width:61%;">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">name</th>
+<th align="center">age</th>
+<th align="center">height</th>
+<th align="center">weight</th>
+<th align="center">gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Tanaka</td>
+<td align="center">10</td>
+<td align="center">149.5</td>
+<td align="center">36</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Suzuki</td>
+<td align="center">18</td>
+<td align="center">153</td>
+<td align="center">48</td>
+<td align="center">female</td>
+</tr>
+<tr class="odd">
+<td align="center">Okada</td>
+<td align="center">36</td>
+<td align="center">171</td>
+<td align="center">58</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Watanabe</td>
+<td align="center">23</td>
+<td align="center">174.5</td>
+<td align="center">65</td>
+<td align="center">male</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>関数同士をパイプで繋ぐこともできる</li>
+</ul>
+<pre class="r"><code>read.csv(&quot;data/sokutei.csv&quot;) %&gt;% head() </code></pre>
+<table style="width:62%;">
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Name</th>
+<th align="center">Age</th>
+<th align="center">Height</th>
+<th align="center">Weight</th>
+<th align="center">Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Tanaka</td>
+<td align="center">10</td>
+<td align="center">149.5</td>
+<td align="center">36</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Suzuki</td>
+<td align="center">18</td>
+<td align="center">153</td>
+<td align="center">48</td>
+<td align="center">female</td>
+</tr>
+<tr class="odd">
+<td align="center">Okada</td>
+<td align="center">41</td>
+<td align="center">171</td>
+<td align="center">58</td>
+<td align="center">male</td>
+</tr>
+<tr class="even">
+<td align="center">Watanabe</td>
+<td align="center">26</td>
+<td align="center">174.5</td>
+<td align="center">65</td>
+<td align="center">male</td>
+</tr>
+<tr class="odd">
+<td align="center">Sato</td>
+<td align="center">32</td>
+<td align="center">159</td>
+<td align="center">54</td>
+<td align="center">female</td>
+</tr>
+<tr class="even">
+<td align="center">Takahashi</td>
+<td align="center">16</td>
+<td align="center">169</td>
+<td align="center">87</td>
+<td align="center">male</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>また、<strong>パイプはいくらでも繋げられる</strong></li>
+<li>結果を変数に格納することもできる</li>
+</ul>
+<pre class="r"><code>mean_x &lt;- 
+  x %&gt;% 
+  abs() %&gt;% #xの各要素の絶対値をとった
+  mean()　　#絶対値をとったベクトルの平均を計算
+
+mean_x</code></pre>
+<pre><code>## [1] 3</code></pre>
+<ul>
+<li><strong>どんなものの処理でも、いくらで簡単に繋げられる</strong>のがパイプのすごいところ！</li>
+<li>このあとデータの前処理で使ってみると、パイプの便利さがわかるはず</li>
+</ul>
+<!--chapter:end:06-data_cleaning.Rmd-->
 </div>
 </div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
-<li id="fn1"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>行列と同じ2次元のデータ構造だが、データフレームは列(変数)ごとに異なったデータ型を持てる<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>現在の作業ディレクトリの確認は<code>getwd()</code>、変更は<code>setwd(&quot;変更後のディレクトリのパス&quot;)</code><a href="#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>5章の<code>tidyverse</code>パッケージに含まれた<code>read_csv()</code>を使っても良い（この場合、データフレームによく似た<code>tibble</code>という形式で読み込まれる）<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>エラーが出る場合は、<a href="#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>エラーが出る場合は、<a href="#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>エラーが出る場合は、<a href="#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><code>data()</code>はRに最初から組み込まれたデータを読み込む時に使う関数（例:<code>data(iris)</code>)<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>エラーが出る場合は、<a href="#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる<a href="#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする<a href="#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

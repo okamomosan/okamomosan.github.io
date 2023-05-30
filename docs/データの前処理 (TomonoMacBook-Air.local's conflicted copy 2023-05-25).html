@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Go!! | 行動経済学の実証分析</title>
-  <meta name="description" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <title>Chapter 7 データの前処理 | 行動経済学の実証分析</title>
+  <meta name="description" content="Chapter 7 データの前処理 | 行動経済学の実証分析" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 7 データの前処理 | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 7 データの前処理 | 行動経済学の実証分析" />
   
   
   
@@ -23,15 +23,15 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-31" />
+<meta name="date" content="2023-05-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="基本操作①.html"/>
+<link rel="prev" href="データの読み込み.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">行動経済学の実証分析</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
@@ -196,14 +196,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.1" data-path="データの前処理.html"><a href="データの前処理.html#前処理"><i class="fa fa-check"></i><b>7.1</b> 前処理</a></li>
 <li class="chapter" data-level="7.2" data-path="データの前処理.html"><a href="データの前処理.html#パイプによる処理"><i class="fa fa-check"></i><b>7.2</b> パイプによる処理</a></li>
-<li class="chapter" data-level="7.3" data-path="データの前処理.html"><a href="データの前処理.html#変数列の抽出削除"><i class="fa fa-check"></i><b>7.3</b> 変数（列）の抽出・削除</a></li>
-<li class="chapter" data-level="7.4" data-path="データの前処理.html"><a href="データの前処理.html#変数名の変更"><i class="fa fa-check"></i><b>7.4</b> 変数名の変更</a></li>
-<li class="chapter" data-level="7.5" data-path="データの前処理.html"><a href="データの前処理.html#データ行の抽出"><i class="fa fa-check"></i><b>7.5</b> データ（行）の抽出</a></li>
-<li class="chapter" data-level="7.6" data-path="データの前処理.html"><a href="データの前処理.html#条件式のキホン"><i class="fa fa-check"></i><b>7.6</b> 条件式のキホン</a></li>
-<li class="chapter" data-level="7.7" data-path="データの前処理.html"><a href="データの前処理.html#変数の追加"><i class="fa fa-check"></i><b>7.7</b> 変数の追加</a></li>
-<li class="chapter" data-level="7.8" data-path="データの前処理.html"><a href="データの前処理.html#データの並び替え"><i class="fa fa-check"></i><b>7.8</b> データの並び替え</a></li>
-<li class="chapter" data-level="7.9" data-path="データの前処理.html"><a href="データの前処理.html#データの集計と計算"><i class="fa fa-check"></i><b>7.9</b> データの集計と計算</a></li>
-<li class="chapter" data-level="7.10" data-path="データの前処理.html"><a href="データの前処理.html#演習問題-4"><i class="fa fa-check"></i><b>7.10</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -222,170 +214,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="go" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Go!!<a href="go.html#go" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="データの前処理" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> データの前処理<a href="データの前処理.html#データの前処理" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>とりあえずまずは使ってみよう！</li>
-</ul>
-<div id="rstudioを開く" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> RStudioを開く<a href="go.html#rstudioを開く" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>RStudioのアイコンから起動</li>
-<li>次のような画面が表示される<br />
-<img src="img/01_rstudio_start.png" /></li>
-</ul>
-<hr />
-</div>
-<div id="コンソールに直接打ち込む" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> コンソールに直接打ち込む<a href="go.html#コンソールに直接打ち込む" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>左側の大きな枠を見る<br />
-</li>
-<li>Consoleのタブが選択されていることを確認</li>
-<li>この画面（＝コンソール）を使い、簡単な足し算を実行しよう</li>
-<li>最下段の<code>&gt;</code>のあとに<code>1+1</code>と打ち込み<strong>Enter（macはreturn）</strong>を押す</li>
-<li><code>[1] 2</code>と返ってくる</li>
-<li><code>2</code>の部分が<code>1+1</code>の計算結果（<code>[1]</code>は1行目という意味）</li>
-</ul>
-<div align="center">
-<p><img src="img/01_betauchi.png" width="50%"></p>
-</div>
-<hr />
-</div>
-<div id="rスクリプトを使う" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Rスクリプトを使う<a href="go.html#rスクリプトを使う" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>コンソールに書いたコードは、Rstudioを終了すると消える<br />
-（実際に終了して再起動してみよう）<br />
-</li>
-<li>だから、<strong>Rスクリプト</strong>と呼ばれる保存可能なファイルにコードを書くことが多い</li>
-</ul>
-<div id="rスクリプトを作る" class="section level5 unnumbered hasAnchor">
-<h5>Rスクリプトを作る：<a href="go.html#rスクリプトを作る" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>RStudioの左上の <img src="img/01_create.png" width="4%">
-をクリックし、「R Script」を選択</li>
-<li>左上に新しくできた枠に、空のRスクリプトファイルが表示される<br />
-（untitled1と表示されたタブが作成したRスクリプト）</li>
-</ul>
-</div>
-<div id="rstudioの４つのペーン" class="section level5 unnumbered hasAnchor">
-<h5>RStudioの４つのペーン：<a href="go.html#rstudioの４つのペーン" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>実際には、この４つの枠（＝ペーン）に分かれた画面で作業することが多い</li>
-</ul>
-<p><img src="img/01_rstudio_4pane.png" /></p>
-<p>　　<strong>①左上：</strong>メインの作業場で、Rスクリプトのコードなどを書くところ<br />
-　　<strong>②右上：</strong>変数やオブジェクトのリストが表示されたり、バージョン管理を行う<br />
-　　<strong>③左下：</strong>コードの実行結果が表示されるコンソールや、各種コマンドを実行するターミナルなど<br />
-　　<strong>④右下：</strong>各種ファイルやパッケージの表示、出力した図の表示など</p>
-</div>
-<div id="rスクリプトに書く" class="section level4 unnumbered hasAnchor">
-<h4>Rスクリプトに書く：<a href="go.html#rスクリプトに書く" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>左上のペーンを見て、untitled1のタブが選択されていることを確認</li>
-<li>1行目に<code>1+1</code>と入力して<strong>ctrl+Enter（macはcommand+return）</strong>を押す<br />
-（ <img src="img/01_run.png" width="8%"> をクリックしても良い）</li>
-<li>左下のペーンのコンソールに結果(<code>[1] 2</code>)が表示される</li>
-</ul>
-<div id="保存" class="section level5 unnumbered hasAnchor">
-<h5>保存：<a href="go.html#保存" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>Rスクリプトは<strong>ctrl+s（macはcommand+s）</strong>で好きな時に保存できる<br />
-（ <img src="img/01_save.png" width="2.5%"> をクリックしても良い）</li>
-<li>初回はファイル名と保存場所も決める
-（test.Rという名前でデスクトップに保存してみよう）</li>
-<li>試しに、保存したRスクリプトのタブを閉じてみよう
-（test.Rのタブの右側の×をクリック）</li>
-<li>左上の <img src="img/01_open.png" width="4%"> をクリックし、保存したRスクリプトのファイルを選択<br />
-（つまり、デスクトップにあるtest.Rを選択）</li>
-<li>Rスクリプトが先ほど保存した状態で開く</li>
-</ul>
-</div>
-<div id="さらに書く" class="section level5 unnumbered hasAnchor">
-<h5>さらに書く！：<a href="go.html#さらに書く" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>続けて、簡単な引き算を実行しよう</li>
-<li>2行目に<code>5-2</code>と入力する</li>
-<li>2行目にカーソルを合わせて<strong>ctrl+Enter</strong>を押す</li>
-<li>2行目の計算結果(<code>[1] 3</code>)が表示される</li>
-<li>1行目にカーソルを合わせて<strong>ctrl+Enter</strong>を押す</li>
-<li>1行目の計算結果(<code>[1] 2</code>)が表示される</li>
-<li>つまり、実行したい行にカーソルを合わせて<strong>ctrl+Enter</strong>を押せば良い</li>
-<li>全ての行を一括で実行したいなら<strong>ctrl+shift+Enter（macはcommand+shift+return）</strong></li>
-<li>一部分だけ実行したいなら、下図のように実行したい行だけ選択して<strong>ctrl+Enter</strong></li>
-</ul>
-<div align="center">
-<p><img src="img/01_ichibu.png" width="10%"></p>
-</div>
-</div>
-<div id="rスクリプトを使うメリット" class="section level5 unnumbered hasAnchor">
-<h5>Rスクリプトを使うメリット：<a href="go.html#rスクリプトを使うメリット" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ol style="list-style-type: decimal">
-<li>コードが保存できる（毎回書き直さなくて良い！）</li>
-<li>長く複雑なコードを書いたり、管理するのが楽<br />
-</li>
-<li>他の人に配布できる（分析を再現してもらいやすい）<br />
-などなど…</li>
-</ol>
-<hr />
-</div>
-</div>
-</div>
-<div id="プロジェクト管理" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> プロジェクト管理<a href="go.html#プロジェクト管理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>研究プロジェクトが進むと、ひとつのRスクリプトだけでは管理しきれなくなる</li>
-<li><strong>プロジェクト</strong>を使えば、複数のRスクリプトや関連データなどを一つのフォルダにまとめて効率よく管理できる</li>
-</ul>
-<div id="プロジェクトの作成" class="section level5 unnumbered hasAnchor">
-<h5>プロジェクトの作成：<a href="go.html#プロジェクトの作成" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>左上の <img src="img/01_project1.png" width="3%"> をクリックし、「New Directry」→「New Project」の順に選択<br />
-</li>
-<li>次の画面で<u>①プロジェクト名</u>と、その<u>②作成場所</u>を指定して<u>③「Create Project」</u></li>
-</ul>
-<div align="center">
-<p><img src="img/01_project2.png" width="45%"></p>
-</div>
-<ul>
-<li>指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう<br />
-(以降、これを<strong>プロジェクトフォルダ</strong>と呼ぶ)</li>
-<li>そのフォルダの中に<code>プロジェクト名.Rproj</code>というファイルができているのを確認しよう</li>
-<li>以下は、macで<code>Document</code>フォルダ内に<code>sugoi_project</code>というプロジェクトを作った例</li>
-</ul>
-<div align="center">
-<p><img src="img/01_project3.png" width="45%"></p>
-</div>
-<ul>
-<li>初めはご利益がわかりにくいが、研究プロジェクトごとにプロジェクトを作るクセをつけよう</li>
-<li>そして、次の心得に従い、プロジェクト上で作業をするようにしよう！</li>
+<li>本章の説明がわからない人は、森知晴先生のすばらしい動画たちを参考にしよう！</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li>毎回<code>プロジェクト名.Rproj</code>をダブルクリックしてRstudioを起動</li>
-<li>関連するファイルはプロジェクトフォルダにまとめて一元管理</li>
+<li><a href="https://youtu.be/96AZJmGNass">データフレームの操作 in R</a></li>
 </ol>
-</div>
-</div>
-<div id="演習問題" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> 演習問題<a href="go.html#演習問題" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="前処理" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> 前処理<a href="データの前処理.html#前処理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>自分の好きな場所に<code>zemi</code>という名前のプロジェクトを作る</li>
-<li>指定した場所に<code>zemi</code>というフォルダができているのを確認する</li>
-<li>フォルダの中に<code>zemi.Rproj</code>というファイルが出来ているのを確認</li>
+<li>集めたデータを分析ができる形に加工することを「前処理」という</li>
+<li>地味だけど、「データ分析の８割は前処理」と言われるくらい大事な作業</li>
+<li>本章では、<a href="パッケージ.html#パッケージのインストール">以前導入した<code>tidyverse</code>のパッケージ</a>を使った前処理のキホンを説明</li>
+<li>まずは以下のコードを実行して<code>tidyverse</code>を呼び出そう<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 </ul>
-<p><br>
-<strong>※ 今後は、この<code>zemi</code>プロジェクトで作業していることを前提に解説する</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="データの前処理.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+</div>
+<div id="パイプによる処理" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> パイプによる処理<a href="データの前処理.html#パイプによる処理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><code>tidyverse</code>を呼び出すと、パイプ演算子(<code>%&gt;%</code>)と呼ばれるものが使えるようになる<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
+<li>パイプを使いこなせるととても便利！（Rが化ける！）</li>
+<li>例えば、<code>x</code>というベクトルの平均を求めるには、次のようにすればよかった</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="データの前処理.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb2-2"><a href="データの前処理.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="データの前処理.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code></pre></div>
+<pre><code>## [1] 1.581139</code></pre>
+<ul>
+<li>同じことを、パイプを使って以下のように書ける</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="データの前処理.html#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sd</span>()</span></code></pre></div>
+<pre><code>## [1] 1.581139</code></pre>
+<ul>
+<li>要するに、<strong>引数をパイプで繋いで関数の中に入れてあげているイメージ</strong></li>
+<li>ベクトルだけでなく、<strong>どんなものでもパイプで繋げられる</strong></li>
+<li>例えば、前章で作った<code>df</code>というデータフレームの中身を、パイプを使って確認しよう</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="データの前処理.html#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">head</span>() <span class="co">#データフレームもパイプで繋げられる</span></span></code></pre></div>
+<pre><code>##       name age height weight gender
+## 1   Tanaka  10  149.5     36   male
+## 2   Suzuki  18  153.0     48 female
+## 3    Okada  36  171.0     58   male
+## 4 Watanabe  23  174.5     65   male</code></pre>
+<ul>
+<li>関数同士をパイプで繋ぐこともできる</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="データの前処理.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;data/sokutei.csv&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>() </span></code></pre></div>
+<pre><code>##        Name Age Height Weight Gender
+## 1    Tanaka  10  149.5     36   male
+## 2    Suzuki  18  153.0     48 female
+## 3     Okada  41  171.0     58   male
+## 4  Watanabe  26  174.5     65   male
+## 5      Sato  32  159.0     54 female
+## 6 Takahashi  16  169.0     87   male</code></pre>
+<ul>
+<li>また、<strong>パイプはいくらでも繋げられる</strong></li>
+<li>結果を変数に格納することもできる</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="データの前処理.html#cb10-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> </span>
+<span id="cb10-2"><a href="データの前処理.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="データの前処理.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var</span>() <span class="sc">%&gt;%</span> <span class="co">#xの分散を計算</span></span>
+<span id="cb10-4"><a href="データの前処理.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>()　  <span class="co">#上の答えの平方根を計算</span></span>
+<span id="cb10-5"><a href="データの前処理.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="データの前処理.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#分散の平方根が標準偏差だった</span></span>
+<span id="cb10-7"><a href="データの前処理.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#だから、先のsd(x)の答えと同じになる</span></span>
+<span id="cb10-8"><a href="データの前処理.html#cb10-8" aria-hidden="true" tabindex="-1"></a>sd_x </span></code></pre></div>
+<pre><code>## [1] 1.581139</code></pre>
+<ul>
+<li><strong>どんなものの処理でも、いくらで簡単に繋げられる</strong>のがパイプのすごいところ！</li>
+<li>このあとデータの前処理で使ってみると、パイプの便利さがわかるはず</li>
+</ul>
 
 </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="データの前処理.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる<a href="データの前処理.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする<a href="データの前処理.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="基本操作①.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="データの読み込み.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -439,20 +366,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

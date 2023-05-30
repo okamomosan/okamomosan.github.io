@@ -23,7 +23,7 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-17" />
+<meta name="date" content="2023-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,6 +196,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.1" data-path="データの前処理.html"><a href="データの前処理.html#前処理"><i class="fa fa-check"></i><b>7.1</b> 前処理</a></li>
 <li class="chapter" data-level="7.2" data-path="データの前処理.html"><a href="データの前処理.html#パイプによる処理"><i class="fa fa-check"></i><b>7.2</b> パイプによる処理</a></li>
+<li class="chapter" data-level="7.3" data-path="データの前処理.html"><a href="データの前処理.html#変数列の抽出削除"><i class="fa fa-check"></i><b>7.3</b> 変数（列）の抽出・削除</a></li>
+<li class="chapter" data-level="7.4" data-path="データの前処理.html"><a href="データの前処理.html#変数名の変更"><i class="fa fa-check"></i><b>7.4</b> 変数名の変更</a></li>
+<li class="chapter" data-level="7.5" data-path="データの前処理.html"><a href="データの前処理.html#データ行の抽出"><i class="fa fa-check"></i><b>7.5</b> データ（行）の抽出</a></li>
+<li class="chapter" data-level="7.6" data-path="データの前処理.html"><a href="データの前処理.html#条件式のキホン"><i class="fa fa-check"></i><b>7.6</b> 条件式のキホン</a></li>
+<li class="chapter" data-level="7.7" data-path="データの前処理.html"><a href="データの前処理.html#変数の追加"><i class="fa fa-check"></i><b>7.7</b> 変数の追加</a></li>
+<li class="chapter" data-level="7.8" data-path="データの前処理.html"><a href="データの前処理.html#データの並び替え"><i class="fa fa-check"></i><b>7.8</b> データの並び替え</a></li>
+<li class="chapter" data-level="7.9" data-path="データの前処理.html"><a href="データの前処理.html#データの集計と計算"><i class="fa fa-check"></i><b>7.9</b> データの集計と計算</a></li>
+<li class="chapter" data-level="7.10" data-path="データの前処理.html"><a href="データの前処理.html#演習問題-4"><i class="fa fa-check"></i><b>7.10</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -235,8 +243,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>例えば、<code>tidyverse</code>というパッケージは、次のようにインストールする<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 <li><strong>この<code>tidyverse</code>を導入することでRが化ける！</strong>（詳しい使い方は次章）</li>
 </ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="パッケージ.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
-<span id="cb104-2"><a href="パッケージ.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="パッケージ.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 初回に一度だけ実行</span></span>
+<span id="cb106-2"><a href="パッケージ.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co">#引数の&quot;ダブルコーテーション&quot;を忘れない</span></span></code></pre></div>
 </div>
 <div id="パッケージの呼び出し" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> パッケージの呼び出し<a href="パッケージ.html#パッケージの呼び出し" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -244,8 +252,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>インストールするだけではパッケージは使えない</li>
 <li>次のコードを実行して呼び出すことで初めて<code>tidyverse</code>が使えるようになる</li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="パッケージ.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
-<span id="cb105-2"><a href="パッケージ.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="パッケージ.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RStudioを起動する度に実行</span></span>
+<span id="cb107-2"><a href="パッケージ.html#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#引数の&quot;ダブルコーテーション&quot;は不要</span></span></code></pre></div>
 <ul>
 <li><code>install.packages()</code>は、初回に一度だけ実行すれば良い</li>
 <li>ただし、<code>library()</code>はRstudioを起動するたびに実行する必要がある</li>
@@ -257,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="footnotes">
 <hr />
 <ol start="2">
-<li id="fn2"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう<a href="パッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう。<a href="パッケージ.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

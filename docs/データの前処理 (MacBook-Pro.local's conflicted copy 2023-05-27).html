@@ -23,7 +23,7 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-31" />
+<meta name="date" content="2023-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">行動経済学の実証分析</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ready?</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#rstudioとは"><i class="fa fa-check"></i><b>1.1</b> R(Studio)とは？</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tips"><i class="fa fa-check"></i><b>1.2</b> Tips!</a></li>
@@ -201,9 +201,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="データの前処理.html"><a href="データの前処理.html#データ行の抽出"><i class="fa fa-check"></i><b>7.5</b> データ（行）の抽出</a></li>
 <li class="chapter" data-level="7.6" data-path="データの前処理.html"><a href="データの前処理.html#条件式のキホン"><i class="fa fa-check"></i><b>7.6</b> 条件式のキホン</a></li>
 <li class="chapter" data-level="7.7" data-path="データの前処理.html"><a href="データの前処理.html#変数の追加"><i class="fa fa-check"></i><b>7.7</b> 変数の追加</a></li>
-<li class="chapter" data-level="7.8" data-path="データの前処理.html"><a href="データの前処理.html#データの並び替え"><i class="fa fa-check"></i><b>7.8</b> データの並び替え</a></li>
-<li class="chapter" data-level="7.9" data-path="データの前処理.html"><a href="データの前処理.html#データの集計と計算"><i class="fa fa-check"></i><b>7.9</b> データの集計と計算</a></li>
-<li class="chapter" data-level="7.10" data-path="データの前処理.html"><a href="データの前処理.html#演習問題-4"><i class="fa fa-check"></i><b>7.10</b> 演習問題</a></li>
 </ul></li>
 </ul>
 
@@ -236,41 +233,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>集めたデータを分析ができる形に加工することを「前処理」という</li>
 <li>地味だけど、「データ分析の８割は前処理」と言われるくらい大事な作業</li>
 <li>本章では、<a href="パッケージ.html#パッケージのインストール">以前導入した<code>tidyverse</code>のパッケージ</a>を使った前処理のキホンを説明</li>
-<li>まずは以下のコードを実行して<code>tidyverse</code>を呼び出そう<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></li>
+<li>まずは以下のコードを実行して<code>tidyverse</code>を呼び出そう<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
 </ul>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="データの前処理.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="データの前処理.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
 <div id="パイプによる処理" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> パイプによる処理<a href="データの前処理.html#パイプによる処理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><code>tidyverse</code>を呼び出すと、パイプ演算子(<code>%&gt;%</code>)と呼ばれるものが使えるようになる<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> <a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></li>
+<li><code>tidyverse</code>を呼び出すと、パイプ演算子(<code>%&gt;%</code>)と呼ばれるものが使えるようになる<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></li>
 <li>パイプを使いこなせるととても便利！（Rが化ける！）</li>
 <li>例えば、<code>x</code>というベクトルの平均を求めるには、次のようにすればよかった</li>
 </ul>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="データの前処理.html#cb117-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb117-2"><a href="データの前処理.html#cb117-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-3"><a href="データの前処理.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="データの前処理.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb2-2"><a href="データの前処理.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="データの前処理.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1.581139</code></pre>
 <ul>
 <li>同じことを、パイプを使って以下のように書ける</li>
 </ul>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="データの前処理.html#cb119-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="データの前処理.html#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span> <span class="fu">sd</span>()</span></code></pre></div>
 <pre><code>## [1] 1.581139</code></pre>
 <ul>
-<li>要するに、<strong>引数をパイプで繋いで関数の中に入れてあげるイメージ</strong></li>
+<li>要するに、<strong>引数をパイプで繋いで関数の中に入れてあげているイメージ</strong></li>
 <li>ベクトルだけでなく、<strong>どんなものでもパイプで繋げられる</strong></li>
 <li>例えば、前章で作った<code>df</code>というデータフレームの中身を、パイプを使って確認しよう</li>
 </ul>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="データの前処理.html#cb121-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">head</span>() <span class="co">#データフレームもパイプで繋げられる</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="データの前処理.html#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">head</span>() <span class="co">#データフレームもパイプで繋げられる</span></span></code></pre></div>
 <pre><code>##       name age height weight gender
 ## 1   Tanaka  10  149.5     36   male
-## 2   Suzuki  18  153.0     65 female
+## 2   Suzuki  18  153.0     48 female
 ## 3    Okada  36  171.0     58   male
-## 4 Watanabe  23  174.5    127   male</code></pre>
+## 4 Watanabe  23  174.5     65   male</code></pre>
 <ul>
 <li>関数同士をパイプで繋ぐこともできる</li>
 </ul>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="データの前処理.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;data/sokutei.csv&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="データの前処理.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;data/sokutei.csv&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>() </span></code></pre></div>
 <pre><code>##        Name Age Height Weight Gender
 ## 1    Tanaka  10  149.5     36   male
 ## 2    Suzuki  18  153.0     48 female
@@ -282,14 +279,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>また、<strong>パイプはいくらでも繋げられる</strong></li>
 <li>結果を変数に格納することもできる</li>
 </ul>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="データの前処理.html#cb125-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> </span>
-<span id="cb125-2"><a href="データの前処理.html#cb125-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">%&gt;%</span> </span>
-<span id="cb125-3"><a href="データの前処理.html#cb125-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var</span>() <span class="sc">%&gt;%</span> <span class="co">#xの分散を計算</span></span>
-<span id="cb125-4"><a href="データの前処理.html#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>()　  <span class="co">#上の答えの平方根を計算</span></span>
-<span id="cb125-5"><a href="データの前処理.html#cb125-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-6"><a href="データの前処理.html#cb125-6" aria-hidden="true" tabindex="-1"></a><span class="co">#分散の平方根が標準偏差だった</span></span>
-<span id="cb125-7"><a href="データの前処理.html#cb125-7" aria-hidden="true" tabindex="-1"></a><span class="co">#だから、先のsd(x)の答えと同じになる</span></span>
-<span id="cb125-8"><a href="データの前処理.html#cb125-8" aria-hidden="true" tabindex="-1"></a>sd_x </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="データの前処理.html#cb10-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> </span>
+<span id="cb10-2"><a href="データの前処理.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="データの前処理.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var</span>() <span class="sc">%&gt;%</span> <span class="co">#xの分散を計算</span></span>
+<span id="cb10-4"><a href="データの前処理.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>()　  <span class="co">#上の答えの平方根を計算</span></span>
+<span id="cb10-5"><a href="データの前処理.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="データの前処理.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#分散の平方根が標準偏差だった</span></span>
+<span id="cb10-7"><a href="データの前処理.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#だから、先のsd(x)の答えと同じになる</span></span>
+<span id="cb10-8"><a href="データの前処理.html#cb10-8" aria-hidden="true" tabindex="-1"></a>sd_x </span></code></pre></div>
 <pre><code>## [1] 1.581139</code></pre>
 <ul>
 <li><strong>どんなものの処理でも、いくらで簡単に繋げられる</strong>のがパイプのすごいところ！</li>
@@ -304,24 +301,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>そんな時は、<code>dplyr</code>パッケージに収録された<code>select()</code>を使う</li>
 <li>データを匿名にするために、先ほどのデータフレーム<code>df</code>から、変数<code>name</code>以外の変数を抽出したいとする</li>
 </ul>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="データの前処理.html#cb127-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb127-2"><a href="データの前処理.html#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, height, weight, gender) </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="データの前処理.html#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="データの前処理.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, height, weight, gender) </span></code></pre></div>
 <pre><code>##   age height weight gender
 ## 1  10  149.5     36   male
-## 2  18  153.0     65 female
+## 2  18  153.0     48 female
 ## 3  36  171.0     58   male
-## 4  23  174.5    127   male</code></pre>
+## 4  23  174.5     65   male</code></pre>
 <ul>
 <li>もしくは、同じことを<code>df</code>から、変数<code>name</code>を除外することでも、同じ結果が得られる</li>
 <li>この場合、<code>select()</code>の引数で、取り除きたい変数の前に<code>-</code>か<code>!</code>を付ければ良い</li>
 </ul>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="データの前処理.html#cb129-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb129-2"><a href="データの前処理.html#cb129-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>name) <span class="co"># 変数の前に-か!を付けると、その変数を取り除ける</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="データの前処理.html#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="データの前処理.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>name) <span class="co"># 変数の前に-か!を付けると、その変数を取り除ける</span></span></code></pre></div>
 <pre><code>##   age height weight gender
 ## 1  10  149.5     36   male
-## 2  18  153.0     65 female
+## 2  18  153.0     48 female
 ## 3  36  171.0     58   male
-## 4  23  174.5    127   male</code></pre>
+## 4  23  174.5     65   male</code></pre>
 </div>
 <div id="変数名の変更" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> 変数名の変更<a href="データの前処理.html#変数名の変更" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -329,24 +326,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>変数名を変えたい時は、<code>rename()</code>を使う</li>
 <li><code>df</code>の中の<code>age</code>という変数の名前を<code>toshi</code>に変えたい場合を考える</li>
 </ul>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="データの前処理.html#cb131-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb131-2"><a href="データの前処理.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">toshi =</span> age) <span class="co"># 引数は「変更後の変数名 = 変更前の変数名」</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="データの前処理.html#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="データの前処理.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">toshi =</span> age) <span class="co"># 引数は「変更後の変数名 = 変更前の変数名」</span></span></code></pre></div>
 <pre><code>##       name toshi height weight gender
 ## 1   Tanaka    10  149.5     36   male
-## 2   Suzuki    18  153.0     65 female
+## 2   Suzuki    18  153.0     48 female
 ## 3    Okada    36  171.0     58   male
-## 4 Watanabe    23  174.5    127   male</code></pre>
+## 4 Watanabe    23  174.5     65   male</code></pre>
 <ul>
 <li>もしくは、先ほどの<code>select()</code>を使い、変数の抽出とまとめて変数名を変更することもできる</li>
 <li><code>df</code>から<code>name</code>を除外した上で、<code>age</code>の名前を<code>toshi</code>に変更する場合を考える</li>
 </ul>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="データの前処理.html#cb133-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb133-2"><a href="データの前処理.html#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">toshi =</span> age, height, weight, gender)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="データの前処理.html#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="データの前処理.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">toshi =</span> age, height, weight, gender)</span></code></pre></div>
 <pre><code>##   toshi height weight gender
 ## 1    10  149.5     36   male
-## 2    18  153.0     65 female
+## 2    18  153.0     48 female
 ## 3    36  171.0     58   male
-## 4    23  174.5    127   male</code></pre>
+## 4    23  174.5     65   male</code></pre>
 </div>
 <div id="データ行の抽出" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> データ（行）の抽出<a href="データの前処理.html#データ行の抽出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -355,18 +352,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>そんな時は、<code>dplyr</code>パッケージに収録された<code>filter()</code>を使う</li>
 <li>年齢が１８歳以上の人（<code>age</code>が18以上）のデータのみ抜き出してみよう</li>
 </ul>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="データの前処理.html#cb135-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb135-2"><a href="データの前処理.html#cb135-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="co"># filter()の引数に条件式（後述）を書く</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="データの前処理.html#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="データの前処理.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">18</span>) </span>
+<span id="cb20-3"><a href="データの前処理.html#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="データの前処理.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># filter()の引数に条件式を書く</span></span>
+<span id="cb20-5"><a href="データの前処理.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 条件式の書き方はこのあと説明</span></span>
+<span id="cb20-6"><a href="データの前処理.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="データの前処理.html#cb20-7" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>##       name age height weight gender
-## 1   Suzuki  18  153.0     65 female
+## 1   Suzuki  18  153.0     48 female
 ## 2    Okada  36  171.0     58   male
-## 3 Watanabe  23  174.5    127   male</code></pre>
+## 3 Watanabe  23  174.5     65   male</code></pre>
 </div>
 <div id="条件式のキホン" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">7.6</span> 条件式のキホン<a href="データの前処理.html#条件式のキホン" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>先のコードの中に出てきた<code>age &gt;= 18</code>は「bmiが19以上」の意味</li>
-<li>以下を使って条件式を書く<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></li>
+<li>以下を使って条件式を書く<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
 </ul>
 <table>
 <thead>
@@ -453,7 +455,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="練習問題-6" class="section level5 unnumbered hasAnchor">
 <h5>練習問題<a href="データの前処理.html#練習問題-6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
-<li>先の先のデータフレーム<code>df</code>から、以下の条件を満たす人のデータを抽出しなさい</li>
+<li>先の先のデータフレーム<code>df</code>から、以下の条件を満たす人のデータを抽出しなさい<br />
+</li>
 <li>ただし、いずれの問題も<code>select()</code>は一度しか使ってはいけない <br></li>
 </ul>
 <ol style="list-style-type: decimal">
@@ -465,189 +468,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="変数の追加" class="section level2 hasAnchor" number="7.7">
 <h2><span class="header-section-number">7.7</span> 変数の追加<a href="データの前処理.html#変数の追加" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="キホン" class="section level5 unnumbered hasAnchor">
-<h5>キホン：<a href="データの前処理.html#キホン" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
-<li>新しい変数を作る時は、<code>dplyr</code>パッケージに収録された<code>mutate()</code>を使う</li>
+<li>新しい変数を作る時に使う<code>mutate()</code>もそのひとつ</li>
 <li>前章で作った<code>df</code>というデータフレームにBMIの変数を追加してみよう<br />
 （BMI ＝ 体重kg ÷ (身長m)<span class="math inline">\(^2\)</span>）</li>
 </ul>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="データの前処理.html#cb137-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb137-2"><a href="データの前処理.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bmi =</span> weight <span class="sc">/</span> (height<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="co">#BMIの変数を作成しdfに上書き</span></span>
-<span id="cb137-3"><a href="データの前処理.html#cb137-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-4"><a href="データの前処理.html#cb137-4" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="データの前処理.html#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="データの前処理.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bmi =</span> weight <span class="sc">/</span> (height<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="co">#BMIの変数を作成しdfに上書き</span></span>
+<span id="cb22-3"><a href="データの前処理.html#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="データの前処理.html#cb22-4" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>##       name age height weight gender      bmi
-## 1   Tanaka  10  149.5     36   male 16.10720
-## 2   Suzuki  18  153.0     65 female 27.76710
-## 3    Okada  36  171.0     58   male 19.83516
-## 4 Watanabe  23  174.5    127   male 41.70738</code></pre>
-</div>
-<div id="つに条件分岐する変数の作成" class="section level5 unnumbered hasAnchor">
-<h5>2つに条件分岐する変数の作成：<a href="データの前処理.html#つに条件分岐する変数の作成" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li><code>age</code>が18未満の時に<code>1</code>、18歳以上の時に<code>0</code>となるダミー変数<code>is_child</code>を作りたいとする</li>
-<li>この時は、<code>mutate()</code>の中で<code>if_else()</code>を使い、次の条件式を書く</li>
-</ul>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="データの前処理.html#cb139-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb139-2"><a href="データの前処理.html#cb139-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">is_child =</span> </span>
-<span id="cb139-3"><a href="データの前処理.html#cb139-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(</span>
-<span id="cb139-4"><a href="データの前処理.html#cb139-4" aria-hidden="true" tabindex="-1"></a>             age <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="co">#if_else()の１つめの引数は条件式</span></span>
-<span id="cb139-5"><a href="データの前処理.html#cb139-5" aria-hidden="true" tabindex="-1"></a>             <span class="dv">1</span>, <span class="co">#2つめの引数は条件式がTRUEの時の戻り値</span></span>
-<span id="cb139-6"><a href="データの前処理.html#cb139-6" aria-hidden="true" tabindex="-1"></a>             <span class="dv">0</span> <span class="co">#３つめの引数は条件式がFALSEの時の戻り値</span></span>
-<span id="cb139-7"><a href="データの前処理.html#cb139-7" aria-hidden="true" tabindex="-1"></a>           )) </span>
-<span id="cb139-8"><a href="データの前処理.html#cb139-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb139-9"><a href="データの前処理.html#cb139-9" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>##       name age height weight gender      bmi is_child
-## 1   Tanaka  10  149.5     36   male 16.10720        1
-## 2   Suzuki  18  153.0     65 female 27.76710        0
-## 3    Okada  36  171.0     58   male 19.83516        0
-## 4 Watanabe  23  174.5    127   male 41.70738        0</code></pre>
-</div>
-<div id="複雑に条件分岐する変数の作成" class="section level5 unnumbered hasAnchor">
-<h5>複雑に条件分岐する変数の作成：<a href="データの前処理.html#複雑に条件分岐する変数の作成" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li><code>if_else()</code>を入れ子にすれば、3つ以上に条件分岐する変数も作れる</li>
-<li>しかし、3つい上に条件分岐する場合は<code>case_when</code>を使った方が便利</li>
-<li>例えば世界保健機関(WHO)は、BMIを使って以下の基準で肥満度を分類している</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th align="left">BMI値</th>
-<th align="left">分類</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">16未満</td>
-<td align="left">痩せすぎ</td>
-</tr>
-<tr class="even">
-<td align="left">16.00〜16.99以下</td>
-<td align="left">痩せ</td>
-</tr>
-<tr class="odd">
-<td align="left">17.00〜18.49以下</td>
-<td align="left">痩せぎみ</td>
-</tr>
-<tr class="even">
-<td align="left">18.50〜24.99以下</td>
-<td align="left">普通体重</td>
-</tr>
-<tr class="odd">
-<td align="left">25.00〜29.99以下</td>
-<td align="left">前肥満</td>
-</tr>
-<tr class="even">
-<td align="left">30.00〜34.99以下</td>
-<td align="left">肥満(1度)</td>
-</tr>
-<tr class="odd">
-<td align="left">35.00〜39.99以下</td>
-<td align="left">肥満(2度)</td>
-</tr>
-<tr class="even">
-<td align="left">40.00以上</td>
-<td align="left">肥満(3度)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>これを表す変数<code>fat</code>を作りたい場合は以下のように書く</li>
-</ul>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="データの前処理.html#cb141-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb141-2"><a href="データの前処理.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>( <span class="at">fat =</span> </span>
-<span id="cb141-3"><a href="データの前処理.html#cb141-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">case_when</span>(</span>
-<span id="cb141-4"><a href="データの前処理.html#cb141-4" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&lt;</span> <span class="dv">16</span> <span class="sc">~</span> <span class="st">&quot;痩せすぎ&quot;</span>,</span>
-<span id="cb141-5"><a href="データの前処理.html#cb141-5" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="dv">16</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">17</span> <span class="sc">~</span> <span class="st">&quot;痩せ&quot;</span>,</span>
-<span id="cb141-6"><a href="データの前処理.html#cb141-6" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="dv">17</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">&quot;痩せぎみ&quot;</span>,</span>
-<span id="cb141-7"><a href="データの前処理.html#cb141-7" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="fl">18.50</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">&quot;普通体重&quot;</span>,</span>
-<span id="cb141-8"><a href="データの前処理.html#cb141-8" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="dv">25</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span>  <span class="sc">~</span> <span class="st">&quot;前肥満&quot;</span>,</span>
-<span id="cb141-9"><a href="データの前処理.html#cb141-9" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">35</span> <span class="sc">~</span> <span class="st">&quot;肥満(1度)&quot;</span>,</span>
-<span id="cb141-10"><a href="データの前処理.html#cb141-10" aria-hidden="true" tabindex="-1"></a>             bmi <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">&quot;肥満(2度)&quot;</span>,</span>
-<span id="cb141-11"><a href="データの前処理.html#cb141-11" aria-hidden="true" tabindex="-1"></a>             <span class="co">#その他の条件の戻り値はTRUE~を使う</span></span>
-<span id="cb141-12"><a href="データの前処理.html#cb141-12" aria-hidden="true" tabindex="-1"></a>             <span class="cn">TRUE</span><span class="sc">~</span><span class="st">&quot;肥満(3度)&quot;</span> <span class="co">#もちろん、bmi &gt;= 40 ~ &quot;肥満(3度)&quot;,と書いても良い</span></span>
-<span id="cb141-13"><a href="データの前処理.html#cb141-13" aria-hidden="true" tabindex="-1"></a>           )) </span>
-<span id="cb141-14"><a href="データの前処理.html#cb141-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb141-15"><a href="データの前処理.html#cb141-15" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>##       name age height weight gender      bmi is_child       fat
-## 1   Tanaka  10  149.5     36   male 16.10720        1      痩せ
-## 2   Suzuki  18  153.0     65 female 27.76710        0    前肥満
-## 3    Okada  36  171.0     58   male 19.83516        0  普通体重
-## 4 Watanabe  23  174.5    127   male 41.70738        0 肥満(3度)</code></pre>
-</div>
-</div>
-<div id="データの並び替え" class="section level2 hasAnchor" number="7.8">
-<h2><span class="header-section-number">7.8</span> データの並び替え<a href="データの前処理.html#データの並び替え" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>データフレームの中のある変数について並べ替えたい時は、<code>dplyr</code>パッケージに収録された<code>arrange()</code>を使う</li>
-<li>例えば、先の<code>df</code>を<code>age</code>の若い順に並び替えたい時は、次のようにする</li>
-</ul>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="データの前処理.html#cb143-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(age)</span>
-<span id="cb143-2"><a href="データの前処理.html#cb143-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb143-3"><a href="データの前処理.html#cb143-3" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
-<pre><code>##       name age height weight gender      bmi is_child       fat
-## 1   Tanaka  10  149.5     36   male 16.10720        1      痩せ
-## 2   Suzuki  18  153.0     65 female 27.76710        0    前肥満
-## 3 Watanabe  23  174.5    127   male 41.70738        0 肥満(3度)
-## 4    Okada  36  171.0     58   male 19.83516        0  普通体重</code></pre>
-</div>
-<div id="データの集計と計算" class="section level2 hasAnchor" number="7.9">
-<h2><span class="header-section-number">7.9</span> データの集計と計算<a href="データの前処理.html#データの集計と計算" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>データを集計し計算する時には、<code>dplyr</code>パッケージの<code>summarise()</code>を使う<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></li>
-<li>わかりにくいので具体例で説明する</li>
-<li><code>df</code>の中の<code>age</code>の平均をとって<code>mean_age</code>という変数を作りたい時は、次のようにする</li>
-</ul>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="データの前処理.html#cb145-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb145-2"><a href="データの前処理.html#cb145-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age))</span></code></pre></div>
-<pre><code>##   mean_age
-## 1    21.75</code></pre>
-<ul>
-<li><code>mean(df$age)</code>でも同じ結果が得られるので、これだけでは何が便利かわからないかもしれない</li>
-<li><code>summarise()</code>は<code>group_by()</code>という関数と組み合わせて真価を発揮する</li>
-<li><code>group_by()</code>は、データをグループ分けするための関数</li>
-<li>例えば、男女ごとに平均年齢を求めたい時は、次のようにする</li>
-</ul>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="データの前処理.html#cb147-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb147-2"><a href="データの前処理.html#cb147-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> <span class="co">#男女に分ける</span></span>
-<span id="cb147-3"><a href="データの前処理.html#cb147-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age)) <span class="co">#分けたグループごとに平均年齢を計算</span></span></code></pre></div>
-<pre><code>## # A tibble: 2 × 2
-##   gender mean_age
-##   &lt;chr&gt;     &lt;dbl&gt;
-## 1 female       18
-## 2 male         23</code></pre>
-<ul>
-<li><code>summarise()</code>はまとめて複数の要約をすることもできる</li>
-<li>例えば、男性と女性の人数を求めた上で、男女別に身長の平均、中央値、標準偏差を求めたい時は、次のようにする</li>
-</ul>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="データの前処理.html#cb149-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb149-2"><a href="データの前処理.html#cb149-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">%&gt;%</span> <span class="co">#男女に分ける</span></span>
-<span id="cb149-3"><a href="データの前処理.html#cb149-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb149-4"><a href="データの前処理.html#cb149-4" aria-hidden="true" tabindex="-1"></a>    　　　　<span class="at">height_mean =</span> <span class="fu">mean</span>(height),</span>
-<span id="cb149-5"><a href="データの前処理.html#cb149-5" aria-hidden="true" tabindex="-1"></a>    　　　　<span class="at">height_median =</span> <span class="fu">median</span>(height),</span>
-<span id="cb149-6"><a href="データの前処理.html#cb149-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">height_sd =</span> <span class="fu">sd</span>(height), </span>
-<span id="cb149-7"><a href="データの前処理.html#cb149-7" aria-hidden="true" tabindex="-1"></a>    　　　　<span class="co">#女性は１人だけでデータがばらつかない</span></span>
-<span id="cb149-8"><a href="データの前処理.html#cb149-8" aria-hidden="true" tabindex="-1"></a>    　　　　<span class="co">#よって、標準偏差が計算できず欠損値(NA)となる</span></span>
-<span id="cb149-9"><a href="データの前処理.html#cb149-9" aria-hidden="true" tabindex="-1"></a>            ) </span></code></pre></div>
-<pre><code>## # A tibble: 2 × 5
-##   gender     n height_mean height_median height_sd
-##   &lt;chr&gt;  &lt;int&gt;       &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;
-## 1 female     1         153           153      NA  
-## 2 male       3         165           171      13.5</code></pre>
-</div>
-<div id="演習問題-4" class="section level2 hasAnchor" number="7.10">
-<h2><span class="header-section-number">7.10</span> 演習問題<a href="データの前処理.html#演習問題-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+## 1   Suzuki  18  153.0     48 female 20.50493
+## 2    Okada  36  171.0     58   male 19.83516
+## 3 Watanabe  23  174.5     65   male 21.34629</code></pre>
 
 </div>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -659,12 +495,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="footnotes">
 <hr />
-<ol start="7">
-<li id="fn7"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう。<a href="データの前処理.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる。<a href="データの前処理.html#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする。<a href="データの前処理.html#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>条件式は、それを満たすときに<code>TRUE</code>、満たさない時に<code>FALSE</code>を返す。先の<code>filter(bmi &gt;= 19)</code>は、条件式が<code>TRUE</code>となる行のみを抜き出していた。<a href="データの前処理.html#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p><code>summarize()</code>と書いても良い<a href="データの前処理.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p>エラーが出る場合は、<a href="パッケージ.html#パッケージのインストール">以前の章</a>を参考にパッケージが正しくインストールされているか確認しよう。<a href="データの前処理.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>厳密には、<code>tidyverse</code>にも含まる<code>magrittr</code>パッケージを呼び出すと使えるようになる。<a href="データの前処理.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Rのver4.1.0以降は、<code>tidyverse</code>がなくてもパイプ（<code>|&gt;</code>）が使えるようになったが、現在主流の<code>%&gt;%</code>の説明をする。<a href="データの前処理.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>条件式は、それを満たすときに<code>TRUE</code>、満たさない時に<code>FALSE</code>を返す。先の<code>filter(bmi &gt;= 19)</code>は、条件式が<code>TRUE</code>となる行のみを抜き出していた。<a href="データの前処理.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

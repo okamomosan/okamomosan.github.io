@@ -17,9 +17,9 @@ library(tidyverse)
 |Name|Age|Height|Weight|Gender|
 |:----|:----|:----|:----|:----|
 |Tanaka|10|149.5|36|male|
-|Suzuki|18|153|48|female|
+|Suzuki|18|153|65|female|
 |Okada|41|171|58|male|
-|Watanabe|26|174.5|65|male|
+|Watanabe|26|174.5|127|male|
 
 - Rでこのようなデータをあつかう場合、データフレームを使う[^1]
 
@@ -32,7 +32,7 @@ library(tidyverse)
 name <- c("Tanaka", "Suzuki", "Okada", "Watanabe")
 age <- c(10, 18, 36, 23) #年齢のベクトルの作成
 height <- c(149.5, 153.0, 171.0, 174.5)
-weight <- c(36, 48, 58, 65)
+weight <- c(36, 65, 58, 127)
 gender <- c("male", "female", "male", "male") 
 
 # data.frame()の引数に、作成したベクトルを並べる
@@ -108,19 +108,19 @@ sokutei <- read_excel("sokutei.xls")
 - プロジェクトフォルダ内は、さまざまなファイルで溢れがち
 - だから、プロジェクトフォルダ内にファイル保管用のフォルダを作ると良い
 - 今回は、プロジェクトフォルダ内に`data`という新しいフォルダを作ろう
-- その中に`sokutei.csv`を置いた場合、`read_csv("data/sokutei.csv")`で読み込む
+- その中に`sokutei.csv`を置いた場合、`read.csv("data/sokutei.csv")`で読み込む
 
 ## 演習問題
   
-1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作る
-1. 以下から[`sokutei.csv`](https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0 )をダウンロードし、上の`data`フォルダ内に置く
-1. このデータを読み込み、`sokutei_csv`という変数に格納する
-1. `head()`を使って`sokutei_csv`の中身を確認する
-1. 以下から[`sokutei.xls`](https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0)をダウンロードし、上の`data`フォルダ内に置く
-1. このデータを読み込み、`sokutei_excel`という変数に格納する
-1. `head()`を使って`sokutei_excel`の中身を確認する
-1. `sokutei_excel`から変数`weight`を抜き出し、`w`という新たな変数に格納する
-1. `w`の中身を確認する
+1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作李なさい  
+1. 以下から[`sokutei.csv`](https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0 )をダウンロードし、上の`data`フォルダ内に置きなさい  
+1. このデータを読み込み、`sokutei_csv`という変数に格納しなさい  
+1. `head()`を使って`sokutei_csv`の中身を確認しなさい  
+1. 以下から[`sokutei.xls`](https://www.dropbox.com/s/m4m4etyd81pnpq6/sokutei.xls?dl=0)をダウンロードし、上の`data`フォルダ内に置きなさい  
+1. このデータを読み込み、`sokutei_excel`という変数に格納しなさい  
+1. `head()`を使って`sokutei_excel`の中身を確認しなさい  
+1. `sokutei_excel`から変数`weight`を抜き出し、`w`という新たな変数に格納しなさい  
+1. `w`の中身を確認しなさい  
 <br><br>
   
 **挑戦問題：**  <br>
@@ -130,11 +130,11 @@ sokutei <- read_excel("sokutei.xls")
  （このようにデータをまとめたパッケージもある）  
 - 以下の問題がわからない場合は[前章][パッケージ]を参照  
 
-1. wooldridgeという名前のパッケージをインストールする
-2. wooldridgeのパッケージを呼び出す
-3. `data("wage1")`を実行して、wooldridgeに収録された`wage1`というデータを読み込む[^4]
-4. `head(wage1)`を実行して、`wage1`の中身を確認する
-5. `help(package="wooldridge")`を実行して、`wage1`以外にどんなデータが収録されているか確認
+1. wooldridgeという名前のパッケージをインストールしなさい  
+2. wooldridgeのパッケージを呼び出しなさい  
+3. `data("wage1")`を実行して、wooldridgeに収録された`wage1`というデータを読み込みなさい[^4]  
+4. `head(wage1)`を実行して、`wage1`の中身を確認しなさい  
+5. `help(package="wooldridge")`を実行して、`wage1`以外にどんなデータが収録されているか確認しなさい  
 
 
 ```{r eval=FALSE, include=FALSE}

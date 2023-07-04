@@ -288,17 +288,17 @@ df %>%
 1. `saving`を`inc`の高い順に並べ替えなさい
 1. 上の３つの操作を、パイプ関数を使ってひと繋ぎで実行し、`saving_modified`というオブジェクトに保存しなさい
 
-# ```{r}
-# library(wooldridge)
-# data("saving")
-# head(saving)
-# saving_modified <-
-#   saving %>%
-#   mutate(saving_rate = sav / inc) %>%
-#   select(-black) %>%
-#   arrange(-inc)
-# saving_modified
-# ```
+```{r eval=FALSE, include=FALSE}
+library(wooldridge)
+data("saving")
+head(saving)
+saving_modified <-
+  saving %>%
+  mutate(saving_rate = sav / inc) %>%
+  select(-black) %>%
+  arrange(-inc)
+saving_modified
+```
 
 [^1]: エラーが出る場合は、[以前の章][パッケージのインストール]を参考にパッケージが正しくインストールされているか確認しよう。
 [^2]: 厳密には、`tidyverse`にも含まる`magrittr`パッケージを呼び出すと使えるようになる。

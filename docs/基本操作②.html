@@ -23,7 +23,7 @@
 <meta name="author" content="Tomohisa OKADA" />
 
 
-<meta name="date" content="2023-05-31" />
+<meta name="date" content="2023-07-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.9" data-path="データの前処理.html"><a href="データの前処理.html#データの集計と計算"><i class="fa fa-check"></i><b>7.9</b> データの集計と計算</a></li>
 <li class="chapter" data-level="7.10" data-path="データの前処理.html"><a href="データの前処理.html#演習問題-4"><i class="fa fa-check"></i><b>7.10</b> 演習問題</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified.html"><a href="r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified.html"><i class="fa fa-check"></i><b>8</b> <code>{r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- #   saving %&gt;% #   mutate(saving_rate = sav / inc) %&gt;% #   select(-black) %&gt;% #   arrange(-inc) # saving_modified #</code></a></li>
 </ul>
 
       </nav>
@@ -249,14 +250,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>ベクトルも変数に入れることができる</li>
 <li>例として、5つの数字（例えば、2,4,2,3,5）を並べたベクトルを変数<code>v</code>に代入する</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="基本操作②.html#cb43-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>) <span class="co">#ベクトルを作り変数に代入</span></span>
-<span id="cb43-2"><a href="基本操作②.html#cb43-2" aria-hidden="true" tabindex="-1"></a>v <span class="co">#変数vの中身を確認</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="基本操作②.html#cb43-1" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>) <span class="co">#ベクトルを作り変数に代入</span></span>
+<span id="cb43-2"><a href="基本操作②.html#cb43-2" tabindex="-1"></a>v <span class="co">#変数vの中身を確認</span></span></code></pre></div>
 <pre><code>## [1] 2 4 2 3 5</code></pre>
 <ul>
 <li>連番のベクトル（例えば2,3,4,5,6）を作りたい時は、次のようにも書ける</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="基本操作②.html#cb45-1" aria-hidden="true" tabindex="-1"></a>v2_6 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="co">#「n:m」で「nからmまで」の意味</span></span>
-<span id="cb45-2"><a href="基本操作②.html#cb45-2" aria-hidden="true" tabindex="-1"></a>v2_6</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="基本操作②.html#cb45-1" tabindex="-1"></a>v2_6 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="co">#「n:m」で「nからmまで」の意味</span></span>
+<span id="cb45-2"><a href="基本操作②.html#cb45-2" tabindex="-1"></a>v2_6</span></code></pre></div>
 <pre><code>## [1] 2 3 4 5 6</code></pre>
 <div id="ベクトルと数値の演算" class="section level4 unnumbered hasAnchor">
 <h4>ベクトルと数値の演算：<a href="基本操作②.html#ベクトルと数値の演算" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -265,11 +266,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>ベクトル内のそれぞれの数字に、四則演算が施される</li>
 <li>以下の出力結果で確認してみよう</li>
 </ul>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="基本操作②.html#cb47-1" aria-hidden="true" tabindex="-1"></a>v</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="基本操作②.html#cb47-1" tabindex="-1"></a>v</span></code></pre></div>
 <pre><code>## [1] 2 4 2 3 5</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="基本操作②.html#cb49-1" aria-hidden="true" tabindex="-1"></a>v<span class="sc">+</span><span class="dv">2</span>  <span class="co">#それぞれの数字に２を足す </span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="基本操作②.html#cb49-1" tabindex="-1"></a>v<span class="sc">+</span><span class="dv">2</span>  <span class="co">#それぞれの数字に２を足す </span></span></code></pre></div>
 <pre><code>## [1] 4 6 4 5 7</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="基本操作②.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>v  <span class="co">#それぞれの数字に２をかける  </span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="基本操作②.html#cb51-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>v  <span class="co">#それぞれの数字に２をかける  </span></span></code></pre></div>
 <pre><code>## [1]  4  8  4  6 10</code></pre>
 <div id="練習問題-2" class="section level5 unnumbered hasAnchor">
 <h5>練習問題<a href="基本操作②.html#練習問題-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -284,42 +285,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Rでは、ベクトル同士の演算もできる</li>
 <li>まずは2つのベクトルを用意しよう</li>
 </ul>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="基本操作②.html#cb53-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) </span>
-<span id="cb53-2"><a href="基本操作②.html#cb53-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="基本操作②.html#cb53-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) </span>
+<span id="cb53-2"><a href="基本操作②.html#cb53-2" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) </span></code></pre></div>
 <ul>
 <li>これらを<code>+</code>を使って「足す」</li>
 <li>すると、１つめの数同士（1と2）と、２つめの数同士(2と4)が足される</li>
 </ul>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="基本操作②.html#cb54-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="基本操作②.html#cb54-1" tabindex="-1"></a>v1 <span class="sc">+</span> v2</span></code></pre></div>
 <pre><code>## [1] 3 6</code></pre>
 <ul>
 <li><code>*</code>を使って「かける」場合も、同じように1つめの数同士、2つめの数同士がかけられる</li>
 </ul>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="基本操作②.html#cb56-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">*</span> v2</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="基本操作②.html#cb56-1" tabindex="-1"></a>v1 <span class="sc">*</span> v2</span></code></pre></div>
 <pre><code>## [1] 2 8</code></pre>
 <ul>
 <li>ベクトル同士の「かけ算」には内積がある</li>
 <li>Rでは、<code>%*%</code>で内積を計算できる</li>
 </ul>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="基本操作②.html#cb58-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">%*%</span> v2 </span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="基本操作②.html#cb58-1" tabindex="-1"></a>v1 <span class="sc">%*%</span> v2 </span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]   10</code></pre>
 <ul>
 <li>ベクトルの長さ（=入っている数値の個数）が違うとおかしな計算になり、警告が出る</li>
 </ul>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="基本操作②.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#以下のv1には3つの要素があるけど、v2には2つしかない</span></span>
-<span id="cb60-2"><a href="基本操作②.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">#この場合、v2の1つめの要素を無理やりv1の３つめに足してしまう</span></span>
-<span id="cb60-3"><a href="基本操作②.html#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-4"><a href="基本操作②.html#cb60-4" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co">#3つの数を代入</span></span>
-<span id="cb60-5"><a href="基本操作②.html#cb60-5" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#2つの数を代入</span></span>
-<span id="cb60-6"><a href="基本操作②.html#cb60-6" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="co">#長さが違うからうまく計算できず警告が出る</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="基本操作②.html#cb60-1" tabindex="-1"></a><span class="co">#以下のv1には3つの要素があるけど、v2には2つしかない</span></span>
+<span id="cb60-2"><a href="基本操作②.html#cb60-2" tabindex="-1"></a><span class="co">#この場合、v2の1つめの要素を無理やりv1の３つめに足してしまう</span></span>
+<span id="cb60-3"><a href="基本操作②.html#cb60-3" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="基本操作②.html#cb60-4" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co">#3つの数を代入</span></span>
+<span id="cb60-5"><a href="基本操作②.html#cb60-5" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>) <span class="co">#2つの数を代入</span></span>
+<span id="cb60-6"><a href="基本操作②.html#cb60-6" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="co">#長さが違うからうまく計算できず警告が出る</span></span></code></pre></div>
 <pre><code>## Warning in v1 + v2: longer object length is not a multiple of shorter object
 ## length</code></pre>
 <pre><code>## [1] 3 6 5</code></pre>
 <ul>
 <li>ベクトルの長さを確認するには<code>length()</code>を使えば良い</li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="基本操作②.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v1)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="基本操作②.html#cb63-1" tabindex="-1"></a><span class="fu">length</span>(v1)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <div id="練習問題-3" class="section level5 unnumbered hasAnchor">
 <h5>練習問題<a href="基本操作②.html#練習問題-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -339,7 +340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>2番目の要素（つまり4）を抜き出したいなら、<code>v[2]</code>と書く</p></li>
 <li><p>2〜４番めの要素(つまり4,2,3)を抜き出したいなら、<code>v[2:4]</code>と書く</p></li>
 </ul>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="基本操作②.html#cb65-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="基本操作②.html#cb65-1" tabindex="-1"></a>v[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] 4 2 3</code></pre>
 </div>
 </div>
@@ -353,32 +354,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ \end{pmatrix}\)</span>
 を作ってMに代入するには、<code>matrix()</code>を使い次のように書く</li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="基本操作②.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#初めの1:6はc(1:6)と同じで「1,2,3,4,5,6」の意味</span></span>
-<span id="cb67-2"><a href="基本操作②.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="co">#この6つの数字を、2つの行(row)と3つの列(col)に分ける</span></span>
-<span id="cb67-3"><a href="基本操作②.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co">#byrow = Tで、6つの数字を左から右（zの書き順）に埋めるよう指示</span></span>
-<span id="cb67-4"><a href="基本操作②.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co">#byrow = Tを消すと、上から下に埋める（各自確かめよう）</span></span>
-<span id="cb67-5"><a href="基本操作②.html#cb67-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-6"><a href="基本操作②.html#cb67-6" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span>
-<span id="cb67-7"><a href="基本操作②.html#cb67-7" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="基本操作②.html#cb67-1" tabindex="-1"></a><span class="co">#初めの1:6はc(1:6)と同じで「1,2,3,4,5,6」の意味</span></span>
+<span id="cb67-2"><a href="基本操作②.html#cb67-2" tabindex="-1"></a><span class="co">#この6つの数字を、2つの行(row)と3つの列(col)に分ける</span></span>
+<span id="cb67-3"><a href="基本操作②.html#cb67-3" tabindex="-1"></a><span class="co">#byrow = Tで、6つの数字を左から右（zの書き順）に埋めるよう指示</span></span>
+<span id="cb67-4"><a href="基本操作②.html#cb67-4" tabindex="-1"></a><span class="co">#byrow = Tを消すと、上から下に埋める（各自確かめよう）</span></span>
+<span id="cb67-5"><a href="基本操作②.html#cb67-5" tabindex="-1"></a></span>
+<span id="cb67-6"><a href="基本操作②.html#cb67-6" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span>
+<span id="cb67-7"><a href="基本操作②.html#cb67-7" tabindex="-1"></a>M</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
 ## [2,]    4    5    6</code></pre>
 <ul>
 <li>次の関数を使って、ベクトル同士を結合しても行列を作れる</li>
 </ul>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="基本操作②.html#cb69-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) </span>
-<span id="cb69-2"><a href="基本操作②.html#cb69-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="co">#2つのベクトルv1とv2を作る</span></span>
-<span id="cb69-3"><a href="基本操作②.html#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="基本操作②.html#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(v1, v2) <span class="co">#v1とv2を行(row)方向に繋げる</span></span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="基本操作②.html#cb69-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) </span>
+<span id="cb69-2"><a href="基本操作②.html#cb69-2" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="co">#2つのベクトルv1とv2を作る</span></span>
+<span id="cb69-3"><a href="基本操作②.html#cb69-3" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="基本操作②.html#cb69-4" tabindex="-1"></a><span class="fu">rbind</span>(v1, v2) <span class="co">#v1とv2を行(row)方向に繋げる</span></span></code></pre></div>
 <pre><code>##    [,1] [,2] [,3]
 ## v1    1    2    3
 ## v2    1    1    1</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="基本操作②.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(v1, v2) <span class="co">#v1とv2を列(column)方向に繋げる</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="基本操作②.html#cb71-1" tabindex="-1"></a><span class="fu">cbind</span>(v1, v2) <span class="co">#v1とv2を列(column)方向に繋げる</span></span></code></pre></div>
 <pre><code>##      v1 v2
 ## [1,]  1  1
 ## [2,]  2  1
 ## [3,]  3  1</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="基本操作②.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(M, v1) <span class="co">#「行列とベクトル」や「行列同士」も繋げられる</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="基本操作②.html#cb73-1" tabindex="-1"></a><span class="fu">rbind</span>(M, v1) <span class="co">#「行列とベクトル」や「行列同士」も繋げられる</span></span></code></pre></div>
 <pre><code>##    [,1] [,2] [,3]
 ##       1    2    3
 ##       4    5    6
@@ -390,18 +391,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>行列<code>x</code>から要素を抜き出すには、<code>x[抜き出したい行、抜き出したい列]</code>と書く</li>
 <li>具体例として、先の行列<code>M</code>から色々な要素を抜き出してみよう</li>
 </ul>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="基本操作②.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2行1列目を抽出し、変数M21に代入</span></span>
-<span id="cb75-2"><a href="基本操作②.html#cb75-2" aria-hidden="true" tabindex="-1"></a>M21 <span class="ot">&lt;-</span> M[<span class="dv">2</span>,<span class="dv">1</span>]</span>
-<span id="cb75-3"><a href="基本操作②.html#cb75-3" aria-hidden="true" tabindex="-1"></a>M21</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="基本操作②.html#cb75-1" tabindex="-1"></a><span class="co"># 2行1列目を抽出し、変数M21に代入</span></span>
+<span id="cb75-2"><a href="基本操作②.html#cb75-2" tabindex="-1"></a>M21 <span class="ot">&lt;-</span> M[<span class="dv">2</span>,<span class="dv">1</span>]</span>
+<span id="cb75-3"><a href="基本操作②.html#cb75-3" tabindex="-1"></a>M21</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="基本操作②.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2行めを抽出</span></span>
-<span id="cb77-2"><a href="基本操作②.html#cb77-2" aria-hidden="true" tabindex="-1"></a>M[<span class="dv">2</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="基本操作②.html#cb77-1" tabindex="-1"></a><span class="co"># 2行めを抽出</span></span>
+<span id="cb77-2"><a href="基本操作②.html#cb77-2" tabindex="-1"></a>M[<span class="dv">2</span>,]</span></code></pre></div>
 <pre><code>## [1] 4 5 6</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="基本操作②.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1列めを抽出</span></span>
-<span id="cb79-2"><a href="基本操作②.html#cb79-2" aria-hidden="true" tabindex="-1"></a>M[,<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="基本操作②.html#cb79-1" tabindex="-1"></a><span class="co"># 1列めを抽出</span></span>
+<span id="cb79-2"><a href="基本操作②.html#cb79-2" tabindex="-1"></a>M[,<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 1 4</code></pre>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="基本操作②.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1,2行めと1,3列めを抽出</span></span>
-<span id="cb81-2"><a href="基本操作②.html#cb81-2" aria-hidden="true" tabindex="-1"></a>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="基本操作②.html#cb81-1" tabindex="-1"></a><span class="co"># 1,2行めと1,3列めを抽出</span></span>
+<span id="cb81-2"><a href="基本操作②.html#cb81-2" tabindex="-1"></a>M[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    3
 ## [2,]    4    6</code></pre>
@@ -412,32 +413,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>n行n列の２つの行列同士の計算について、足し算は<code>+</code>、引き算は<code>-</code>を使えば良い</li>
 <li>以下の例のように、かけ算は<code>%*%</code>を使わなくてはいけないので注意</li>
 </ul>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="基本操作②.html#cb83-1" aria-hidden="true" tabindex="-1"></a>M <span class="co">#先ほど作った2行3列の行列を表示</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="基本操作②.html#cb83-1" tabindex="-1"></a>M <span class="co">#先ほど作った2行3列の行列を表示</span></span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
 ## [2,]    4    5    6</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="基本操作②.html#cb85-1" aria-hidden="true" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> T) <span class="co">#新たに3行2列の行列を作る</span></span>
-<span id="cb85-2"><a href="基本操作②.html#cb85-2" aria-hidden="true" tabindex="-1"></a>M2 <span class="co">#今作った2行3列の行列を表示</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="基本操作②.html#cb85-1" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> T) <span class="co">#新たに3行2列の行列を作る</span></span>
+<span id="cb85-2"><a href="基本操作②.html#cb85-2" tabindex="-1"></a>M2 <span class="co">#今作った2行3列の行列を表示</span></span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    2
 ## [2,]    0    1
 ## [3,]    0    2</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="基本操作②.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
-<span id="cb87-2"><a href="基本操作②.html#cb87-2" aria-hidden="true" tabindex="-1"></a>M <span class="sc">%*%</span> M2 </span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="基本操作②.html#cb87-1" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
+<span id="cb87-2"><a href="基本操作②.html#cb87-2" tabindex="-1"></a>M <span class="sc">%*%</span> M2 </span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1   10
 ## [2,]    4   25</code></pre>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="基本操作②.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
-<span id="cb89-2"><a href="基本操作②.html#cb89-2" aria-hidden="true" tabindex="-1"></a>M2 <span class="sc">%*%</span> M　</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="基本操作②.html#cb89-1" tabindex="-1"></a><span class="co">#２つの行列の積MN</span></span>
+<span id="cb89-2"><a href="基本操作②.html#cb89-2" tabindex="-1"></a>M2 <span class="sc">%*%</span> M　</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    9   12   15
 ## [2,]    4    5    6
 ## [3,]    8   10   12</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="基本操作②.html#cb91-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co">#要素が３つのベクトルを作る</span></span>
-<span id="cb91-2"><a href="基本操作②.html#cb91-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-3"><a href="基本操作②.html#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="co">#行列とベクトルのかけ算も%*%を使う</span></span>
-<span id="cb91-4"><a href="基本操作②.html#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="co">#縦ベクトルと横ベクトルは区別されないので、次のコードで計算できる</span></span>
-<span id="cb91-5"><a href="基本操作②.html#cb91-5" aria-hidden="true" tabindex="-1"></a>v <span class="sc">%*%</span> M2 <span class="co"># ただし、M2%*%vのように計算できない場合はエラーが出る（各自確かめよう）</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="基本操作②.html#cb91-1" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co">#要素が３つのベクトルを作る</span></span>
+<span id="cb91-2"><a href="基本操作②.html#cb91-2" tabindex="-1"></a></span>
+<span id="cb91-3"><a href="基本操作②.html#cb91-3" tabindex="-1"></a><span class="co">#行列とベクトルのかけ算も%*%を使う</span></span>
+<span id="cb91-4"><a href="基本操作②.html#cb91-4" tabindex="-1"></a><span class="co">#縦ベクトルと横ベクトルは区別されないので、次のコードで計算できる</span></span>
+<span id="cb91-5"><a href="基本操作②.html#cb91-5" tabindex="-1"></a>v <span class="sc">%*%</span> M2 <span class="co"># ただし、M2%*%vのように計算できない場合はエラーが出る（各自確かめよう）</span></span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1   10</code></pre>
 <hr />
@@ -516,18 +517,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>具体的に理解するため、5人の年齢のデータを作成する</li>
 </ul>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="基本操作②.html#cb93-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">16</span>, <span class="dv">43</span>, <span class="dv">18</span>, <span class="dv">22</span>) <span class="co">#5人の年齢のベクトルを作成</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="基本操作②.html#cb93-1" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">16</span>, <span class="dv">43</span>, <span class="dv">18</span>, <span class="dv">22</span>) <span class="co">#5人の年齢のベクトルを作成</span></span></code></pre></div>
 <ul>
 <li>このベクトル<code>age</code>を引数にして、上表のいくつかを実行してみる</li>
 </ul>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="基本操作②.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(age) <span class="co">#基本統計量を一括表示</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="基本操作②.html#cb94-1" tabindex="-1"></a><span class="fu">summary</span>(age) <span class="co">#基本統計量を一括表示</span></span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##      16      18      22      27      36      43</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="基本操作②.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(age) <span class="co">#一番大きい値を取り出す（5人のうち最年長は43歳）</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="基本操作②.html#cb96-1" tabindex="-1"></a><span class="fu">max</span>(age) <span class="co">#一番大きい値を取り出す（5人のうち最年長は43歳）</span></span></code></pre></div>
 <pre><code>## [1] 43</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="基本操作②.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(age) <span class="co">#算術平均（5人の平均年齢は27歳）</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="基本操作②.html#cb98-1" tabindex="-1"></a><span class="fu">mean</span>(age) <span class="co">#算術平均（5人の平均年齢は27歳）</span></span></code></pre></div>
 <pre><code>## [1] 27</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="基本操作②.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(age) <span class="co">#不偏分散（5人の平均の分散は141）</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="基本操作②.html#cb100-1" tabindex="-1"></a><span class="fu">var</span>(age) <span class="co">#不偏分散（5人の平均の分散は141）</span></span></code></pre></div>
 <pre><code>## [1] 141</code></pre>
 <div id="練習問題-4" class="section level5 unnumbered hasAnchor">
 <h5>練習問題<a href="基本操作②.html#練習問題-4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -614,21 +615,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>そのようなコーディングを繰り返し実行しなければいけない時は、自作関数を作ると便利</li>
 <li>自作関数の作り方の基本は以下のとおり</li>
 </ul>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="基本操作②.html#cb102-1" aria-hidden="true" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
-<span id="cb102-2"><a href="基本操作②.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  処理内容</span>
-<span id="cb102-3"><a href="基本操作②.html#cb102-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="基本操作②.html#cb102-1" tabindex="-1"></a>関数名 <span class="ot">&lt;-</span> <span class="cf">function</span> (引数名) {</span>
+<span id="cb102-2"><a href="基本操作②.html#cb102-2" tabindex="-1"></a>  処理内容</span>
+<span id="cb102-3"><a href="基本操作②.html#cb102-3" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>例えば、<span class="math inline">\(a/(1-x)\)</span>という計算を、様々な<code>a</code>と<code>x</code>の値で繰り返し実行する必要があるとする</li>
 <li>この計算を実行する関数<code>inf_geo()</code>は、次のように自作できる</li>
 </ul>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="基本操作②.html#cb103-1" aria-hidden="true" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
-<span id="cb103-2"><a href="基本操作②.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
-<span id="cb103-3"><a href="基本操作②.html#cb103-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="基本操作②.html#cb103-1" tabindex="-1"></a>inf_geo <span class="ot">&lt;-</span> <span class="cf">function</span> (a, x) {</span>
+<span id="cb103-2"><a href="基本操作②.html#cb103-2" tabindex="-1"></a>  a<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>x)</span>
+<span id="cb103-3"><a href="基本操作②.html#cb103-3" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>出来上がった関数を使うときは、次のようにする</li>
 </ul>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="基本操作②.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
-<span id="cb104-2"><a href="基本操作②.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="基本操作②.html#cb104-1" tabindex="-1"></a><span class="co">#a=1で、x=0.8を計算したい場合</span></span>
+<span id="cb104-2"><a href="基本操作②.html#cb104-2" tabindex="-1"></a><span class="fu">inf_geo</span>(<span class="dv">1</span>, <span class="fl">0.8</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <hr />
 </div>

@@ -112,7 +112,7 @@ sokutei <- read_excel("sokutei.xls")
 
 ## 演習問題
   
-1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作李なさい  
+1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作りなさい  
 1. 以下から[`sokutei.csv`](https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0 )をダウンロードし、上の`data`フォルダ内に置きなさい  
 1. このデータを読み込み、`sokutei_csv`という変数に格納しなさい  
 1. `head()`を使って`sokutei_csv`の中身を確認しなさい  

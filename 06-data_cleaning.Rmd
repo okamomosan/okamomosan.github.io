@@ -192,7 +192,7 @@ df
 ##### 複雑に条件分岐する変数の作成：{-}
 
 - `if_else()`を入れ子にすれば、3つ以上に条件分岐する変数も作れる
-- しかし、3つい上に条件分岐する場合は`case_when`を使った方が便利
+- しかし、3つ以上に条件分岐する場合は`case_when`を使った方が便利
 - 例えば世界保健機関(WHO)は、BMIを使って以下の基準で肥満度を分類している
 
 |BMI値|分類|
@@ -234,6 +234,8 @@ df
 ```{r}
 
 df <- df %>% arrange(age)
+
+# 年齢が高い人から順に並べたい時はarrange(-age)
 
 df
 
@@ -277,6 +279,26 @@ df %>%
 
 ## 演習問題  
 
+1. １章で作った`zemi`のプロジェクトフォルダ内に`data`というフォルダを作りなさい   
+1. `wooldridge`のパッケージを呼び出しなさい（必要ならインストールすること）  
+1. `data("saving")`を実行して、wooldridgeに収録された`saving`というデータを読み込みなさい
+1. `head(saving)`を実行して、`saving`の中身を確認しなさい
+1. `saving`に、saving_rateという名前の貯蓄を収入で割った（sav/inc）変数を追加しなさい
+1. `saving`から、`black`という変数を削除しなさい
+1. `saving`を`inc`の高い順に並べ替えなさい
+1. 上の３つの操作を、パイプ関数を使ってひと繋ぎで実行し、`saving_modified`というオブジェクトに保存しなさい
+
+# ```{r}
+# library(wooldridge)
+# data("saving")
+# head(saving)
+# saving_modified <-
+#   saving %>%
+#   mutate(saving_rate = sav / inc) %>%
+#   select(-black) %>%
+#   arrange(-inc)
+# saving_modified
+# ```
 
 [^1]: エラーが出る場合は、[以前の章][パッケージのインストール]を参考にパッケージが正しくインストールされているか確認しよう。
 [^2]: 厳密には、`tidyverse`にも含まる`magrittr`パッケージを呼び出すと使えるようになる。

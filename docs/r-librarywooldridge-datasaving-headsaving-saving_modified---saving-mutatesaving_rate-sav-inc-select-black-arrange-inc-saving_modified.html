@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Go!! | 行動経済学の実証分析</title>
-  <meta name="description" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <title>Chapter 8 {r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- # saving %&gt;% # mutate(saving_rate = sav / inc) %&gt;% # select(-black) %&gt;% # arrange(-inc) # saving_modified # | 行動経済学の実証分析</title>
+  <meta name="description" content="Chapter 8 {r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- # saving %&gt;% # mutate(saving_rate = sav / inc) %&gt;% # select(-black) %&gt;% # arrange(-inc) # saving_modified # | 行動経済学の実証分析" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <meta property="og:title" content="Chapter 8 {r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- # saving %&gt;% # mutate(saving_rate = sav / inc) %&gt;% # select(-black) %&gt;% # arrange(-inc) # saving_modified # | 行動経済学の実証分析" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Go!! | 行動経済学の実証分析" />
+  <meta name="twitter:title" content="Chapter 8 {r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- # saving %&gt;% # mutate(saving_rate = sav / inc) %&gt;% # select(-black) %&gt;% # arrange(-inc) # saving_modified # | 行動経済学の実証分析" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="基本操作①.html"/>
+<link rel="prev" href="データの前処理.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -223,170 +223,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="go" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Go!!<a href="go.html#go" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<ul>
-<li>とりあえずまずは使ってみよう！</li>
-</ul>
-<div id="rstudioを開く" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> RStudioを開く<a href="go.html#rstudioを開く" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>RStudioのアイコンから起動</li>
-<li>次のような画面が表示される<br />
-<img src="img/01_rstudio_start.png" /></li>
-</ul>
-<hr />
-</div>
-<div id="コンソールに直接打ち込む" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> コンソールに直接打ち込む<a href="go.html#コンソールに直接打ち込む" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>左側の大きな枠を見る<br />
-</li>
-<li>Consoleのタブが選択されていることを確認</li>
-<li>この画面（＝コンソール）を使い、簡単な足し算を実行しよう</li>
-<li>最下段の<code>&gt;</code>のあとに<code>1+1</code>と打ち込み<strong>Enter（macはreturn）</strong>を押す</li>
-<li><code>[1] 2</code>と返ってくる</li>
-<li><code>2</code>の部分が<code>1+1</code>の計算結果（<code>[1]</code>は1行目という意味）</li>
-</ul>
-<div align="center">
-<p><img src="img/01_betauchi.png" width="50%"></p>
-</div>
-<hr />
-</div>
-<div id="rスクリプトを使う" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Rスクリプトを使う<a href="go.html#rスクリプトを使う" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>コンソールに書いたコードは、Rstudioを終了すると消える<br />
-（実際に終了して再起動してみよう）<br />
-</li>
-<li>だから、<strong>Rスクリプト</strong>と呼ばれる保存可能なファイルにコードを書くことが多い</li>
-</ul>
-<div id="rスクリプトを作る" class="section level5 unnumbered hasAnchor">
-<h5>Rスクリプトを作る：<a href="go.html#rスクリプトを作る" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>RStudioの左上の <img src="img/01_create.png" width="4%">
-をクリックし、「R Script」を選択</li>
-<li>左上に新しくできた枠に、空のRスクリプトファイルが表示される<br />
-（untitled1と表示されたタブが作成したRスクリプト）</li>
-</ul>
-</div>
-<div id="rstudioの４つのペーン" class="section level5 unnumbered hasAnchor">
-<h5>RStudioの４つのペーン：<a href="go.html#rstudioの４つのペーン" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>実際には、この４つの枠（＝ペーン）に分かれた画面で作業することが多い</li>
-</ul>
-<p><img src="img/01_rstudio_4pane.png" /></p>
-<p>　　<strong>①左上：</strong>メインの作業場で、Rスクリプトのコードなどを書くところ<br />
-　　<strong>②右上：</strong>変数やオブジェクトのリストが表示されたり、バージョン管理を行う<br />
-　　<strong>③左下：</strong>コードの実行結果が表示されるコンソールや、各種コマンドを実行するターミナルなど<br />
-　　<strong>④右下：</strong>各種ファイルやパッケージの表示、出力した図の表示など</p>
-</div>
-<div id="rスクリプトに書く" class="section level4 unnumbered hasAnchor">
-<h4>Rスクリプトに書く：<a href="go.html#rスクリプトに書く" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>左上のペーンを見て、untitled1のタブが選択されていることを確認</li>
-<li>1行目に<code>1+1</code>と入力して<strong>ctrl+Enter（macはcommand+return）</strong>を押す<br />
-（ <img src="img/01_run.png" width="8%"> をクリックしても良い）</li>
-<li>左下のペーンのコンソールに結果(<code>[1] 2</code>)が表示される</li>
-</ul>
-<div id="保存" class="section level5 unnumbered hasAnchor">
-<h5>保存：<a href="go.html#保存" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>Rスクリプトは<strong>ctrl+s（macはcommand+s）</strong>で好きな時に保存できる<br />
-（ <img src="img/01_save.png" width="2.5%"> をクリックしても良い）</li>
-<li>初回はファイル名と保存場所も決める
-（test.Rという名前でデスクトップに保存してみよう）</li>
-<li>試しに、保存したRスクリプトのタブを閉じてみよう
-（test.Rのタブの右側の×をクリック）</li>
-<li>左上の <img src="img/01_open.png" width="4%"> をクリックし、保存したRスクリプトのファイルを選択<br />
-（つまり、デスクトップにあるtest.Rを選択）</li>
-<li>Rスクリプトが先ほど保存した状態で開く</li>
-</ul>
-</div>
-<div id="さらに書く" class="section level5 unnumbered hasAnchor">
-<h5>さらに書く！：<a href="go.html#さらに書く" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>続けて、簡単な引き算を実行しよう</li>
-<li>2行目に<code>5-2</code>と入力する</li>
-<li>2行目にカーソルを合わせて<strong>ctrl+Enter</strong>を押す</li>
-<li>2行目の計算結果(<code>[1] 3</code>)が表示される</li>
-<li>1行目にカーソルを合わせて<strong>ctrl+Enter</strong>を押す</li>
-<li>1行目の計算結果(<code>[1] 2</code>)が表示される</li>
-<li>つまり、実行したい行にカーソルを合わせて<strong>ctrl+Enter</strong>を押せば良い</li>
-<li>全ての行を一括で実行したいなら<strong>ctrl+shift+Enter（macはcommand+shift+return）</strong></li>
-<li>一部分だけ実行したいなら、下図のように実行したい行だけ選択して<strong>ctrl+Enter</strong></li>
-</ul>
-<div align="center">
-<p><img src="img/01_ichibu.png" width="10%"></p>
-</div>
-</div>
-<div id="rスクリプトを使うメリット" class="section level5 unnumbered hasAnchor">
-<h5>Rスクリプトを使うメリット：<a href="go.html#rスクリプトを使うメリット" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ol style="list-style-type: decimal">
-<li>コードが保存できる（毎回書き直さなくて良い！）</li>
-<li>長く複雑なコードを書いたり、管理するのが楽<br />
-</li>
-<li>他の人に配布できる（分析を再現してもらいやすい）<br />
-などなど…</li>
-</ol>
-<hr />
-</div>
-</div>
-</div>
-<div id="プロジェクト管理" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> プロジェクト管理<a href="go.html#プロジェクト管理" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>研究プロジェクトが進むと、ひとつのRスクリプトだけでは管理しきれなくなる</li>
-<li><strong>プロジェクト</strong>を使えば、複数のRスクリプトや関連データなどを一つのフォルダにまとめて効率よく管理できる</li>
-</ul>
-<div id="プロジェクトの作成" class="section level5 unnumbered hasAnchor">
-<h5>プロジェクトの作成：<a href="go.html#プロジェクトの作成" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<ul>
-<li>左上の <img src="img/01_project1.png" width="3%"> をクリックし、「New Directry」→「New Project」の順に選択<br />
-</li>
-<li>次の画面で<u>①プロジェクト名</u>と、その<u>②作成場所</u>を指定して<u>③「Create Project」</u></li>
-</ul>
-<div align="center">
-<p><img src="img/01_project2.png" width="45%"></p>
-</div>
-<ul>
-<li>指定した場所に、指定したプロジェクト名のフォルダができているのを確認しよう<br />
-(以降、これを<strong>プロジェクトフォルダ</strong>と呼ぶ)</li>
-<li>そのフォルダの中に<code>プロジェクト名.Rproj</code>というファイルができているのを確認しよう</li>
-<li>以下は、macで<code>Document</code>フォルダ内に<code>sugoi_project</code>というプロジェクトを作った例</li>
-</ul>
-<div align="center">
-<p><img src="img/01_project3.png" width="45%"></p>
-</div>
-<ul>
-<li>初めはご利益がわかりにくいが、研究プロジェクトごとにプロジェクトを作るクセをつけよう</li>
-<li>そして、次の心得に従い、プロジェクト上で作業をするようにしよう！</li>
-</ul>
-<ol style="list-style-type: decimal">
-<li>毎回<code>プロジェクト名.Rproj</code>をダブルクリックしてRstudioを起動</li>
-<li>関連するファイルはプロジェクトフォルダにまとめて一元管理</li>
-</ol>
-</div>
-</div>
-<div id="演習問題" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> 演習問題<a href="go.html#演習問題" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li>自分の好きな場所に<code>zemi</code>という名前のプロジェクトを作る</li>
-<li>指定した場所に<code>zemi</code>というフォルダができているのを確認する</li>
-<li>フォルダの中に<code>zemi.Rproj</code>というファイルが出来ているのを確認</li>
-</ul>
-<p><br>
-<strong>※ 今後は、この<code>zemi</code>プロジェクトで作業していることを前提に解説する</strong></p>
+<div id="r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> <code>{r} # library(wooldridge) # data("saving") # head(saving) # saving_modified &lt;- #   saving %&gt;% #   mutate(saving_rate = sav / inc) %&gt;% #   select(-black) %&gt;% #   arrange(-inc) # saving_modified #</code><a href="r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified.html#r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="基本操作①.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="データの前処理.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

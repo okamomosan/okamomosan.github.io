@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -44,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -58,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -67,7 +70,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -108,7 +111,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={行動経済学の実証分析},
   pdfauthor={Tomohisa OKADA},
@@ -117,7 +120,7 @@
 
 \title{行動経済学の実証分析}
 \author{Tomohisa OKADA}
-\date{2023-05-31}
+\date{2023-07-05}
 
 \begin{document}
 \maketitle
@@ -806,14 +809,16 @@
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 関数(引数xは数値)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 意味
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 log(x) & 自然対数 \\
 log(x, base=y) & yを底とする常用対数 \\
 sqrt(x) & xの平方根 \\
@@ -822,7 +827,6 @@ abs(x) & xの絶対値 \\
 round(x,y) & 小数点以下y桁になるようxを四捨五入（IEEE754方式）※ 詳細は演習問題参照 \\
 floor(x) & xの小数点以下切り捨て \\
 ceiling(x) & xの小数点以下切り上げ \\
-\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -1492,10 +1496,12 @@ ceiling(x) & xの小数点以下切り上げ \\
 \end{itemize}
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 関数(引数xはベクトル) & 意味 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 summary(x) & 基本統計量の一括表示 \\
 max(x) & xの要素の最大値 \\
 min(x) & xの要素の最小値 \\
@@ -1508,7 +1514,6 @@ range(x) & xのデータの範囲（最小値と最大値） \\
 length(x) & xのデータの個数（ベクトルの次元） \\
 sort(x) & xの各要素を小さい順に並び替え \\
 sort(x, decreasing = TRUE) & xの各要素を大きい順に並び替え \\
-\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -1597,10 +1602,12 @@ sort(x, decreasing = TRUE) & xの各要素を大きい順に並び替え \\
 \end{itemize}
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 関数(引数xは行列) & 意味 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 matrix(0, nrow=2, ncol=3) & 2 行 3 列のゼロ行列を作成 \\
 diag(5) & 5×5の単位行列作成 \\
 diag(X) \textless- 1 & 行列 X の対角成分を全て 1 にする \\
@@ -1611,7 +1618,6 @@ rowSums(X) & 行列 X の行和 \\
 colSums(X) & 行列 X の列和 \\
 RowMeans(X) & 行列 X の行平均 \\
 colMeand(X) & 行列 X の列平均 \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{ux7df4ux7fd2ux554fux984c-5}{%
@@ -1864,15 +1870,16 @@ colMeand(X) & 行列 X の列平均 \\
 \end{itemize}
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule()
+\toprule\noalign{}
 Name & Age & Height & Weight & Gender \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Tanaka & 10 & 149.5 & 36 & male \\
 Suzuki & 18 & 153 & 65 & female \\
 Okada & 41 & 171 & 58 & male \\
 Watanabe & 26 & 174.5 & 127 & male \\
-\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -2056,7 +2063,7 @@ Watanabe & 26 & 174.5 & 127 & male \\
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  １章で作った\texttt{zemi}のプロジェクトフォルダ内に\texttt{data}というフォルダを作李なさい\\
+  １章で作った\texttt{zemi}のプロジェクトフォルダ内に\texttt{data}というフォルダを作りなさい\\
 \item
   以下から\href{https://www.dropbox.com/s/8fy2dbnurinract/shitaisokutei.csv?dl=0}{\texttt{sokutei.csv}}をダウンロードし、上の\texttt{data}フォルダ内に置きなさい\\
 \item
@@ -2401,10 +2408,12 @@ Watanabe & 26 & 174.5 & 127 & male \\
 \end{itemize}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 関係演算子 & 書き方 & 意味 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textgreater{} & a \textgreater{} b & aはbよりも大きいか？ \\
 \textgreater= & a \textgreater= b & aはb以上か？ \\
 \textless{} & a \textless{} b & aはbよりも小さいか？ \\
@@ -2412,20 +2421,20 @@ Watanabe & 26 & 174.5 & 127 & male \\
 == & a == b & aはbと等しいか？ \\
 != & a != b & aはbと等しくないか？ \\
 \%in\% & a \%in\% c(a, b, c) & aはc(a, b, c)のグループに含まれるか？ \\
-\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule()
+\toprule\noalign{}
 論理演算子 & 構文 & 意味 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 ! & !(a==b) & aとbは等しくないか \\
 \& & a \& b & aかつb（ベクトルに対して使う） \\
 \&\& & a \&\& b & aかつb（スカラーに対して使う） \\
 \textbar{} & a \textbar{} b & aまたはb（ベクトルに対して使う） \\
 \textbar\textbar{} & a \textbar\textbar{} b & aまたはb（スカラーに対して使う） \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{ux7df4ux7fd2ux554fux984c-6}{%
@@ -2527,16 +2536,18 @@ Watanabe & 26 & 174.5 & 127 & male \\
 \item
   \texttt{if\_else()}を入れ子にすれば、3つ以上に条件分岐する変数も作れる
 \item
-  しかし、3つい上に条件分岐する場合は\texttt{case\_when}を使った方が便利
+  しかし、3つ以上に条件分岐する場合は\texttt{case\_when}を使った方が便利
 \item
   例えば世界保健機関(WHO)は、BMIを使って以下の基準で肥満度を分類している
 \end{itemize}
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
+\toprule\noalign{}
 BMI値 & 分類 \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 16未満 & 痩せすぎ \\
 16.00〜16.99以下 & 痩せ \\
 17.00〜18.49以下 & 痩せぎみ \\
@@ -2545,7 +2556,6 @@ BMI値 & 分類 \\
 30.00〜34.99以下 & 肥満(1度) \\
 35.00〜39.99以下 & 肥満(2度) \\
 40.00以上 & 肥満(3度) \\
-\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -2596,6 +2606,8 @@ BMI値 & 分類 \\
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(age)}
+
+\CommentTok{\# 年齢が高い人から順に並べたい時はarrange({-}age)}
 
 \NormalTok{df}
 \end{Highlighting}
@@ -2694,6 +2706,30 @@ BMI値 & 分類 \\
 
 \hypertarget{ux6f14ux7fd2ux554fux984c-4}{%
 \section{演習問題}\label{ux6f14ux7fd2ux554fux984c-4}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  １章で作った\texttt{zemi}のプロジェクトフォルダ内に\texttt{data}というフォルダを作りなさい\\
+\item
+  \texttt{wooldridge}のパッケージを呼び出しなさい（必要ならインストールすること）\\
+\item
+  \texttt{data("saving")}を実行して、wooldridgeに収録された\texttt{saving}というデータを読み込みなさい
+\item
+  \texttt{head(saving)}を実行して、\texttt{saving}の中身を確認しなさい
+\item
+  \texttt{saving}に、saving\_rateという名前の貯蓄を収入で割った（sav/inc）変数を追加しなさい
+\item
+  \texttt{saving}から、\texttt{black}という変数を削除しなさい
+\item
+  \texttt{saving}を\texttt{inc}の高い順に並べ替えなさい
+\item
+  上の３つの操作を、パイプ関数を使ってひと繋ぎで実行し、\texttt{saving\_modified}というオブジェクトに保存しなさい
+\end{enumerate}
+
+\hypertarget{r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified}{%
+\chapter{\texorpdfstring{\texttt{\{r\}\ \#\ library(wooldridge)\ \#\ data("saving")\ \#\ head(saving)\ \#\ saving\_modified\ \textless{}-\ \#\ \ \ saving\ \%\textgreater{}\%\ \#\ \ \ mutate(saving\_rate\ =\ sav\ /\ inc)\ \%\textgreater{}\%\ \#\ \ \ select(-black)\ \%\textgreater{}\%\ \#\ \ \ arrange(-inc)\ \#\ saving\_modified\ \#}}{\{r\} \# library(wooldridge) \# data("saving") \# head(saving) \# saving\_modified \textless- \#   saving \%\textgreater\% \#   mutate(saving\_rate = sav / inc) \%\textgreater\% \#   select(-black) \%\textgreater\% \#   arrange(-inc) \# saving\_modified \#}}\label{r-librarywooldridge-datasaving-headsaving-saving_modified---saving-mutatesaving_rate-sav-inc-select-black-arrange-inc-saving_modified}}
 
   \bibliography{book.bib,packages.bib}
 
